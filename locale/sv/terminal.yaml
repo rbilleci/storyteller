@@ -1,0 +1,88 @@
+# Terminaladapterns spelartext, på svenska.
+# Kommandon med snedstreck (/help, /character, /quit, /continue, /retry, /revise,
+# /dismiss) är SYNTAX: översätts aldrig.
+
+language: sv-SE
+
+status:
+  no_character: "Ingen rollperson än"
+  hp: "KP $hp/$hp_max"
+  doom: "Undergång $die"
+  combat: "Strid"
+  round: ": runda $round"
+  turn: "$name:s tur"
+  day: "Dag $day"
+
+sheet:
+  backgrounds: "**Bakgrunder:**"
+  stories: "**Historier:**"
+  hp: "**KP**"
+  doom: "**Undergång**"
+  armour: "**Rustning**"
+  weapons: "**Vapen:**"
+  equipment: "**Utrustning:**"
+  coins: "**Mynt:**"
+  languages: "**Språk:**"
+  resources: "**Resurser:**"
+  doses: "**Doser:**"
+  gifts: "**Gåvor:**"
+  spells: "**Besvärjelser:**"
+  powers: "**Krafter:**"
+  runic_weapon: "**Runvapen:**"
+  conditions: "**Tillstånd:**"
+  scars: "**Ärr:**"
+  notes: "**Anteckningar:**"
+  none: "inga"
+  shield: " + sköld"
+  level: "Nivå $level"
+  unlinked: "Inget rollformulär än: den här terminalen är inte kopplad till någon rollperson. Formuläret visas så snart rollskapandet kopplar en.\n"
+
+commands:
+  help: "Kommandon: /help, /character, /thinking, /language, /quit\n"
+  recovery_help: "Återställningskommandon: /continue, /retry, /revise, /dismiss. Använd /revise följt av en ny handling, eller /revise text.\n"
+  revise_after: "Ange en omarbetad handling efter /revise.\n"
+  revise_now: "Ange en omarbetad handling.\n"
+  no_decision_open: "Inget beslut är öppet, så en siffra når ingenting. Återställningskommandon: /continue, /retry, /revise, /dismiss.\n"
+  unknown: "Okänt kommando: $command. Skriv /help.\n"
+  slash_required: "Kommandon börjar numera med /. Skriv /help.\n"
+  thinking_show: "Betänketid: $level. Nivåer: $levels. Skriv /thinking följt av en nivå för att ändra den.\n"
+  thinking_set: "Betänketid satt till $level.\n"
+  thinking_unknown: "Okänd betänkenivå: $level. Nivåer: $levels.\n"
+  thinking_unavailable: "Betänkenivån kan inte ändras i den här kanalen.\n"
+  # Språkkoderna är syntax, precis som kommandona: översätt dem inte.
+  language_show: "Språk: $language. Språk: $languages. Skriv /language följt av ett språk för att byta.\n"
+  language_set: "Språk satt till $language.\n"
+  language_unknown: "Okänt språk: $language. Språk: $languages.\n"
+  language_unavailable: "Språket kan inte ändras i den här kanalen.\n"
+
+autocomplete:
+  # Korta sammanfattningar som visas i terminalens kommandokompletteringsmeny.
+  # Fri text, till skillnad från /kommandona ovan.
+  help: "Visa tillgängliga kommandon"
+  character: "Visa ditt rollformulär"
+  quit: "Lämna sessionen"
+  thinking: "Visa eller ställ in hur mycket berättaren tänker"
+  language: "Visa eller ställ in bordets språk"
+  continue: "Låt spelet fortsätta som berättat"
+  dismiss: "Avvisa det öppna beslutet"
+  retry: "Be berättaren försöka igen"
+  revise: "Ersätt den senaste handlingen med en ny"
+
+decision:
+  prompt: "Beslut för $name"
+  enter_number: "Ange en siffra. Skriv /help för beslutshjälp eller /dismiss för att stänga."
+  help: "Välj ett numrerat alternativ. /dismiss stänger den här frågan. /character visar ditt rollformulär. /quit lämnar spelet."
+  choose_listed: "Välj ett av de listade alternativen.\n"
+  describe_approach: "Beskriv det tillvägagångssättet: skriv det som vanlig text, eller som alternativets nummer följt av . eller ).\n"
+  custom_grammar: "För $label, skriv $marker följt av din beskrivning. Exempel: $example"
+  custom_plain: "Vanlig text på egen hand fungerar också: beskriv vad du gör så tas det som det tillvägagångssättet."
+  custom_example: "smyga längs hustaken"
+
+errors:
+  invalid: "Det svaret är inte tillgängligt. Välj ett alternativ.\n"
+  conflict: "Ditt första svar gäller fortfarande.\n"
+  stale: "Det beslutet förföll eftersom spelläget ändrades.\n"
+  cancelled: "Det beslutet är inte längre aktivt.\n"
+  rejected: "Beslutet godtogs inte.\n"
+
+thinking: " Tänker"

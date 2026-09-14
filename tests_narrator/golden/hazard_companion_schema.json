@@ -1,0 +1,77 @@
+{
+  "additionalProperties": false,
+  "description": "One narrow verdict: the hazard a message declares, asked when the full classifier claims an acceptance the engine cannot see.",
+  "properties": {
+    "accepts_offer": {
+      "default": false,
+      "title": "Accepts Offer",
+      "type": "boolean"
+    },
+    "hazard": {
+      "enum": [
+        "violence",
+        "theft",
+        "destructive",
+        "none"
+      ],
+      "title": "Hazard",
+      "type": "string"
+    },
+    "interlocutor_id": {
+      "default": "",
+      "maxLength": 64,
+      "title": "Interlocutor Id",
+      "type": "string"
+    },
+    "named_person_ids": {
+      "items": {
+        "maxLength": 64,
+        "type": "string"
+      },
+      "maxItems": 12,
+      "title": "Named Person Ids",
+      "type": "array"
+    },
+    "names_unrecorded_person": {
+      "default": false,
+      "title": "Names Unrecorded Person",
+      "type": "boolean"
+    },
+    "offered_price": {
+      "default": 0,
+      "maximum": 9999,
+      "minimum": 0,
+      "title": "Offered Price",
+      "type": "integer"
+    },
+    "reason": {
+      "maxLength": 240,
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    },
+    "route": {
+      "enum": [
+        "risk",
+        "social",
+        "read",
+        "out_of_character",
+        "planner"
+      ],
+      "title": "Route",
+      "type": "string"
+    }
+  },
+  "required": [
+    "route",
+    "hazard",
+    "named_person_ids",
+    "names_unrecorded_person",
+    "interlocutor_id",
+    "accepts_offer",
+    "offered_price",
+    "reason"
+  ],
+  "title": "HazardCompanion",
+  "type": "object"
+}

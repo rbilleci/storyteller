@@ -1,0 +1,80 @@
+# 叙事者的玩家可见文本，简体中文（普通话）。目录名为 "zh"，因此 zh、zh-CN 和
+# zh-Hans 都会解析到这里。
+# 逐键翻译自 locale/en/narrator.yaml。约束见英文源文件：恢复命令（/retry、/revise、
+# /dismiss、/continue）是语法，绝不翻译；每个 $placeholder 都是必需的。占位符与
+# 中文字符之间保留空格或标点。
+
+language: zh-CN
+
+notices:
+  decision_fault: "没有任何行动发生：游戏主持人无法准备一个安全的决定。请使用 /retry、/revise 或 /dismiss。"
+  decision_stale_context: "没有任何行动发生：这个决定打开期间，桌面的状态发生了变化。请使用 /retry 重新询问。"
+  decision_stale_confirmation: "没有任何行动发生：这个确认已不再对应你正在做的事。请重新描述该行动。"
+  decision_segment: "没有任何行动发生。这个决定环节需要另一位玩家的视角。请使用 /continue、/revise 或 /dismiss。"
+  decision_declined: "没有任何行动发生：提议的行动被拒绝了。"
+  risk_confirmation: "没有任何行动发生：这个危险需要经过认证的确认。"
+  classifier_fault: "游戏主持人无法读懂那个回合要做什么，因此什么也没有发生，也没有掷骰。请再说一遍，或换个说法。"
+  romance_boundary: "没有任何行动发生：这样的进展在本桌不可用。"
+  trade_confirmation: "没有发生任何购买：商定的条款需要经过认证的确认。"
+  trade_completed: "已确认的购买已被记录。"
+  withheld: "游戏主持人暂扣了这个回合：其后果尚未写入记录。已掷出的骰子仍然有效 - 不要重做该行动。请询问接下来发生了什么。"
+  fault: "游戏主持人在书写这个回合的故事时遇到了故障。已掷出的骰子仍然有效 - 不要重做该行动。请询问接下来发生了什么。"
+  decision_incomplete: "没有丢失任何行动：游戏主持人为这个行动所做的准备已经写入记录，无需重复。行动本身在这个回合没有解决完毕。请使用 /retry、/revise 或 /dismiss。"
+  decision_refused: "没有解决任何行动：规则引擎拒绝了 $refusal，什么也没有改变。请使用 /retry、/revise 或 /dismiss。"
+
+confirmations:
+  violence: "这个行动可能伤害或杀死尚未与你交战的人。确认吗？"
+  theft: "这个行动会拿走他人未曾出让的财物。确认吗？"
+  destructive: "这个行动可能摧毁某物或使其发生永久改变。确认吗？"
+  uncategorized: "这个行动可能伤害某人、夺走某物，或对某人某物造成永久影响。确认吗？"
+
+options:
+  confirm: "确认"
+  decline: "拒绝"
+  own_approach: "描述你自己的做法"
+  parry: "格挡（力量）"
+  dodge: "闪避（敏捷）"
+
+decisions:
+  # 必需占位符：$enemy $character
+  enemy_turn_question: "$enemy 正在行动。$character 如何防御？"
+  enemy_turn_context: "$character 的回合在 $enemy 之后。"
+
+roll:
+  # 两个数字都必须保留标注：这是低掷制游戏，未标注的一对数字会让来自高掷制
+  # 系统的玩家读反。
+  # 必需占位符：$name $attribute $total $target $outcome
+  announcement: "$name 检定 $attribute：掷出 $total，目标值 $target，$outcome。"
+
+doom:
+  # 必需占位符：$name $die $total $result
+  announcement: "$name 掷厄运骰（$die）：掷出 $total，$result。"
+
+doom_results:
+  held: "骰子保持不变"
+  # 必需占位符：$next
+  downgraded: "骰子降为 $next"
+  depleted: "厄运骰已耗尽"
+
+runic:
+  # 符文武器的赌注行，由引擎从结果的 kills_helpless 字段直接书写
+  # （见英文源文件）。
+  # 必需占位符：$name $wielder
+  armed: "$name 已量定 $wielder：若 $wielder 在本次团期内陷入无助倒下，此刃将当场杀死 $wielder。"
+  disarmed: "$name 未量定 $wielder：本次团期内陷入无助倒下，也不会把 $wielder 交予此刃。"
+  armed_next: "$name 已为下次团期量定 $wielder：若 $wielder 在其中陷入无助倒下，此刃将当场杀死 $wielder。"
+  disarmed_next: "$name 未为下次团期量定 $wielder：在其中陷入无助倒下，也不会把 $wielder 交予此刃。"
+
+attributes:
+  STR: "力量"
+  DEX: "敏捷"
+  CON: "体质"
+  INT: "智力"
+  WIS: "感知"
+  CHA: "魅力"
+
+outcomes:
+  success: "成功"
+  failure: "失败"
+  critical_success: "大成功"
+  critical_failure: "大失败"

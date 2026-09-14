@@ -1,0 +1,80 @@
+# Pasakotojo žaidėjams matomas tekstas, lietuvių kalba.
+# locale/en/narrator.yaml vertimas, raktas po rakto. Apribojimus žr. angliškame
+# šaltinyje: atkūrimo komandos (/retry, /revise, /dismiss, /continue) yra sintaksė ir
+# niekada neverčiamos, o kiekvienas $placeholder yra privalomas. Vardai ($name,
+# $wielder) dedami į nelinksniuojamas pozicijas, nes variklis jų linksniuoti nemoka.
+
+language: lt-LT
+
+notices:
+  decision_fault: "Joks veiksmas neįvyko: žaidimo vedėjas negalėjo paruošti saugaus sprendimo. Naudokite /retry, /revise arba /dismiss."
+  decision_stale_context: "Joks veiksmas neįvyko: stalo būsena pasikeitė, kol šis sprendimas buvo atviras. Naudokite /retry paklausti iš naujo."
+  decision_stale_confirmation: "Joks veiksmas neįvyko: šis patvirtinimas nebeatitinka to, ką darote. Apibūdinkite veiksmą iš naujo."
+  decision_segment: "Joks veiksmas neįvyko. Šiam sprendimo segmentui reikia kito žaidėjo žvilgsnio. Naudokite /continue, /revise arba /dismiss."
+  decision_declined: "Joks veiksmas neįvyko: pasiūlytas veiksmas buvo atmestas."
+  risk_confirmation: "Joks veiksmas neįvyko: šis pavojus reikalauja autentifikuoto patvirtinimo."
+  classifier_fault: "Žaidimo vedėjas nesuprato, ką tas ėjimas darė; nieko neįvyko ir joks kauliukas nebuvo mestas. Pasakykite tai dar kartą arba performuluokite."
+  romance_boundary: "Joks veiksmas neįvyko: toks žingsnis prie šio stalo negalimas."
+  trade_confirmation: "Joks pirkimas neįvyko: sutartos sąlygos reikalauja autentifikuoto patvirtinimo."
+  trade_completed: "Patvirtintas pirkimas įrašytas."
+  withheld: "Žaidimo vedėjas sulaiko šį ėjimą: jo pasekmės dar neįrašytos į įrašą. Jau mesti kauliukai tebegalioja - nekartokite veiksmo. Klauskite, kas vyksta toliau."
+  fault: "Žaidimo vedėjui rašant šio ėjimo istoriją įvyko triktis. Jau mesti kauliukai tebegalioja - nekartokite veiksmo. Klauskite, kas vyksta toliau."
+  decision_incomplete: "Joks veiksmas neprarastas: žaidimo vedėjo pasiruošimas šiam veiksmui jau pasiekė įrašą ir jo kartoti nereikia. Pats veiksmas šį ėjimą nebuvo išspręstas iki galo. Naudokite /retry, /revise arba /dismiss."
+  decision_refused: "Joks veiksmas neišspręstas: taisyklių variklis atmetė $refusal, ir niekas nepasikeitė. Naudokite /retry, /revise arba /dismiss."
+
+confirmations:
+  violence: "Šis veiksmas gali sužeisti arba nužudyti tą, kas su jumis dar nekovoja. Patvirtinti?"
+  theft: "Šis veiksmas paima nuosavybę iš to, kas jos nepasiūlė. Patvirtinti?"
+  destructive: "Šis veiksmas gali ką nors sunaikinti arba negrįžtamai pakeisti. Patvirtinti?"
+  uncategorized: "Šis veiksmas gali ką nors sužaloti, iš ko nors atimti arba negrįžtamai paveikti ką nors ar kažką. Patvirtinti?"
+
+options:
+  confirm: "Patvirtinti"
+  decline: "Atmesti"
+  own_approach: "Apibūdinkite savo pačių būdą"
+  parry: "Atremti (JĖG)"
+  dodge: "Išsisukti (VIK)"
+
+decisions:
+  # Privalomi placeholderiai: $enemy $character
+  enemy_turn_question: "$enemy veikia. Kaip ginasi $character?"
+  enemy_turn_context: "Ėjimas personažo $character laukia po priešininko $enemy ėjimo."
+
+roll:
+  # Abu skaičiai privalo likti pažymėti: žaidžiama metant žemiau tikslo, o nepažymėtą
+  # porą atėjęs iš aukšto metimo sistemos žaidėjas perskaito atvirkščiai.
+  # Privalomi placeholderiai: $name $attribute $total $target $outcome
+  announcement: "$name tikrina $attribute: iškrito $total, tikslas $target, $outcome."
+
+doom:
+  # Privalomi placeholderiai: $name $die $total $result
+  announcement: "$name meta Pražūties kauliuką ($die): iškrito $total, $result."
+
+doom_results:
+  held: "kauliukas laikosi"
+  # Privalomas placeholderis: $next
+  downgraded: "kauliukas nukrinta iki $next"
+  depleted: "Pražūties kauliukas išsemtas"
+
+runic:
+  # Runų ginklo statymo eilutė, kurią VARIKLIS rašo iš rezultato lauko kills_helpless
+  # (žr. anglišką šaltinį).
+  # Privalomi placeholderiai: $name $wielder
+  armed: "$name pasvėrė nešėją $wielder: jei $wielder šioje sesijoje krinta Bejėgis, ašmenys čia pat pribaigia nešėją $wielder."
+  disarmed: "$name nepasvėrė nešėjo $wielder: kritimas Bejėgiu šioje sesijoje neatiduoda nešėjo $wielder ašmenims."
+  armed_next: "$name pasvėrė nešėją $wielder kitai sesijai: jei $wielder joje krinta Bejėgis, ašmenys čia pat pribaigia nešėją $wielder."
+  disarmed_next: "$name nepasvėrė nešėjo $wielder kitai sesijai: kritimas Bejėgiu joje neatiduoda nešėjo $wielder ašmenims."
+
+attributes:
+  STR: "JĖG"
+  DEX: "VIK"
+  CON: "IŠT"
+  INT: "INT"
+  WIS: "IŠM"
+  CHA: "CHA"
+
+outcomes:
+  success: "sėkmė"
+  failure: "nesėkmė"
+  critical_success: "kritinė sėkmė"
+  critical_failure: "kritinė nesėkmė"

@@ -1,0 +1,19 @@
+{
+  "source": "Black Sword Hack - Ultimate Chaos Edition SRD v1.0.2, Experience: Levels and benefits. Transcribed from https://blackswordhack.github.io/5experience.html and retained at docs/srd/experience.md.",
+  "stories_per_level": "A character advances after collecting Stories equal to their current level. Cumulative Stories required to reach level N equal N multiplied by N minus 1, divided by 2.",
+  "max_level": 10,
+  "hp_per_level": 1,
+  "hp_gain_note": "The SRD grants +1 hit point at every level from 2 through 9. Level 10 grants the Doom die upgrade instead, so a level-10 advancement adds 0 hit points.",
+  "gift_levels": [3, 5, 7, 9],
+  "attribute_increase_levels": {
+    "2": 1,
+    "4": 2,
+    "6": 1,
+    "8": 2
+  },
+  "attribute_max": 18,
+  "attribute_max_note": "The SRD caps an attribute raised by advancement at 18. character_advance rejects a chosen attribute already at 18 rather than exceeding it.",
+  "level_10_doom_die": "d8",
+  "automation": "tool",
+  "automation_note": "The character_advance tool applies one level per call, gated by Story eligibility. It raises the level, adds the hit point, applies the player's chosen attribute increases and Gift, and upgrades the Doom die at level 10. The player still chooses which attributes to raise and which Gift to take; the tool validates those choices against the level's SRD benefits and writes them. Each Gift's automation field in gifts.json records whether the effect registry drives it ('effect') or the narrator applies its text as a ruling ('manual'); read the field per entry rather than assuming a count, since a mechanization slice flips one entry at a time."
+}

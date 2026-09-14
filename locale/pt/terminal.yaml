@@ -1,0 +1,88 @@
+# Texto do adaptador de terminal para os jogadores, em português europeu.
+# Os comandos com barra (/help, /character, /quit, /continue, /retry, /revise,
+# /dismiss) são SINTAXE: nunca se traduzem.
+
+language: pt-PT
+
+status:
+  no_character: "Ainda sem personagem"
+  hp: "PV $hp/$hp_max"
+  doom: "Perdição $die"
+  combat: "Combate"
+  round: ": ronda $round"
+  turn: "turno de $name"
+  day: "Dia $day"
+
+sheet:
+  backgrounds: "**Antecedentes:**"
+  stories: "**Histórias:**"
+  hp: "**PV**"
+  doom: "**Perdição**"
+  armour: "**Armadura**"
+  weapons: "**Armas:**"
+  equipment: "**Equipamento:**"
+  coins: "**Moedas:**"
+  languages: "**Línguas:**"
+  resources: "**Recursos:**"
+  doses: "**Doses:**"
+  gifts: "**Dádivas:**"
+  spells: "**Feitiços:**"
+  powers: "**Poderes:**"
+  runic_weapon: "**Arma rúnica:**"
+  conditions: "**Estados:**"
+  scars: "**Cicatrizes:**"
+  notes: "**Notas:**"
+  none: "nenhum"
+  shield: " + escudo"
+  level: "Nível $level"
+  unlinked: "Ainda não há ficha de personagem: este terminal não está ligado a nenhuma personagem. A ficha aparece assim que a criação de personagem ligar uma.\n"
+
+commands:
+  help: "Comandos: /help, /character, /thinking, /language, /quit\n"
+  recovery_help: "Comandos de recuperação: /continue, /retry, /revise, /dismiss. Usa /revise seguido de uma nova ação, ou /revise texto.\n"
+  revise_after: "Escreve uma ação revista depois de /revise.\n"
+  revise_now: "Escreve uma ação revista.\n"
+  no_decision_open: "Nenhuma decisão está aberta, por isso um número não chega a lado nenhum. Comandos de recuperação: /continue, /retry, /revise, /dismiss.\n"
+  unknown: "Comando desconhecido: $command. Escreve /help.\n"
+  slash_required: "Os comandos começam agora por /. Escreve /help.\n"
+  thinking_show: "Reflexão: $level. Níveis: $levels. Escreve /thinking seguido de um nível para a mudar.\n"
+  thinking_set: "Reflexão definida como $level.\n"
+  thinking_unknown: "Nível de reflexão desconhecido: $level. Níveis: $levels.\n"
+  thinking_unavailable: "O nível de reflexão não pode ser mudado neste canal.\n"
+  # Os códigos de língua são sintaxe, como os comandos: não os traduzir.
+  language_show: "Língua: $language. Línguas: $languages. Escreve /language seguido de uma língua para a mudar.\n"
+  language_set: "Língua definida como $language.\n"
+  language_unknown: "Língua desconhecida: $language. Línguas: $languages.\n"
+  language_unavailable: "A língua não pode ser mudada neste canal.\n"
+
+autocomplete:
+  # Resumos breves mostrados no menu de conclusão de comandos do terminal. Texto
+  # livre, ao contrário dos /comandos acima.
+  help: "Mostrar os comandos disponíveis"
+  character: "Mostrar a tua ficha de personagem"
+  quit: "Sair da sessão"
+  thinking: "Mostrar ou definir o quanto o narrador pensa"
+  language: "Mostrar ou definir o idioma da mesa"
+  continue: "Deixar o jogo continuar como narrado"
+  dismiss: "Rejeitar a decisão em aberto"
+  retry: "Pedir ao narrador para tentar novamente"
+  revise: "Substituir a última ação por uma nova"
+
+decision:
+  prompt: "Decisão para $name"
+  enter_number: "Introduz um número. Escreve /help para a ajuda de decisões ou /dismiss para fechar."
+  help: "Escolhe uma opção numerada. /dismiss fecha este aviso. /character mostra a tua ficha. /quit sai do jogo."
+  choose_listed: "Escolhe uma das opções listadas.\n"
+  describe_approach: "Descreve essa abordagem: escreve-a como texto simples, ou como o número da opção seguido de . ou ).\n"
+  custom_grammar: "Para $label, escreve $marker seguido da tua descrição. Exemplo: $example"
+  custom_plain: "Texto simples por si só também funciona: descreve o que fazes e é tomado como essa abordagem."
+  custom_example: "deslizar pelos telhados"
+
+errors:
+  invalid: "Essa resposta não está disponível. Escolhe uma opção.\n"
+  conflict: "A tua primeira resposta continua em vigor.\n"
+  stale: "Essa decisão expirou porque o estado do jogo mudou.\n"
+  cancelled: "Essa decisão já não está ativa.\n"
+  rejected: "Decisão não aceite.\n"
+
+thinking: " A pensar"

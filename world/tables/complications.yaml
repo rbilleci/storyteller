@@ -1,0 +1,26 @@
+note: >-
+  Roll or choose a complication when a test fails at a cost, when a clock fills,
+  or when the party stalls. Each entry names a concrete, physical consequence.
+  Never use a complication to erase a player's success.
+
+d12:
+  1: The tide turns two hours early and the plank walk floods to the knee.
+  2: A Magistrate patrol arrives and asks for the bronze register.
+  3: A shuttered lamp signals twice from the customs house window.
+  4: The lamp oil runs out, and the Usage Die steps down.
+  5: Orso Pell is already standing where the party meant to go.
+  6: The rope holds, but the rail does not, and something falls into the mud.
+  7: A witness the party trusted has already sold what they know.
+  8: The shrine bell answers on its own, and everyone within fifty metres hears it.
+  9: Someone in the party is recognised by name by a stranger.
+  10: The channel has moved since the last chart, and the boat grounds.
+  11: A Choir adherent asks the party, publicly and politely, to explain themselves.
+  12: The water in the cave rises a hand's width faster than the tide table says.
+
+stalling:
+  note: Use these when the party discusses for a long time without acting.
+  entries:
+    - The evening bell does not ring again, and the market notices out loud.
+    - A second bell cracks somewhere down the coast, audible as a flat note.
+    - Sera Vane's lamp is found on the mud, still warm.
+    - The Choir advances its clock one segment and moves openly.

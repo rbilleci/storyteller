@@ -1,0 +1,52 @@
+{
+  "additionalProperties": false,
+  "description": "One narrow verdict: which introduced person, if any, a message addresses, asked beside the full classifier.",
+  "properties": {
+    "interlocutor_id": {
+      "default": "",
+      "maxLength": 64,
+      "title": "Interlocutor Id",
+      "type": "string"
+    },
+    "named_person_ids": {
+      "items": {
+        "maxLength": 64,
+        "type": "string"
+      },
+      "maxItems": 12,
+      "title": "Named Person Ids",
+      "type": "array"
+    },
+    "names_unrecorded_person": {
+      "default": false,
+      "title": "Names Unrecorded Person",
+      "type": "boolean"
+    },
+    "reason": {
+      "maxLength": 240,
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    },
+    "route": {
+      "enum": [
+        "risk",
+        "social",
+        "read",
+        "out_of_character",
+        "planner"
+      ],
+      "title": "Route",
+      "type": "string"
+    }
+  },
+  "required": [
+    "route",
+    "named_person_ids",
+    "names_unrecorded_person",
+    "interlocutor_id",
+    "reason"
+  ],
+  "title": "PersonsCompanion",
+  "type": "object"
+}

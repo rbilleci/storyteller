@@ -1,0 +1,82 @@
+# Texto del narrador para los jugadores, en español (México).
+# Traducción de locale/en/narrator.yaml, clave por clave. Ver la fuente inglesa para las
+# restricciones: los comandos de recuperación (/retry, /revise, /dismiss, /continue) son
+# sintaxis y nunca se traducen, y cada $placeholder es obligatorio.
+# El registro narrativo coincide con el texto de España salvo donde el uso mexicano
+# difiere; el dominio de terminal (terminal.yaml) es donde viven la mayoría de esas
+# diferencias.
+
+language: es-MX
+
+notices:
+  decision_fault: "No ocurrió ninguna acción: el director de juego no pudo preparar una decisión segura. Usa /retry, /revise o /dismiss."
+  decision_stale_context: "No ocurrió ninguna acción: el estado de la mesa cambió mientras esta decisión estaba abierta. Usa /retry para preguntar de nuevo."
+  decision_stale_confirmation: "No ocurrió ninguna acción: esta confirmación ya no corresponde a lo que estás haciendo. Describe la acción de nuevo."
+  decision_segment: "No ocurrió ninguna acción. Este segmento de decisión necesita la vista de otro jugador. Usa /continue, /revise o /dismiss."
+  decision_declined: "No ocurrió ninguna acción: la acción propuesta fue rechazada."
+  risk_confirmation: "No ocurrió ninguna acción: este peligro exige una confirmación autenticada."
+  classifier_fault: "El director de juego no pudo entender qué hacía ese turno; no ocurrió nada y no se tiró ningún dado. Dilo otra vez, o exprésalo de otro modo."
+  romance_boundary: "No ocurrió ninguna acción: esa escalada no está disponible en esta mesa."
+  trade_confirmation: "No se realizó ninguna compra: los términos acordados exigen una confirmación autenticada."
+  trade_completed: "La compra confirmada quedó registrada."
+  withheld: "El director de juego retiene este turno: sus consecuencias aún no están asentadas en el registro. Los dados ya tirados siguen contando - no repitas la acción. Pregunta qué ocurre después."
+  fault: "El director de juego sufrió una falla al escribir la historia de este turno. Los dados ya tirados siguen contando - no repitas la acción. Pregunta qué ocurre después."
+  decision_incomplete: "No se perdió ninguna acción: la preparación del director de juego para esta acción ya llegó al registro y no necesita repetirse. La acción en sí no terminó de resolverse este turno. Usa /retry, /revise o /dismiss."
+  decision_refused: "Ninguna acción se resolvió: el motor de reglas rechazó $refusal, y nada cambió. Usa /retry, /revise o /dismiss."
+
+confirmations:
+  violence: "Esta acción puede herir o matar a alguien que aún no está peleando contigo. ¿Confirmar?"
+  theft: "Esta acción toma una propiedad de alguien que no la ha ofrecido. ¿Confirmar?"
+  destructive: "Esta acción puede destruir o alterar algo de forma permanente. ¿Confirmar?"
+  uncategorized: "Esta acción puede dañar a alguien, quitarle algo, o afectar de forma permanente a alguien o algo. ¿Confirmar?"
+
+options:
+  confirm: "Confirmar"
+  decline: "Rechazar"
+  own_approach: "Describe tu propio enfoque"
+  parry: "Parar (FUE)"
+  dodge: "Esquivar (DES)"
+
+decisions:
+  # Placeholders obligatorios: $enemy $character
+  enemy_turn_question: "$enemy está actuando. ¿Cómo se defiende $character?"
+  enemy_turn_context: "El turno de $character llega después del de $enemy."
+
+roll:
+  # Los dos números deben quedar etiquetados: se juega por debajo del umbral, y un par
+  # sin etiquetar se lee al revés para quien viene de un sistema de tirar alto.
+  # Placeholders obligatorios: $name $attribute $total $target $outcome
+  announcement: "$name tira $attribute: obtuvo $total contra un objetivo de $target, $outcome."
+
+doom:
+  # Placeholders obligatorios: $name $die $total $result
+  announcement: "$name tira el dado de Perdición ($die): obtuvo $total, $result."
+
+doom_results:
+  held: "el dado aguanta"
+  # Placeholder obligatorio: $next
+  downgraded: "el dado baja a $next"
+  depleted: "el dado de Perdición está agotado"
+
+runic:
+  # La línea de apuesta de un arma rúnica, escrita por el MOTOR a partir del campo
+  # kills_helpless del resultado (ver la fuente inglesa).
+  # Placeholders obligatorios: $name $wielder
+  armed: "$name ha tomado la medida de $wielder: si $wielder cae Indefenso en esta sesión, la hoja mata a $wielder en el acto."
+  disarmed: "$name no ha tomado la medida de $wielder: caer Indefenso en esta sesión no entrega a $wielder a la hoja."
+  armed_next: "$name ha tomado la medida de $wielder para la próxima sesión: si $wielder cae Indefenso en ella, la hoja mata a $wielder en el acto."
+  disarmed_next: "$name no ha tomado la medida de $wielder para la próxima sesión: caer Indefenso en ella no entrega a $wielder a la hoja."
+
+attributes:
+  STR: "FUE"
+  DEX: "DES"
+  CON: "CON"
+  INT: "INT"
+  WIS: "SAB"
+  CHA: "CAR"
+
+outcomes:
+  success: "éxito"
+  failure: "fallo"
+  critical_success: "éxito crítico"
+  critical_failure: "fallo crítico"

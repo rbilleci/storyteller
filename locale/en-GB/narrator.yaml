@@ -1,0 +1,117 @@
+# British English. Currently word-for-word the US source: the shared wording carries
+# no US-only spellings (the SRD's own "Armour" is already British), so the two variants
+# genuinely read the same today. This file exists so en-GB is an explicit, selectable
+# table language with a home for future divergence; keep it aligned with locale/en
+# unless a string genuinely differs in British usage.
+# The source catalog is locale/en/narrator.yaml; this is a variant of it, not the
+# schema, and keys are structural identifiers that never change.
+#
+# Interpolation is $name, substituted with string.Template. A placeholder listed in
+# a comment below is REQUIRED: narrator.locale refuses to load a catalog whose
+# string does not carry exactly the placeholders its English source carries.
+
+language: en-GB
+
+# Engine-authored notices. Every one of these is posted INSTEAD of model narration,
+# so none may imply that fiction happened. Several name a recovery control with a
+# leading slash; those controls are syntax and must survive translation unchanged --
+# narrator.delivery arms a control by finding its name in the posted text.
+notices:
+  decision_fault: "No action occurred because the game master could not prepare a safe decision. Use /retry, /revise, or /dismiss."
+  decision_stale_context: "No action occurred because the table's state changed while this decision was open. Use /retry to ask again."
+  decision_stale_confirmation: "No action occurred because this confirmation no longer matches what you're doing. Describe the action again."
+  decision_segment: "No action occurred. This decision segment needs another player view. Use /continue, /revise, or /dismiss."
+  decision_declined: "No action occurred because the proposed action was declined."
+  risk_confirmation: "No action occurred because this hazard requires an authenticated confirmation."
+  classifier_fault: "The game master could not read what that turn was doing, so nothing happened and no dice were rolled. Say it again, or rephrase it."
+  romance_boundary: "No action occurred because this escalation is unavailable at this table."
+  trade_confirmation: "No purchase occurred because the agreed terms require an authenticated confirmation."
+  trade_completed: "The confirmed purchase was recorded."
+  withheld: "The game master holds this turn: its outcomes are not yet settled into the record. Any dice already rolled still count - do not redo the action. Ask what happens next."
+  fault: "The game master hit a fault writing this turn's story. Any dice already rolled still count - do not redo the action. Ask what happens next."
+  decision_incomplete: "No action was lost: the game master's setup for this action already reached the record and does not need repeating. The action itself did not finish resolving this turn. Use /retry, /revise, or /dismiss."
+  # $refusal is the engine's own tool name and error code, e.g.
+  # "combat_attack (no_actions_remaining)". Required placeholder: $refusal
+  decision_refused: "No action resolved: the rules engine refused $refusal, and nothing changed. Use /retry, /revise, or /dismiss."
+
+# The table-safety confirmation. Each names the consequence its own category
+# actually carries; a single sentence for all three was measured unanswerable,
+# because a player could not tell which of their words triggered it.
+confirmations:
+  violence: "This action can wound or kill someone who is not already fighting you. Confirm?"
+  theft: "This action takes property from someone who has not offered it. Confirm?"
+  destructive: "This action can destroy or permanently alter something. Confirm?"
+  uncategorized: "This action can harm, take from, or permanently affect someone or something. Confirm?"
+
+# Decision option labels the table selects by name or by number.
+options:
+  confirm: "Confirm"
+  decline: "Decline"
+  own_approach: "Describe your own approach"
+  parry: "Parry (STR)"
+  dodge: "Dodge (DEX)"
+
+# The engine-authored decision presented on an enemy's own open combat turn, when
+# the table's reply is not already a bound one-word "dodge" or "parry".
+decisions:
+  # Required placeholders: $enemy $character
+  enemy_turn_question: "$enemy is acting. How does $character defend?"
+  enemy_turn_context: "$character's own turn comes after $enemy's."
+
+roll:
+  # Shown to the table after any die roll. The ENGINE writes this line; the narrator
+  # is instructed never to write it (skills/bsh-gm/SKILL.md).
+  #
+  # KEEP BOTH NUMBERS LABELED. This is a roll-under game: an unlabeled "4 vs 13"
+  # reads backwards to a player arriving from a roll-high system, which a live table
+  # demonstrated. Say which number the dice produced and which the sheet supplied.
+  #
+  # Required placeholders: $name $attribute $total $target $outcome
+  announcement: "$name rolls $attribute: rolled $total vs target $target, $outcome."
+
+doom:
+  # Shown to the table after any Doom die roll this turn's tool results carried,
+  # whether the die held or stepped down. The ENGINE writes this line; a live
+  # session delivered the identical sentence for a held roll and a downgraded one,
+  # because nothing announced which had happened.
+  #
+  # Required placeholders: $name $die $total $result
+  announcement: "$name rolls the Doom die ($die): rolled $total, $result."
+
+# The three Doom outcomes ``doom.announcement``'s $result names. Keys are
+# structural identifiers and never change; only the values are translated.
+doom_results:
+  held: "the die holds"
+  # Required placeholder: $next
+  downgraded: "the die drops to $next"
+  depleted: "the Doom die is spent"
+
+
+runic:
+  # Shown to the table beside a runic weapon's session-test announcement
+  # (grant_runic_weapon, and session_close for the next session). The ENGINE writes
+  # this line from the result's own kills_helpless field. The wielder is identified
+  # by name so translations do not need to infer gender.
+  #
+  # Required placeholders: $name $wielder
+  armed: "$name has taken the measure of $wielder: if $wielder falls Helpless this session, the blade kills $wielder outright."
+  disarmed: "$name has not taken the measure of $wielder: a Helpless fall this session is not the blade's kill."
+  armed_next: "$name has taken the measure of $wielder for the next session: if $wielder falls Helpless in it, the blade kills $wielder outright."
+  disarmed_next: "$name has not taken the measure of $wielder for the next session: a Helpless fall in it is not the blade's kill."
+
+# Attribute codes as the table reads them. Keys are the rules engine's canonical
+# codes and never change; only the values are translated.
+attributes:
+  STR: "STR"
+  DEX: "DEX"
+  CON: "CON"
+  INT: "INT"
+  WIS: "WIS"
+  CHA: "CHA"
+
+# The four outcomes bsh_mcp.rules.classify can return. Keys are canonical.
+outcomes:
+  success: "success"
+  failure: "failure"
+  critical_success: "critical success"
+  critical_failure: "critical failure"

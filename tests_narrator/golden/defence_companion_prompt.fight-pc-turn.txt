@@ -1,0 +1,20 @@
+A player at the table sent this message:
+
+I take the rope and punch the trader. What next?
+
+People recorded present in the scene: rade (dead), orso-pell (alive).
+An open fight is running against: reed-thug.
+Fighting on the player side: rill.
+
+Classify the message.
+
+route:
+- risk: it declares an act that needs a table-safety confirmation.
+- social: it speaks to, or deals with, a person recorded present.
+- read: it asks what is perceptible in the scene rather than acting.
+- out_of_character: it asks about the game, its rules, or the record.
+- planner: it declares any other action.
+
+defence_method: while a fight is running the game master asks the target "do you parry or dodge?", so a message that is nothing but one verb, in any language, is answering that question rather than describing something else. The fight offers exactly two defences and this is the answer to 'do you parry or dodge?'. Answer 'dodge' when the character avoids the blow by moving -- ducking, sidestepping, leaping clear, esquiver, ausweichen. Answer 'parry' when the character stops or deflects it with a weapon, shield or arm -- blocking, turning it aside, parer, parieren. Answer for the two regardless of the language they are stated in. Answer none when the message names both, asks which to use, or carries any other act or target alongside it: naming both is not a choice.
+
+Answer with one JSON object, every field present: {"route": "...", "defence_method": "dodge|parry|none", "reason": "one short sentence"}

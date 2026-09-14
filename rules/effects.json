@@ -1,0 +1,305 @@
+{
+  "source": "Project effect registry. Each entry maps one background, Gift, or subsystem effect onto declarative operations at named hook points, so the engine dispatches effects instead of branching on each one. Slice 1 migrates the existing automation_tag consumers with zero behaviour change; later slices add combat, resource, and invocation effects.",
+  "note": "An operation names a primitive in src/bsh_mcp/effects.py PRIMITIVES and carries its parameters. data.py::_validate_effects rejects an unknown primitive or hook at load. Operations run in (priority, effect_id) order; priority defaults to 100.",
+  "test_categories": ["stealth", "pickpocketing", "eavesdropping", "streetwise", "sorcery"],
+  "backlash_tables": ["torn_veil", "demon_revenge"],
+  "effects": {
+    "vicious": {
+      "source": "background:vicious",
+      "activation": "passive",
+      "rule": "Weapon damage rises to d8 and unarmed damage rises to d6.",
+      "hooks": {
+        "character_shape": [
+          {"op": "set_weapon_damage", "die": "d8", "priority": 10},
+          {"op": "set_unarmed_damage", "die": "d6", "priority": 10}
+        ]
+      }
+    },
+    "pit_fighter": {
+      "source": "background:pit-fighter",
+      "activation": "passive",
+      "rule": "Unarmed damage equals weapon damage. Runs after Vicious, so a Vicious Pit-fighter punches for the weapon die.",
+      "hooks": {
+        "character_shape": [
+          {"op": "set_unarmed_to_weapon", "priority": 20}
+        ]
+      }
+    },
+    "diplomat_languages": {
+      "source": "background:diplomat",
+      "activation": "passive",
+      "rule": "Speak two extra languages.",
+      "hooks": {
+        "character_shape": [
+          {"op": "add_languages", "count": 2, "label": "additional language (player choice)", "priority": 10}
+        ]
+      }
+    },
+    "scout_initiative": {
+      "source": "background:scout",
+      "activation": "passive",
+      "rule": "Advantage on initiative tests.",
+      "hooks": {
+        "initiative": [
+          {"op": "grant_advantage", "priority": 10}
+        ]
+      }
+    },
+    "wildling_rest": {
+      "source": "background:wildling",
+      "activation": "passive",
+      "rule": "Take a long rest anywhere without a safe environment.",
+      "hooks": {
+        "rest": [
+          {"op": "allow_unsafe_long_rest", "priority": 10}
+        ]
+      }
+    },
+    "raider_crit": {
+      "source": "background:raider",
+      "activation": "passive",
+      "rule": "A critical hit deals damage equal to the attacker's STR score, replacing the rolled damage.",
+      "hooks": {
+        "critical_damage": [
+          {"op": "set_total_to_attribute", "attribute": "STR", "priority": 10}
+        ]
+      }
+    },
+    "paranoid_initiative": {
+      "source": "gift:paranoid",
+      "activation": "passive",
+      "rule": "Advantage on initiative tests.",
+      "hooks": {
+        "initiative": [
+          {"op": "grant_advantage", "priority": 10}
+        ]
+      }
+    },
+    "armour_of_scars": {
+      "source": "gift:armour-of-scars",
+      "activation": "passive",
+      "rule": "Reduce damage received by 1 while wearing no armour.",
+      "hooks": {
+        "damage_incoming": [
+          {"op": "flat_reduce_incoming", "amount": 1, "when_no_armour": true, "priority": 10}
+        ]
+      }
+    },
+    "will_to_live": {
+      "source": "gift:will-to-live",
+      "activation": "passive",
+      "rule": "Advantage on rolls against the Helpless table; the table runs high-is-worse, so advantage keeps the lower of two d6.",
+      "hooks": {
+        "helpless": [
+          {"op": "grant_helpless_advantage", "priority": 10}
+        ]
+      }
+    },
+    "tough_as_nails": {
+      "source": "gift:tough-as-nails",
+      "activation": "passive",
+      "rule": "After surviving the Helpless table, add the character's level to the hit points regained.",
+      "hooks": {
+        "helpless": [
+          {"op": "add_level_to_regained_hp", "priority": 10}
+        ]
+      }
+    },
+    "berserker_rage": {
+      "source": "background:berserker",
+      "activation": "toggle",
+      "rule": "Enter a rage that adds a d6 to damage dealt and halves damage received; the rage ends on a d6 damage result of 1.",
+      "hooks": {
+        "damage_dealt": [
+          {"op": "add_damage_die", "die": "d6", "end_on_face": 1, "priority": 10}
+        ],
+        "damage_incoming": [
+          {"op": "scale_incoming", "factor": 0.5, "priority": 50}
+        ]
+      }
+    },
+    "legionnaire_reroll": {
+      "source": "background:legionnaire",
+      "activation": "resource",
+      "pool": {"max": 3, "reset": "session"},
+      "rule": "Before a nearby ally rolls a dodge, parry, or attack, spend one use to give that roll Advantage. Three times per session. Declare it before the roll; the engine cannot reroll a resolved failure."
+    },
+    "sophist_lie": {
+      "source": "background:sophist",
+      "activation": "resource",
+      "pool": {"max": 1, "reset": "session"},
+      "rule": "Make one listener believe an obvious lie for one hour, once per session."
+    },
+    "bookworm_substitution": {
+      "source": "background:bookworm",
+      "activation": "resource",
+      "pool": {"max": 1, "reset": "long_rest"},
+      "rule": "Substitute INT for any other attribute on one test, once per long rest."
+    },
+    "bodyguard_ward": {
+      "source": "background:bodyguard",
+      "activation": "targeted",
+      "rule": "While warding a nearby ally, absorb half of the damage aimed at them; the guard takes the larger half, rounding up. combat_defend applies the redirect."
+    },
+    "street_urchin_streetwise": {
+      "source": "background:street-urchin",
+      "activation": "passive",
+      "rule": "Advantage on stealth, pickpocketing, eavesdropping, and streetwise tests, declared through attribute_test's category argument.",
+      "hooks": {
+        "attribute_test": [
+          {"op": "grant_category_advantage", "categories": ["stealth", "pickpocketing", "eavesdropping", "streetwise"], "priority": 10}
+        ]
+      }
+    },
+    "hunter_first_arrow": {
+      "source": "background:hunter",
+      "activation": "passive",
+      "rule": "The first ranged attack of each fight hits automatically, without a test, and adds the character's level to its damage. House ruling: 'first arrow' reads as the first ranged attack, whatever the projectile.",
+      "hooks": {
+        "attack": [
+          {"op": "grant_auto_hit", "when_first_ranged_in_combat": true, "priority": 10},
+          {"op": "add_level_to_damage", "when_first_ranged_in_combat": true, "priority": 10}
+        ]
+      }
+    },
+    "sword_master_finesse": {
+      "source": "background:sword-master",
+      "activation": "passive",
+      "rule": "With a one-handed bladed weapon, the attack tests DEX in place of STR. The narrator declares the blade with combat_attack's one_handed_blade flag, the same way two_handed is declared.",
+      "hooks": {
+        "attack": [
+          {"op": "substitute_attack_attribute", "from": "STR", "to": "DEX", "when_one_handed_blade": true, "priority": 10}
+        ]
+      }
+    },
+    "surgeon_care": {
+      "source": "background:surgeon",
+      "activation": "passive",
+      "rule": "Tending a Helpless ally: pass the surgeon as helpless_roll's carer_id. A successful INT test by the surgeon rolls the ally's Helpless die as a d4 instead of a d6, putting Butchered and death out of reach.",
+      "hooks": {
+        "helpless_care": [
+          {"op": "tend_helpless", "test_attribute": "INT", "die_sides": 4, "priority": 10}
+        ]
+      }
+    },
+    "assassin_strike": {
+      "source": "background:assassin",
+      "activation": "passive",
+      "rule": "The first attack against an unaware target deals damage equal to the DEX score in place of the rolled weapon damage. The narrator declares target_unaware on combat_attack; the engine honours the declaration only while the target has not itself reacted this fight (opened its own turn, or attacked someone) and this character has not already spent their own unaware strike this fight. Being struck does not count as reacting, so a second Assassin can still find the same target unaware. Runic damage takes precedence when both apply, and the attempt still spends the strike. House ruling: 'unaware' is verified operationally by the engine as described above, not simulated.",
+      "hooks": {
+        "attack": [
+          {"op": "override_damage_with_attribute", "attribute": "DEX", "when_target_unaware": true, "priority": 10}
+        ]
+      }
+    },
+    "herbalist_stock": {
+      "source": "background:herbalist",
+      "activation": "intent",
+      "intent_types": ["healing_balm", "poison", "hallucinogen"],
+      "rule": "Declare what you prepare on your next qualifying long rest with use_ability (ability_id herbalist_stock, choice healing_balm, poison, or hallucinogen). The declaration is standing: set it any time, at your own pace, independent of when the party actually rests. On a long rest whose scene is tagged 'natural' (set through scene_commit's environment_tags), the engine rolls d6 and the new batch replaces your stock of that type; the declaration is then cleared. A long rest whose scene lacks that tag resolves nothing and leaves the declaration standing for the next attempt. House ruling: 'close to nature' is verified operationally as a narrator-set scene tag, not simulated.",
+      "hooks": {
+        "rest": [
+          {"op": "resolve_declared_preparation", "types": ["healing_balm", "poison", "hallucinogen"], "quantity_die": "d6", "required_environment_tag": "natural", "priority": 10}
+        ]
+      }
+    },
+    "herbalist_dose": {
+      "source": "background:herbalist",
+      "activation": "dose",
+      "dose_effects": {
+        "healing_balm": "heal_d6_plus_level",
+        "poison": "adjudicated",
+        "hallucinogen": "adjudicated"
+      },
+      "rule": "Spend one prepared dose (use_ability, ability_id herbalist_dose, choice the dose type, target_id an ally or omitted for self). A healing balm restores d6 + the herbalist's level in hit points to the target. A poison dose spent here is a direct application, its delivery and its d6-per-dose damage narrator-adjudicated; in combat, spend it instead through combat_attack's poisoned flag, which delivers it via a coated weapon and rolls the d6 itself. A hallucinogen has no numeric effect; the narrator adjudicates it."
+    },
+    "second_wind": {
+      "source": "gift:second-wind",
+      "activation": "resource",
+      "pool": {"max": 1, "reset": "day"},
+      "resource_effect": "heal_level",
+      "rule": "Regain hit points equal to your level, once per in-game day, even in combat. Spend it with use_ability (ability_id second_wind); the engine heals you and records it. Refused at full hit points rather than spent on nothing, and refused for a dead character; a Helpless character may spend it and rises once their hit points exceed zero."
+    },
+    "resourceful": {
+      "source": "gift:resourceful",
+      "activation": "resource",
+      "pool": {"max": 1, "reset": "session"},
+      "resource_effect": "replenish_usage_die",
+      "rule": "Restore one tracked Usage die to its recorded maximum, once per session, no rest needed (use_ability, ability_id resourceful, choice the resource id). The Doom die is not a tracked resource and cannot be named. Refused at the resource's maximum rather than spent on nothing."
+    },
+    "battle_hardened": {
+      "source": "gift:battle-hardened",
+      "activation": "passive",
+      "rule": "In combat, an unmodified d20 roll of 1 to 3 on an attack or defence is a critical success.",
+      "hooks": {
+        "attribute_test": [
+          {"op": "widen_critical_success", "max_face": 3, "when_in_combat": true, "priority": 10}
+        ]
+      }
+    },
+    "bloodlust": {
+      "source": "gift:bloodlust",
+      "activation": "passive",
+      "rule": "Every damage die you roll is stepped up one size: d4 becomes d6, d6 becomes d8, d8 becomes d10, d10 or d12 becomes d12. This is permanent and applies to whichever die an attack actually rolls, weapon or unarmed; a runic strike or an attribute-fixed strike rolls no die and is untouched. d12 is the ceiling.",
+      "hooks": {
+        "attack": [
+          {"op": "step_up_damage_die", "steps": 1, "priority": 10}
+        ]
+      }
+    },
+    "riddle_of_steel": {
+      "source": "gift:riddle-of-steel",
+      "activation": "intent",
+      "choices_from": "weapons",
+      "rule": "Designate one weapon you currently hold with use_ability (ability_id riddle_of_steel, choice the weapon's name). While it remains in your inventory, an armed attack with it rolls d12 damage instead of its normal die. A damage roll that keeps a 1 breaks the weapon: it is removed from your inventory and the designation is cleared. The designation is standing -- it survives rests and sessions untouched -- and may be withdrawn (mode deactivate) or re-declared onto another held weapon at any time.",
+      "hooks": {
+        "attack": [
+          {"op": "override_damage_die", "die": "d12", "break_on_face": 1, "when_declared_weapon_held": true, "priority": 20}
+        ]
+      }
+    },
+    "dark_revelation": {
+      "source": "gift:dark-revelation",
+      "activation": "passive",
+      "rule": "Roll Torn Veil tests with Advantage.",
+      "hooks": {
+        "backlash": [
+          {"op": "grant_backlash_advantage", "tables": ["torn_veil"], "priority": 10}
+        ]
+      }
+    },
+    "dubious_friendships": {
+      "source": "gift:dubious-friendships",
+      "activation": "passive",
+      "rule": "Roll Demon's revenge tests with Advantage.",
+      "hooks": {
+        "backlash": [
+          {"op": "grant_backlash_advantage", "tables": ["demon_revenge"], "priority": 10}
+        ]
+      }
+    },
+    "spirit_alliance": {
+      "source": "gift:spirit-alliance",
+      "activation": "intent",
+      "choices_from": "spirit_alliances",
+      "rule": "Declare one specific spirit with use_ability (ability_id spirit_alliance, choice the spirit's id, e.g. ancestor_spirit). Invoking that spirit rolls its Doom die with Advantage. The designation is standing -- it survives rests and sessions untouched -- and may be withdrawn (mode deactivate) or re-declared onto another spirit at any time.",
+      "hooks": {
+        "invoke": [
+          {"op": "grant_invocation_advantage", "priority": 10}
+        ]
+      }
+    },
+    "survivors_luck": {
+      "source": "gift:survivors-luck",
+      "activation": "resource",
+      "pool": {"max": 1, "reset": "session"},
+      "choices_from": "weapons",
+      "rule": "Declare it BEFORE the defence roll, naming the weapon you stake (use_ability, ability_id survivors_luck, choice the weapon's name). The stance then stands until the first failed defence that would actually hurt you: that attack applies zero damage and the staked weapon is destroyed. A successful defence, or one whose damage armour already absorbed entirely, leaves the stance armed. The defence still rolls, so a critical failure still rolls Doom and still destroys a parrying shield -- the Gift ignores damage, not consequences. Once per session; the engine cannot undo damage already applied, so a declaration made after the defence does nothing.",
+      "hooks": {
+        "damage_incoming": [
+          {"op": "nullify_incoming", "priority": 90}
+        ]
+      }
+    }
+  }
+}

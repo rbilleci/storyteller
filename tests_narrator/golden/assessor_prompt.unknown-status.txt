@@ -1,0 +1,14 @@
+A player at the table sent this message:
+
+I take the rope and punch the trader. What next?
+
+People recorded present in the scene: rade (alive), ghost (status unknown).
+No fight is currently running.
+
+Judge what kind of message this is:
+- declaration: the player's character performs an action now, in the fiction.
+- report: the player describes or disputes something that already happened.
+- question: the player asks something instead of acting.
+- table_talk: the player addresses the game master or the table about the game itself rather than acting in it.
+
+Answer with one JSON object, every field present: {"kind": "declaration|report|question|table_talk", "reason": "one short sentence"}.

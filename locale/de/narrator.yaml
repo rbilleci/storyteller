@@ -1,0 +1,79 @@
+# Spielertexte des Erzählers, auf Deutsch.
+# Übersetzung von locale/en/narrator.yaml, Schlüssel für Schlüssel. Die
+# Wiederherstellungsbefehle (/retry, /revise, /dismiss, /continue) sind Syntax und werden
+# nie übersetzt; jeder $placeholder ist verpflichtend.
+
+language: de-DE
+
+notices:
+  decision_fault: "Es ist nichts geschehen: Die Spielleitung konnte keine sichere Entscheidung vorbereiten. Nutze /retry, /revise oder /dismiss."
+  decision_stale_context: "Es ist nichts geschehen: Der Zustand am Tisch hat sich geändert, während diese Entscheidung offen war. Nutze /retry, um erneut zu fragen."
+  decision_stale_confirmation: "Es ist nichts geschehen: Diese Bestätigung passt nicht mehr zu dem, was du tust. Beschreibe die Handlung noch einmal."
+  decision_segment: "Es ist nichts geschehen. Dieser Entscheidungsabschnitt braucht eine weitere Spieleransicht. Nutze /continue, /revise oder /dismiss."
+  decision_declined: "Es ist nichts geschehen: Die vorgeschlagene Handlung wurde abgelehnt."
+  risk_confirmation: "Es ist nichts geschehen: Diese Gefahr verlangt eine authentifizierte Bestätigung."
+  classifier_fault: "Die Spielleitung konnte nicht erkennen, was dieser Zug tun sollte; es ist nichts geschehen und es wurde nicht gewürfelt. Sag es noch einmal oder formuliere es um."
+  romance_boundary: "Es ist nichts geschehen: Diese Eskalation steht an diesem Tisch nicht zur Verfügung."
+  trade_confirmation: "Es wurde nichts gekauft: Die vereinbarten Bedingungen verlangen eine authentifizierte Bestätigung."
+  trade_completed: "Der bestätigte Kauf wurde eingetragen."
+  withheld: "Die Spielleitung hält diesen Zug zurück: Seine Folgen sind noch nicht ins Protokoll eingetragen. Bereits gewürfelte Würfe zählen weiterhin - wiederhole die Handlung nicht. Frag, wie es weitergeht."
+  fault: "Die Spielleitung hatte einen Fehler beim Schreiben dieses Zuges. Bereits gewürfelte Würfe zählen weiterhin - wiederhole die Handlung nicht. Frag, wie es weitergeht."
+  decision_incomplete: "Es ging nichts verloren: Die Vorbereitung der Spielleitung für diese Handlung steht bereits im Protokoll und muss nicht wiederholt werden. Die Handlung selbst wurde in diesem Zug nicht zu Ende geführt. Nutze /retry, /revise oder /dismiss."
+  decision_refused: "Es wurde nichts aufgelöst: Das Regelwerk hat $refusal verweigert, und nichts hat sich geändert. Nutze /retry, /revise oder /dismiss."
+
+confirmations:
+  violence: "Diese Handlung kann jemanden verwunden oder töten, der nicht bereits gegen dich kämpft. Bestätigen?"
+  theft: "Diese Handlung nimmt jemandem Besitz weg, der ihn nicht angeboten hat. Bestätigen?"
+  destructive: "Diese Handlung kann etwas zerstören oder dauerhaft verändern. Bestätigen?"
+  uncategorized: "Diese Handlung kann jemandem schaden, ihm etwas wegnehmen oder jemanden oder etwas dauerhaft verändern. Bestätigen?"
+
+options:
+  confirm: "Bestätigen"
+  decline: "Ablehnen"
+  own_approach: "Beschreibe dein eigenes Vorgehen"
+  parry: "Parieren (STÄ)"
+  dodge: "Ausweichen (GES)"
+
+decisions:
+  # Pflicht-Platzhalter: $enemy $character
+  enemy_turn_question: "$enemy handelt. Wie verteidigt sich $character?"
+  enemy_turn_context: "$character ist erst nach $enemy an der Reihe."
+
+roll:
+  # Beide Zahlen müssen beschriftet bleiben: Es wird unter den Zielwert gewürfelt, und ein
+  # unbeschriftetes Paar liest sich verkehrt herum.
+  # Pflicht-Platzhalter: $name $attribute $total $target $outcome
+  announcement: "$name würfelt $attribute: $total gewürfelt gegen Zielwert $target, $outcome."
+
+doom:
+  # Pflicht-Platzhalter: $name $die $total $result
+  announcement: "$name würfelt den Verhängnis-Würfel ($die): $total gewürfelt, $result."
+
+doom_results:
+  held: "der Würfel hält"
+  # Pflicht-Platzhalter: $next
+  downgraded: "der Würfel fällt auf $next"
+  depleted: "der Verhängnis-Würfel ist aufgebraucht"
+
+runic:
+  # Die Einsatzzeile einer Runenwaffe, von der ENGINE aus dem Feld kills_helpless
+  # des Ergebnisses geschrieben (siehe die englische Quelle).
+  # Required placeholders: $name $wielder
+  armed: "$name hat $wielder ermessen: Fällt $wielder in dieser Sitzung hilflos, tötet die Klinge $wielder auf der Stelle."
+  disarmed: "$name hat $wielder nicht ermessen: Ein hilfloser Sturz in dieser Sitzung liefert $wielder nicht der Klinge aus."
+  armed_next: "$name hat $wielder für die nächste Sitzung ermessen: Fällt $wielder darin hilflos, tötet die Klinge $wielder auf der Stelle."
+  disarmed_next: "$name hat $wielder für die nächste Sitzung nicht ermessen: Ein hilfloser Sturz darin liefert $wielder nicht der Klinge aus."
+
+attributes:
+  STR: "STÄ"
+  DEX: "GES"
+  CON: "KON"
+  INT: "INT"
+  WIS: "WEI"
+  CHA: "CHA"
+
+outcomes:
+  success: "Erfolg"
+  failure: "Fehlschlag"
+  critical_success: "kritischer Erfolg"
+  critical_failure: "kritischer Fehlschlag"

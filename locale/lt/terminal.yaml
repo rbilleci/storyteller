@@ -1,0 +1,88 @@
+# Terminalo adapterio žaidėjams matomas tekstas, lietuvių kalba.
+# Komandos su pasviruoju brūkšniu (/help, /character, /quit, /continue, /retry,
+# /revise, /dismiss) yra SINTAKSĖ: niekada neverčiamos.
+
+language: lt-LT
+
+status:
+  no_character: "Dar nėra personažo"
+  hp: "GT $hp/$hp_max"
+  doom: "Pražūtis $die"
+  combat: "Kova"
+  round: ": $round raundas"
+  turn: "eina $name"
+  day: "Diena $day"
+
+sheet:
+  backgrounds: "**Kilmės:**"
+  stories: "**Istorijos:**"
+  hp: "**GT**"
+  doom: "**Pražūtis**"
+  armour: "**Šarvai**"
+  weapons: "**Ginklai:**"
+  equipment: "**Įranga:**"
+  coins: "**Monetos:**"
+  languages: "**Kalbos:**"
+  resources: "**Ištekliai:**"
+  doses: "**Dozės:**"
+  gifts: "**Dovanos:**"
+  spells: "**Kerai:**"
+  powers: "**Galios:**"
+  runic_weapon: "**Runų ginklas:**"
+  conditions: "**Būklės:**"
+  scars: "**Randai:**"
+  notes: "**Užrašai:**"
+  none: "nėra"
+  shield: " + skydas"
+  level: "Lygis $level"
+  unlinked: "Personažo lapo dar nėra: šis terminalas nesusietas su jokiu personažu. Lapas atsiras vos tik personažo kūrimas jį susies.\n"
+
+commands:
+  help: "Komandos: /help, /character, /thinking, /language, /quit\n"
+  recovery_help: "Atkūrimo komandos: /continue, /retry, /revise, /dismiss. Naudokite /revise ir po jos naują veiksmą, arba /revise tekstas.\n"
+  revise_after: "Po /revise įveskite pataisytą veiksmą.\n"
+  revise_now: "Įveskite pataisytą veiksmą.\n"
+  no_decision_open: "Nėra atviro sprendimo, todėl skaičius niekur nenukeliaus. Atkūrimo komandos: /continue, /retry, /revise, /dismiss.\n"
+  unknown: "Nežinoma komanda: $command. Įveskite /help.\n"
+  slash_required: "Komandos dabar prasideda /. Įveskite /help.\n"
+  thinking_show: "Mąstymas: $level. Lygiai: $levels. Norėdami pakeisti, įveskite /thinking ir po jos lygį.\n"
+  thinking_set: "Mąstymas nustatytas į $level.\n"
+  thinking_unknown: "Nežinomas mąstymo lygis: $level. Lygiai: $levels.\n"
+  thinking_unavailable: "Šiame kanale mąstymo lygio pakeisti negalima.\n"
+  # Kalbų kodai, kaip ir komandos, yra sintaksė: jų neverskite.
+  language_show: "Kalba: $language. Kalbos: $languages. Norėdami pakeisti, įveskite /language ir po jos kalbą.\n"
+  language_set: "Kalba nustatyta į $language.\n"
+  language_unknown: "Nežinoma kalba: $language. Kalbos: $languages.\n"
+  language_unavailable: "Šiame kanale kalbos pakeisti negalima.\n"
+
+autocomplete:
+  # Trumpi aprašymai, rodomi terminalo komandų užbaigimo meniu. Laisvas tekstas,
+  # kitaip nei aukščiau esančios /komandos.
+  help: "Rodyti galimas komandas"
+  character: "Rodyti savo veikėjo lapą"
+  quit: "Palikti sesiją"
+  thinking: "Rodyti arba nustatyti, kiek pasakotojas galvoja"
+  language: "Rodyti arba nustatyti stalo kalbą"
+  continue: "Leisti žaidimui tęstis taip, kaip papasakota"
+  dismiss: "Atmesti atvirą sprendimą"
+  retry: "Paprašyti pasakotojo pabandyti dar kartą"
+  revise: "Pakeisti paskutinį veiksmą nauju"
+
+decision:
+  prompt: "Sprendimas: $name"
+  enter_number: "Įveskite skaičių. Įveskite /help sprendimų pagalbai arba /dismiss uždaryti."
+  help: "Pasirinkite sunumeruotą variantą. /dismiss uždaro šį langą. /character parodo jūsų personažo lapą. /quit palieka žaidimą."
+  choose_listed: "Pasirinkite vieną iš išvardytų variantų.\n"
+  describe_approach: "Apibūdinkite tą būdą: įveskite jį paprastu tekstu arba varianto numerį ir po jo . arba ).\n"
+  custom_grammar: "Variantui $label įveskite $marker ir po jo savo aprašymą. Pavyzdys: $example"
+  custom_plain: "Vien paprastas tekstas taip pat veikia: apibūdinkite, ką darote, ir tai bus priimta kaip tas būdas."
+  custom_example: "sėlinti stogais"
+
+errors:
+  invalid: "Tas atsakymas negalimas. Pasirinkite variantą.\n"
+  conflict: "Jūsų pirmasis atsakymas lieka galioti.\n"
+  stale: "Tas sprendimas nebegalioja, nes žaidimo būsena pasikeitė.\n"
+  cancelled: "Tas sprendimas nebeaktyvus.\n"
+  rejected: "Sprendimas nepriimtas.\n"
+
+thinking: " Mąsto"

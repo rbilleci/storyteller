@@ -1,0 +1,684 @@
+{
+  "source": "Black Sword Hack - Ultimate Chaos Edition SRD, Dark pacts & other vileness, https://blackswordhack.github.io/6darkpact.html.",
+  "srd_artifact": "docs/srd/dark-pacts.md",
+  "fetched": "2026-08-05",
+  "note": "The six supernatural subsystems the design's Deferred roadmap item 2 names. Effect text stays a narrator ruling; the deterministic tables are the d6 Demon's Revenge and Torn Veil tables and the d100 sorcery spell draw. Transcribed from the retained SRD artifact docs/srd/dark-pacts.md; tests/test_subsystems.py holds an independent copy of the counts and d100 coverage, and data.py::_validate_subsystems refuses a gap in the d100 table or a missing backlash face.",
+  "demonic_pacts": {
+    "automation": "adjudicated",
+    "pact_slots": 2,
+    "invocation": {
+      "die": "doom",
+      "disadvantage_on_repeat_per_day": true,
+      "reset": "long_rest",
+      "side_effect_on_1": true,
+      "on_doom_depletion": "demon_revenge"
+    },
+    "demons": [
+      {
+        "id": "abyss",
+        "name": "Abyss",
+        "effect": "Target becomes monstrous or disfigured for d6 hours; permanent on a 1."
+      },
+      {
+        "id": "envy",
+        "name": "Envy",
+        "effect": "Target tries to seize a chosen object by force; the caster's own equipment becomes the target on a 1."
+      },
+      {
+        "id": "fear",
+        "name": "Fear",
+        "effect": "The caster learns the target's deepest fear; the effect is mutual on a 1."
+      },
+      {
+        "id": "greed",
+        "name": "Greed",
+        "effect": "Creates 4d6 fake coins lasting one hour; steals 4d6 of the caster's real coins on a 1."
+      },
+      {
+        "id": "hate",
+        "name": "Hate",
+        "effect": "Target verbally abuses a chosen person for d6 minutes; the caster is abused on a 1."
+      },
+      {
+        "id": "isolation",
+        "name": "Isolation",
+        "effect": "Target is unseen and unheard for d6 hours; the caster cannot see the target on a 1."
+      },
+      {
+        "id": "gluttony",
+        "name": "Gluttony",
+        "effect": "Target attacks randomly chosen people and consumes 2d6 HP worth; it wants to eat the caster on a 1."
+      },
+      {
+        "id": "nightmare",
+        "name": "Nightmare",
+        "effect": "Target loses sleep, granting Advantage on the next day's tests against them; Disadvantage on a 1."
+      },
+      {
+        "id": "oblivion",
+        "name": "Oblivion",
+        "effect": "Target is forgotten for d6 hours; the demon steals one Background on a 1, recoverable after a long rest."
+      },
+      {
+        "id": "ruin",
+        "name": "Ruin",
+        "effect": "Breaks equipment up to cart size; the caster's own gear breaks on a 1."
+      },
+      {
+        "id": "sloth",
+        "name": "Sloth",
+        "effect": "Target falls asleep; never wakes on a 1."
+      },
+      {
+        "id": "suspicion",
+        "name": "Suspicion",
+        "effect": "Target suspects a chosen person; the caster becomes the suspected one on a 1."
+      },
+      {
+        "id": "wrath",
+        "name": "Wrath",
+        "effect": "Target goes berserk and attacks everyone; the caster is affected on a 1."
+      }
+    ],
+    "demon_revenge": {
+      "die": "d6",
+      "results": {
+        "1": "Cannot invoke this demon until the next sunrise.",
+        "2": "The demon steals one possession.",
+        "3": "The demon destroys an ally's weapon.",
+        "4": "The demon takes payment in blood: lose d6 HP.",
+        "5": "Broken pact: this demon can never be invoked again.",
+        "6": "The demon manifests, inflicts 3d6 damage, and the pact breaks."
+      }
+    }
+  },
+  "spirit_alliances": {
+    "automation": "adjudicated",
+    "alliance_slots": 2,
+    "invocation": {
+      "die": "doom",
+      "disadvantage_on_repeat_per_day": true,
+      "reset": "long_rest",
+      "side_effect_on_1": true,
+      "on_doom_depletion": "adjudicated"
+    },
+    "spirits": [
+      {
+        "id": "ancestor_spirit",
+        "name": "Ancestor spirit",
+        "effect": "Grants Advantage on one attribute test, requiring an object belonging to the ancestor; gives Disadvantage instead on a 1."
+      },
+      {
+        "id": "animal_lord_spirit",
+        "name": "Animal lord spirit",
+        "effect": "Summons animal subjects to help or to cease attacking; the animals flee or attack on a 1."
+      },
+      {
+        "id": "disease_spirit",
+        "name": "Disease spirit",
+        "effect": "Renders a target bedridden with a non-lethal disease until cured; the disease becomes contagious on a 1."
+      },
+      {
+        "id": "fire_spirit",
+        "name": "Fire spirit",
+        "effect": "Manipulates an existing fire — double its size, shape it, move it — and inflicts d6 damage plus d6 ongoing; a rolled 20 burns the caster and a 1 extinguishes the fire."
+      },
+      {
+        "id": "forest_spirit",
+        "name": "Forest spirit",
+        "effect": "Finds a way, food, water, or shelter in the wilderness, and summons plants granting Advantage against enemies for one turn; denies rest for two days on a 1."
+      },
+      {
+        "id": "hunger_spirit",
+        "name": "Hunger spirit",
+        "effect": "Drives a target to search for food or water until fed a full meal; affects the shaman too on a 1."
+      },
+      {
+        "id": "pain_spirit",
+        "name": "Pain spirit",
+        "effect": "Prevents a target from acting for one Turn; afflicts the shaman at the same time on a 1."
+      },
+      {
+        "id": "river_spirit",
+        "name": "River spirit",
+        "effect": "Manipulates present water — double it, shape it, move it; the water disappears on a 1."
+      },
+      {
+        "id": "wind_spirit",
+        "name": "Wind spirit",
+        "effect": "Extinguishes flames, dissipates fumes, or forces humanoids down; the effect reverses on a 1."
+      }
+    ],
+    "sacrifice": "A shaman may sacrifice an alliance for one large effect (firestorm, hurricane, beast lord in the flesh); spirits of that type then shun the shaman and deny further alliances.",
+    "binding": "Binding a new spirit always carries a price; the SRD provides a d20 price table. Adjudicated as a ruling."
+  },
+  "sorcery": {
+    "automation": "deterministic_draw",
+    "starting_spells": 4,
+    "max_spells": "INT",
+    "casting": {
+      "test": "INT",
+      "disadvantage_on_repeat_per_day": true,
+      "reset": "long_rest",
+      "on_critical_failure": "torn_veil"
+    },
+    "torn_veil": {
+      "die": "d6",
+      "results": {
+        "1": "Cannot cast spells until the next sunrise.",
+        "2": "Energy ravages the body: lose d6 HP.",
+        "3": "Arcane explosion: d6 damage to all Nearby.",
+        "4": "The body pays the price: permanently lose 1 HP.",
+        "5": "The mind shatters: permanently lose 1 INT.",
+        "6": "A tentacled monstrosity appears and the caster is transported to another plane."
+      }
+    },
+    "spell_table": {
+      "die": "d100",
+      "spells": [
+        {
+          "low": 1,
+          "high": 2,
+          "id": "acid_blood",
+          "name": "Acid blood",
+          "effect": "Convert 3 HP to acid: d6 damage, or dissolves a small item."
+        },
+        {
+          "low": 3,
+          "high": 5,
+          "id": "animate_mirror",
+          "name": "Animate mirror",
+          "effect": "A reflection attacks from a mirror for d6 damage."
+        },
+        {
+          "low": 6,
+          "high": 7,
+          "id": "blood_mark",
+          "name": "Blood mark",
+          "effect": "Mark a possession and always know its location; costs 1 HP permanently."
+        },
+        {
+          "low": 8,
+          "high": 10,
+          "id": "call_the_id",
+          "name": "Call the Id",
+          "effect": "Summon an invisible anger creature to remove an obstacle or deal 2d6 damage."
+        },
+        {
+          "low": 11,
+          "high": 12,
+          "id": "curse_of_the_mute",
+          "name": "Curse of the mute",
+          "effect": "Target cannot speak; permanent on a 1."
+        },
+        {
+          "low": 13,
+          "high": 14,
+          "id": "darkness",
+          "name": "Darkness",
+          "effect": "d6 targets are blinded for d6 minutes."
+        },
+        {
+          "low": 15,
+          "high": 17,
+          "id": "dead_man_s_map",
+          "name": "Dead man's map",
+          "effect": "The blood of a corpse reveals the murderer's location."
+        },
+        {
+          "low": 18,
+          "high": 20,
+          "id": "deafening_scream",
+          "name": "Deafening scream",
+          "effect": "Paralyze all who hear it; children and animals die."
+        },
+        {
+          "low": 21,
+          "high": 22,
+          "id": "demon_s_breath",
+          "name": "Demon's breath",
+          "effect": "Extinguish light sources and start a fire elsewhere."
+        },
+        {
+          "low": 23,
+          "high": 24,
+          "id": "dream_guardian",
+          "name": "Dream guardian",
+          "effect": "Animate an object to guard the caster while sleeping."
+        },
+        {
+          "low": 25,
+          "high": 27,
+          "id": "dream_message",
+          "name": "Dream message",
+          "effect": "Send a message through dreams with no line of sight."
+        },
+        {
+          "low": 28,
+          "high": 29,
+          "id": "fading_memories",
+          "name": "Fading memories",
+          "effect": "Target forgets d6 hours of interaction, or years on a 1."
+        },
+        {
+          "low": 30,
+          "high": 31,
+          "id": "feather_crash",
+          "name": "Feather crash",
+          "effect": "Survive a deadly fall; all equipment is destroyed."
+        },
+        {
+          "low": 32,
+          "high": 34,
+          "id": "feeding_the_fire",
+          "name": "Feeding the fire",
+          "effect": "An existing flame bursts for d6 damage Nearby."
+        },
+        {
+          "low": 35,
+          "high": 36,
+          "id": "fireflies",
+          "name": "Fireflies",
+          "effect": "Summon a torch-light swarm that disappears if violence occurs."
+        },
+        {
+          "low": 37,
+          "high": 38,
+          "id": "fleabag",
+          "name": "Fleabag",
+          "effect": "Transform into a dog until sunset or sunrise, keeping HP and abilities, biting for unarmed damage."
+        },
+        {
+          "low": 39,
+          "high": 41,
+          "id": "ghost_pains",
+          "name": "Ghost pains",
+          "effect": "The victim feels a loss and believes the caster can restore it."
+        },
+        {
+          "low": 42,
+          "high": 43,
+          "id": "gloomy_lullaby",
+          "name": "Gloomy lullaby",
+          "effect": "Target loses consciousness; permanent on a 1."
+        },
+        {
+          "low": 44,
+          "high": 46,
+          "id": "greedy_hand",
+          "name": "Greedy hand",
+          "effect": "An item the target holds flies to the caster; it is destroyed on a casting roll of 1."
+        },
+        {
+          "low": 47,
+          "high": 48,
+          "id": "guiding_rat",
+          "name": "Guiding rat",
+          "effect": "Underground, summon a rat to the nearest exit; costs d4 HP in blood."
+        },
+        {
+          "low": 49,
+          "high": 51,
+          "id": "hellhound",
+          "name": "Hellhound",
+          "effect": "Transform a dog into a killer: Attack 11, Dodge 11, d6 damage, 10 HP; it dies after the fight."
+        },
+        {
+          "low": 52,
+          "high": 53,
+          "id": "impotent_arrows",
+          "name": "Impotent arrows",
+          "effect": "Projectiles do no damage next turn; allies' projectiles too on a 1."
+        },
+        {
+          "low": 54,
+          "high": 56,
+          "id": "inquisition",
+          "name": "Inquisition",
+          "effect": "A restrained target endures pain and answers d4 questions; it dies if asked more."
+        },
+        {
+          "low": 57,
+          "high": 58,
+          "id": "iron_ghost",
+          "name": "Iron ghost",
+          "effect": "Create an invisible weapon, invisible until used; costs d6 HP if it does not injure."
+        },
+        {
+          "low": 59,
+          "high": 61,
+          "id": "murmurs",
+          "name": "Murmurs",
+          "effect": "Target hears voices revealing their darkest secrets."
+        },
+        {
+          "low": 62,
+          "high": 63,
+          "id": "never_ending_music",
+          "name": "Never-ending music",
+          "effect": "Target hears a tune, granting Advantage on tests against them."
+        },
+        {
+          "low": 64,
+          "high": 66,
+          "id": "poisonous_projectile",
+          "name": "Poisonous projectile",
+          "effect": "Make a projectile lethal; the victim dies in d6 minutes."
+        },
+        {
+          "low": 67,
+          "high": 68,
+          "id": "portal",
+          "name": "Portal",
+          "effect": "Create a door to a known location; arrive naked, and followers roll d6, disappearing on a 6."
+        },
+        {
+          "low": 69,
+          "high": 70,
+          "id": "red_trap",
+          "name": "Red trap",
+          "effect": "A blood pool costs 2 HP and stops movement."
+        },
+        {
+          "low": 71,
+          "high": 72,
+          "id": "rotten_fumes",
+          "name": "Rotten fumes",
+          "effect": "Advantage against Nearby targets for d6 minutes."
+        },
+        {
+          "low": 73,
+          "high": 75,
+          "id": "serpent_bones",
+          "name": "Serpent bones",
+          "effect": "Boneless form for d6 minutes to escape bonds or squeeze through gaps."
+        },
+        {
+          "low": 76,
+          "high": 77,
+          "id": "sharing_the_pain",
+          "name": "Sharing the pain",
+          "effect": "Transfer wound HP loss to a companion."
+        },
+        {
+          "low": 78,
+          "high": 79,
+          "id": "soundkiller",
+          "name": "Soundkiller",
+          "effect": "Muffle all nearby sounds for 2d6 minutes."
+        },
+        {
+          "low": 80,
+          "high": 82,
+          "id": "soul_eater",
+          "name": "Soul-eater",
+          "effect": "Chomp a target's soul: unconsciousness, or death on a 1."
+        },
+        {
+          "low": 83,
+          "high": 85,
+          "id": "spontaneous_combustion",
+          "name": "Spontaneous combustion",
+          "effect": "Target bursts into flames for d4 continuous damage; all burn on a 1."
+        },
+        {
+          "low": 86,
+          "high": 87,
+          "id": "steal_life",
+          "name": "Steal life",
+          "effect": "Take d6 HP from a touched target, not exceeding the caster's maximum."
+        },
+        {
+          "low": 88,
+          "high": 90,
+          "id": "tongue_thief",
+          "name": "Tongue thief",
+          "effect": "Speak six words through a target's mouth."
+        },
+        {
+          "low": 91,
+          "high": 92,
+          "id": "unnatural_speed",
+          "name": "Unnatural speed",
+          "effect": "Target moves a Far distance per turn; random equipment is destroyed on a 1."
+        },
+        {
+          "low": 93,
+          "high": 95,
+          "id": "war_drums",
+          "name": "War drums",
+          "effect": "Target experiences war horrors; d6: 1–4 panic, 5–6 berserk."
+        },
+        {
+          "low": 96,
+          "high": 97,
+          "id": "wine_of_death",
+          "name": "Wine of death",
+          "effect": "Drinkers seek fights and kill each other on a 1."
+        },
+        {
+          "low": 98,
+          "high": 100,
+          "id": "withering",
+          "name": "Withering",
+          "effect": "Target has the strength and vitality of a 90-year-old for d6 hours."
+        }
+      ]
+    }
+  },
+  "faerie_ties": {
+    "automation": "adjudicated",
+    "tie_slots": 2,
+    "ties": [
+      {
+        "id": "barrow_wisdom",
+        "name": "Barrow wisdom",
+        "effect": "Speak with the dead; a WIS test compels an answer, decreasing the Doom die.",
+        "doom_trigger": "step_down"
+      },
+      {
+        "id": "cauldron_of_gold",
+        "name": "Cauldron of gold",
+        "effect": "A magic coin worth 100 returns after 1d8 dawns."
+      },
+      {
+        "id": "changeling_knowledge",
+        "name": "Changeling knowledge",
+        "effect": "Advantage on tests in two chosen areas of expertise."
+      },
+      {
+        "id": "cold_iron_weapon",
+        "name": "Cold iron weapon",
+        "effect": "A legendary blade dealing +d6 damage against faerie."
+      },
+      {
+        "id": "doomed_to_greatness",
+        "name": "Doomed to greatness",
+        "effect": "Once per day, roll the Doom die with Advantage; recovery requires 1d3 long rests.",
+        "doom_trigger": "roll_advantage",
+        "daily_limit": 1,
+        "recovery_long_rests": "d3"
+      },
+      {
+        "id": "dwarf_deceit",
+        "name": "Dwarf deceit",
+        "effect": "Advantage when lying or sneaking to cause harm."
+      },
+      {
+        "id": "elfin_secret",
+        "name": "Elfin secret",
+        "effect": "One of six options — speak with birds, command plants, invisibility, enthral, divine desire, frighten mortals — with a Doom roll if used more than once per day.",
+        "doom_trigger": "roll_on_repeat"
+      },
+      {
+        "id": "silversmith_sorcerer",
+        "name": "Silversmith sorcerer",
+        "effect": "Bind two rolled spells to jewelry, costing 1d6×100 coins and 3d6 days of work; the wearer casts them as a sorcerer."
+      },
+      {
+        "id": "skinwalker",
+        "name": "Skinwalker",
+        "effect": "Transform into an animal through a prepared pelt; own at most two pelts."
+      },
+      {
+        "id": "trollish_ruggedness",
+        "name": "Trollish ruggedness",
+        "effect": "+1 armour protection."
+      },
+      {
+        "id": "true_faith",
+        "name": "True faith",
+        "effect": "Roll the Doom die to dispel one fey magical effect.",
+        "doom_trigger": "roll"
+      },
+      {
+        "id": "witchsight",
+        "name": "Witchsight",
+        "effect": "See fey beings that are always visible; a WIS roll detects magical auras and illusions."
+      }
+    ],
+    "binding": "New ties form at the GM's discretion during play, with no formal mechanic."
+  },
+  "twisted_science": {
+    "automation": "adjudicated",
+    "invention_points_per_week": "INT",
+    "materials_coins_per_point": 20,
+    "usage_die": "d6",
+    "marvels": [
+      {
+        "id": "acid_spray",
+        "name": "Acid spray",
+        "cost": 2,
+        "single_use": false,
+        "effect": "An enemy weapon deals −2 damage."
+      },
+      {
+        "id": "blood_tinted_spyglass",
+        "name": "Blood-tinted spyglass",
+        "cost": 4,
+        "single_use": false,
+        "effect": "See living beings through obstacles and darkness."
+      },
+      {
+        "id": "bomb",
+        "name": "Bomb",
+        "cost": 4,
+        "single_use": true,
+        "effect": "d8 damage Nearby; a critical failure explodes near the user."
+      },
+      {
+        "id": "firelance",
+        "name": "Firelance",
+        "cost": 6,
+        "single_use": false,
+        "effect": "A ranged fire weapon adding Ud4 ongoing damage."
+      },
+      {
+        "id": "freezing_warhammer",
+        "name": "Freezing warhammer",
+        "cost": 6,
+        "single_use": false,
+        "effect": "Freezes non-living matter; a rolled 20 deals d6 frost damage and destroys the target."
+      },
+      {
+        "id": "gas_mask",
+        "name": "Gas mask",
+        "cost": 2,
+        "single_use": false,
+        "effect": "Standard protection against gas."
+      },
+      {
+        "id": "hallucinogenic_gas",
+        "name": "Hallucinogenic gas",
+        "cost": 4,
+        "single_use": true,
+        "effect": "Indoors, roll d6 per person: 1–2 relaxed, 3–5 dreams, 6 panic."
+      },
+      {
+        "id": "image_crystal",
+        "name": "Image crystal",
+        "cost": 4,
+        "single_use": false,
+        "effect": "Projects a chosen human-sized image."
+      },
+      {
+        "id": "metal_owl",
+        "name": "Metal Owl",
+        "cost": 4,
+        "single_use": false,
+        "effect": "An automaton following six-word orders; 4 HP; distracts only."
+      },
+      {
+        "id": "prosthetic_limb",
+        "name": "Prosthetic limb",
+        "cost": 10,
+        "single_use": false,
+        "effect": "Functions as the original; sacrifice it to negate one attack."
+      },
+      {
+        "id": "resurrection_shot",
+        "name": "Resurrection shot",
+        "cost": 4,
+        "single_use": true,
+        "effect": "Roll d20 to avoid the Helpless table; a 20 means death."
+      },
+      {
+        "id": "sleep_box",
+        "name": "Sleep box",
+        "cost": 4,
+        "single_use": false,
+        "effect": "A music box trance; a Ud6 gives the duration in minutes."
+      },
+      {
+        "id": "targeting_monocle",
+        "name": "Targeting monocle",
+        "cost": 4,
+        "single_use": false,
+        "effect": "Ignore ranged-attack penalties."
+      },
+      {
+        "id": "terror_gas_grenade",
+        "name": "Terror gas grenade",
+        "cost": 2,
+        "single_use": true,
+        "effect": "Roll d6: 1–4 flee, 5–6 berserk with +d4 damage."
+      },
+      {
+        "id": "truth_serum",
+        "name": "Truth serum",
+        "cost": 4,
+        "single_use": true,
+        "effect": "The target speaks the truth; roll d20, and 15–20 means death before speaking."
+      }
+    ],
+    "building": "Build marvels in a well-equipped workshop; invention points equal the INT score per week; a marvel's cost is its bracketed invention-point number."
+  },
+  "runic_weapons": {
+    "automation": "adjudicated",
+    "session_int_test": "The GM makes an INT test for the weapon at the start of each session. On a success, the weapon kills its wielder if the wielder ever becomes helpless during that session.",
+    "helpless_kill": true,
+    "damage": "The weapon inflicts damage equal to one of the wielder's attributes, fixed by the weapon's personality.",
+    "personalities": {
+      "brutal": "STR",
+      "vicious": "DEX",
+      "patient": "CON",
+      "cunning": "INT",
+      "judgemental": "WIS",
+      "prideful": "CHA"
+    },
+    "on_kill": {
+      "die": "d6",
+      "heal_face": 1,
+      "heal_die": "d6",
+      "note": "Project-authored ordering. The SRD names six on-kill effects without numbering them; face 1 is the deterministic heal the engine applies, and faces 2 through 6 carry the five fictional effects for the narrator.",
+      "results": {
+        "1": "The weapon feeds the kill's vitality to the wielder, who regains d6 hit points.",
+        "2": "The weapon devours the victim's soul, placing it beyond any resurrection.",
+        "3": "The weapon absorbs the victim's memories and offers them to the wielder.",
+        "4": "The victim's body transforms into an inert or grotesque form.",
+        "5": "A tattoo marking the kill manifests on the wielder's skin.",
+        "6": "The corpse converts to volatile matter and explodes."
+      }
+    }
+  }
+}

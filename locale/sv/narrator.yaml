@@ -1,0 +1,79 @@
+# Berättarens spelartext, på svenska.
+# Översättning av locale/en/narrator.yaml, nyckel för nyckel. Se den engelska källan för
+# begränsningarna: återställningskommandona (/retry, /revise, /dismiss, /continue) är
+# syntax och översätts aldrig, och varje $placeholder är obligatorisk.
+
+language: sv-SE
+
+notices:
+  decision_fault: "Ingen handling ägde rum: spelledaren kunde inte förbereda ett säkert beslut. Använd /retry, /revise eller /dismiss."
+  decision_stale_context: "Ingen handling ägde rum: bordets läge ändrades medan det här beslutet var öppet. Använd /retry för att fråga igen."
+  decision_stale_confirmation: "Ingen handling ägde rum: den här bekräftelsen motsvarar inte längre det du gör. Beskriv handlingen igen."
+  decision_segment: "Ingen handling ägde rum. Det här beslutssegmentet behöver en annan spelares blick. Använd /continue, /revise eller /dismiss."
+  decision_declined: "Ingen handling ägde rum: den föreslagna handlingen avböjdes."
+  risk_confirmation: "Ingen handling ägde rum: den här faran kräver en autentiserad bekräftelse."
+  classifier_fault: "Spelledaren kunde inte förstå vad det där draget gjorde; ingenting hände och inga tärningar slogs. Säg det igen, eller formulera om det."
+  romance_boundary: "Ingen handling ägde rum: den upptrappningen är inte tillgänglig vid det här bordet."
+  trade_confirmation: "Inget köp ägde rum: de överenskomna villkoren kräver en autentiserad bekräftelse."
+  trade_completed: "Det bekräftade köpet fördes till protokollet."
+  withheld: "Spelledaren håller inne det här draget: dess följder är ännu inte förda till protokollet. Tärningar som redan slagits gäller fortfarande - gör inte om handlingen. Fråga vad som händer härnäst."
+  fault: "Spelledaren stötte på ett fel när det här dragets berättelse skrevs. Tärningar som redan slagits gäller fortfarande - gör inte om handlingen. Fråga vad som händer härnäst."
+  decision_incomplete: "Ingen handling gick förlorad: spelledarens förberedelse för den här handlingen står redan i protokollet och behöver inte upprepas. Själva handlingen blev inte färdigavgjord det här draget. Använd /retry, /revise eller /dismiss."
+  decision_refused: "Ingen handling avgjordes: regelverket vägrade $refusal, och ingenting ändrades. Använd /retry, /revise eller /dismiss."
+
+confirmations:
+  violence: "Den här handlingen kan såra eller döda någon som inte redan slåss mot dig. Bekräfta?"
+  theft: "Den här handlingen tar egendom från någon som inte har erbjudit den. Bekräfta?"
+  destructive: "Den här handlingen kan förstöra eller varaktigt förändra något. Bekräfta?"
+  uncategorized: "Den här handlingen kan skada någon, ta något ifrån någon, eller varaktigt påverka någon eller något. Bekräfta?"
+
+options:
+  confirm: "Bekräfta"
+  decline: "Avböj"
+  own_approach: "Beskriv ditt eget tillvägagångssätt"
+  parry: "Parera (STY)"
+  dodge: "Undvik (SMI)"
+
+decisions:
+  # Obligatoriska placeholders: $enemy $character
+  enemy_turn_question: "$enemy agerar. Hur försvarar sig $character?"
+  enemy_turn_context: "Turen för $character kommer efter den för $enemy."
+
+roll:
+  # Båda talen måste förbli märkta: man slår under tröskeln, och ett omärkt par läses
+  # baklänges av den som kommer från ett system där man slår högt.
+  # Obligatoriska placeholders: $name $attribute $total $target $outcome
+  announcement: "$name slår för $attribute: slog $total mot målvärde $target, $outcome."
+
+doom:
+  # Obligatoriska placeholders: $name $die $total $result
+  announcement: "$name slår undergångstärningen ($die): slog $total, $result."
+
+doom_results:
+  held: "tärningen håller"
+  # Obligatorisk placeholder: $next
+  downgraded: "tärningen sjunker till $next"
+  depleted: "undergångstärningen är förbrukad"
+
+runic:
+  # Ett runvapens insatsrad, skriven av MOTORN ur resultatets fält kills_helpless
+  # (se den engelska källan).
+  # Obligatoriska placeholders: $name $wielder
+  armed: "$name har tagit mått på $wielder: faller $wielder Hjälplös under den här sessionen dödar klingan $wielder på fläcken."
+  disarmed: "$name har inte tagit mått på $wielder: ett Hjälplöst fall under den här sessionen utlämnar inte $wielder åt klingan."
+  armed_next: "$name har tagit mått på $wielder inför nästa session: faller $wielder Hjälplös i den dödar klingan $wielder på fläcken."
+  disarmed_next: "$name har inte tagit mått på $wielder inför nästa session: att falla Hjälplös i den utlämnar inte $wielder åt klingan."
+
+attributes:
+  STR: "STY"
+  DEX: "SMI"
+  CON: "FYS"
+  INT: "INT"
+  WIS: "VIS"
+  CHA: "KAR"
+
+outcomes:
+  success: "lyckat"
+  failure: "misslyckat"
+  critical_success: "kritiskt lyckat"
+  critical_failure: "kritiskt misslyckat"

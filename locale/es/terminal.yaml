@@ -1,0 +1,88 @@
+# Texto del adaptador de terminal para los jugadores, en español (España).
+# Los comandos con barra (/help, /character, /quit, /continue, /retry, /revise,
+# /dismiss) son SINTAXIS: nunca se traducen.
+
+language: es-ES
+
+status:
+  no_character: "Aún sin personaje"
+  hp: "PG $hp/$hp_max"
+  doom: "Perdición $die"
+  combat: "Combate"
+  round: ": asalto $round"
+  turn: "turno de $name"
+  day: "Día $day"
+
+sheet:
+  backgrounds: "**Trasfondos:**"
+  stories: "**Historias:**"
+  hp: "**PG**"
+  doom: "**Perdición**"
+  armour: "**Armadura**"
+  weapons: "**Armas:**"
+  equipment: "**Equipo:**"
+  coins: "**Monedas:**"
+  languages: "**Idiomas:**"
+  resources: "**Recursos:**"
+  doses: "**Dosis:**"
+  gifts: "**Dones:**"
+  spells: "**Conjuros:**"
+  powers: "**Poderes:**"
+  runic_weapon: "**Arma rúnica:**"
+  conditions: "**Estados:**"
+  scars: "**Cicatrices:**"
+  notes: "**Notas:**"
+  none: "ninguno"
+  shield: " + escudo"
+  level: "Nivel $level"
+  unlinked: "Aún no hay hoja de personaje: este terminal no está vinculado a ningún personaje. La hoja aparece en cuanto la creación de personaje vincula uno.\n"
+
+commands:
+  help: "Comandos: /help, /character, /thinking, /language, /quit\n"
+  recovery_help: "Comandos de recuperación: /continue, /retry, /revise, /dismiss. Usa /revise seguido de una nueva acción, o /revise texto.\n"
+  revise_after: "Teclea una acción revisada después de /revise.\n"
+  revise_now: "Teclea una acción revisada.\n"
+  no_decision_open: "No hay ninguna decisión abierta, así que un número no llega a nada. Comandos de recuperación: /continue, /retry, /revise, /dismiss.\n"
+  unknown: "Comando desconocido: $command. Teclea /help.\n"
+  slash_required: "Los comandos ahora empiezan por /. Teclea /help.\n"
+  thinking_show: "Reflexión: $level. Niveles: $levels. Teclea /thinking seguido de un nivel para cambiarla.\n"
+  thinking_set: "Reflexión fijada en $level.\n"
+  thinking_unknown: "Nivel de reflexión desconocido: $level. Niveles: $levels.\n"
+  thinking_unavailable: "El nivel de reflexión no puede cambiarse en este canal.\n"
+  # Los códigos de idioma son sintaxis, como los comandos: no traducirlos.
+  language_show: "Idioma: $language. Idiomas: $languages. Teclea /language seguido de un idioma para cambiarlo.\n"
+  language_set: "Idioma fijado en $language.\n"
+  language_unknown: "Idioma desconocido: $language. Idiomas: $languages.\n"
+  language_unavailable: "El idioma no puede cambiarse en este canal.\n"
+
+autocomplete:
+  # Resúmenes breves mostrados en el menú de autocompletado de comandos del
+  # terminal. Texto libre, a diferencia de los /comandos anteriores.
+  help: "Mostrar los comandos disponibles"
+  character: "Mostrar tu hoja de personaje"
+  quit: "Salir de la sesión"
+  thinking: "Mostrar o establecer cuánto piensa el narrador"
+  language: "Mostrar o establecer el idioma de la mesa"
+  continue: "Dejar que el juego continúe como se narró"
+  dismiss: "Descartar la decisión abierta"
+  retry: "Pedirle al narrador que lo intente de nuevo"
+  revise: "Reemplazar la última acción por una nueva"
+
+decision:
+  prompt: "Decisión para $name"
+  enter_number: "Introduce un número. Teclea /help para la ayuda de decisiones o /dismiss para cerrar."
+  help: "Elige una opción numerada. /dismiss cierra este aviso. /character muestra tu hoja. /quit sale del juego."
+  choose_listed: "Elige una de las opciones listadas.\n"
+  describe_approach: "Describe ese enfoque: escríbelo como texto normal, o como el número de la opción seguido de . o ).\n"
+  custom_grammar: "Para $label, teclea $marker seguido de tu descripción. Ejemplo: $example"
+  custom_plain: "El texto normal por sí solo también funciona: describe lo que haces y se toma como ese enfoque."
+  custom_example: "deslizarse por los tejados"
+
+errors:
+  invalid: "Esa respuesta no está disponible. Elige una opción.\n"
+  conflict: "Tu primera respuesta sigue en vigor.\n"
+  stale: "Esa decisión caducó porque el estado del juego cambió.\n"
+  cancelled: "Esa decisión ya no está activa.\n"
+  rejected: "Decisión no aceptada.\n"
+
+thinking: " Pensando"

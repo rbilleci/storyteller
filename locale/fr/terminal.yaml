@@ -1,0 +1,83 @@
+# Texte de l'adaptateur terminal destiné aux joueurs, en français.
+# Les commandes précédées d'une barre oblique (/help, /character, /quit, /continue,
+# /retry, /revise, /dismiss) sont de la SYNTAXE : ne jamais les traduire.
+language: fr-FR
+status:
+  no_character: "Aucun personnage"
+  hp: "PV $hp/$hp_max"
+  doom: "Fatalité $die"
+  combat: "Combat"
+  round: " : round $round"
+  turn: "tour de $name"
+  day: "Jour $day"
+sheet:
+  backgrounds: "**Origines :**"
+  stories: "**Histoires :**"
+  hp: "**PV**"
+  doom: "**Fatalité**"
+  armour: "**Armure**"
+  weapons: "**Armes :**"
+  equipment: "**Équipement :**"
+  coins: "**Pièces :**"
+  languages: "**Langues :**"
+  resources: "**Ressources :**"
+  doses: "**Doses :**"
+  gifts: "**Dons :**"
+  spells: "**Sorts :**"
+  powers: "**Pouvoirs :**"
+  runic_weapon: "**Arme runique :**"
+  conditions: "**États :**"
+  scars: "**Cicatrices :**"
+  notes: "**Notes :**"
+  none: "aucun"
+  shield: " + bouclier"
+  level: "Niveau $level"
+  unlinked: "Pas encore de feuille de personnage : ce terminal n'est lié à aucun personnage. La feuille apparaît dès que la création en lie un.\n"
+commands:
+  help: "Commandes : /help, /character, /thinking, /language, /quit\n"
+  recovery_help: "Commandes de récupération : /continue, /retry, /revise, /dismiss. Utilisez /revise suivi d'une nouvelle action, ou /revise texte.\n"
+  revise_after: "Saisissez une action révisée après /revise.\n"
+  revise_now: "Saisissez une action révisée.\n"
+  no_decision_open: "Aucune décision n'est ouverte : un numéro n'atteindrait rien. Commandes de récupération : /continue, /retry, /revise, /dismiss.\n"
+  unknown: "Commande inconnue : $command. Tapez /help.\n"
+  slash_required: "Les commandes commencent désormais par /. Tapez /help.\n"
+  thinking_show: "Réflexion : $level. Niveaux : $levels. Tapez /thinking suivi d'un niveau pour la changer.\n"
+  thinking_set: "Réflexion réglée sur $level.\n"
+  thinking_unknown: "Niveau de réflexion inconnu : $level. Niveaux : $levels.\n"
+  thinking_unavailable: "Le niveau de réflexion ne peut pas être changé sur ce canal.\n"
+  # Les codes de langue sont de la syntaxe, comme les commandes : ne jamais les
+  # traduire.
+  language_show: "Langue : $language. Langues : $languages. Tapez /language suivi d'une langue pour la changer.\n"
+  language_set: "Langue réglée sur $language.\n"
+  language_unknown: "Langue inconnue : $language. Langues : $languages.\n"
+  language_unavailable: "La langue ne peut pas être changée sur ce canal.\n"
+
+autocomplete:
+  # Brefs résumés affichés dans le menu de complétion des commandes du terminal.
+  # Texte libre, contrairement aux /commandes ci-dessus.
+  help: "Afficher les commandes disponibles"
+  character: "Afficher votre feuille de personnage"
+  quit: "Quitter la session"
+  thinking: "Afficher ou définir le niveau de réflexion du narrateur"
+  language: "Afficher ou définir la langue de la table"
+  continue: "Laisser le jeu continuer tel que narré"
+  dismiss: "Rejeter la décision en cours"
+  retry: "Demander au narrateur de réessayer"
+  revise: "Remplacer la dernière action par une nouvelle"
+
+decision:
+  prompt: "Décision pour $name"
+  enter_number: "Saisissez un numéro. Tapez /help pour l'aide, ou /dismiss pour fermer."
+  help: "Choisissez une option numérotée. /dismiss ferme cette invite. /character affiche votre feuille. /quit quitte la partie."
+  choose_listed: "Choisissez une option de la liste.\n"
+  describe_approach: "Décrivez cette approche : en texte libre, ou le numéro de l'option suivi de . ou ).\n"
+  custom_grammar: "Pour $label, tapez $marker suivi de votre description. Exemple : $example"
+  custom_plain: "Le texte libre fonctionne aussi : décrivez ce que vous faites, ce sera pris comme votre approche."
+  custom_example: "me faufiler sur les toits"
+errors:
+  invalid: "Cette réponse n'est pas disponible. Choisissez une option.\n"
+  conflict: "Votre première réponse reste en vigueur.\n"
+  stale: "Cette décision a expiré : l'état du jeu a changé.\n"
+  cancelled: "Cette décision n'est plus active.\n"
+  rejected: "Décision non acceptée.\n"
+thinking: " Réflexion"

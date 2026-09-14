@@ -1,0 +1,130 @@
+{
+  "source": "Black Sword Hack - Ultimate Chaos Edition SRD v1.0.2, Experience: Gifts.",
+  "completeness": "complete",
+  "completeness_note": "All 15 Gifts are recorded, 5 per category, transcribed from the SRD on August 4, 2026. Feature lines paraphrase the SRD into one operational line each for tool use, matching the convention rules/attribution.md records for backgrounds; the SRD holds the authoritative wording. Each Gift's automation field records whether the effect registry (rules/effects.json) drives it ('effect') or the narrator applies its text as a ruling ('manual'); read the field per entry rather than assuming a count, since a mechanization slice flips one entry at a time. Spirit alliance, Dark revelation, and Dubious friendships are automated as of August 25, 2026: each grants Advantage on a specific subsystem roll (the declared spirit's own invocation, the Torn Veil table, the Demon's Revenge table) through the same effects.json hooks the other Advantage-granting Gifts use.",
+  "structure": {
+    "categories": [
+      "balance",
+      "chaos",
+      "law"
+    ],
+    "gifts_per_category": 5,
+    "acquired_at_levels": [
+      3,
+      5,
+      7,
+      9
+    ],
+    "rule": "Each Gift can be taken only once."
+  },
+  "gifts": [
+    {
+      "id": "fortress-of-the-mind",
+      "name": "Fortress of the mind",
+      "category": "balance",
+      "feature": "Advantage on attribute tests that resist spells.",
+      "automation": "manual"
+    },
+    {
+      "id": "meditation",
+      "name": "Meditation",
+      "category": "balance",
+      "feature": "Restore the Doom die after a short rest.",
+      "automation": "manual"
+    },
+    {
+      "id": "second-wind",
+      "name": "Second wind",
+      "category": "balance",
+      "feature": "Regain hit points equal to the character's level once per day, even in combat.",
+      "automation": "effect"
+    },
+    {
+      "id": "spirit-alliance",
+      "name": "Spirit alliance",
+      "category": "balance",
+      "feature": "Advantage when summoning one specific spirit.",
+      "automation": "effect",
+      "subsystem": "spirit_alliances"
+    },
+    {
+      "id": "survivors-luck",
+      "name": "Survivor's luck",
+      "category": "balance",
+      "feature": "Once per session, ignore all damage from one attack and lose a weapon doing it.",
+      "automation": "effect"
+    },
+    {
+      "id": "armour-of-scars",
+      "name": "Armour of scars",
+      "category": "chaos",
+      "feature": "Reduce damage received by 1 while wearing no armour.",
+      "automation": "effect"
+    },
+    {
+      "id": "bloodlust",
+      "name": "Bloodlust",
+      "category": "chaos",
+      "feature": "Upgrade the damage die one step.",
+      "automation": "effect"
+    },
+    {
+      "id": "dark-revelation",
+      "name": "Dark revelation",
+      "category": "chaos",
+      "feature": "Roll Torn Veil tests with Advantage.",
+      "automation": "effect",
+      "subsystem": "sorcery"
+    },
+    {
+      "id": "dubious-friendships",
+      "name": "Dubious friendships",
+      "category": "chaos",
+      "feature": "Roll Demon's revenge tests with Advantage.",
+      "automation": "effect",
+      "subsystem": "demonic_pacts"
+    },
+    {
+      "id": "paranoid",
+      "name": "Paranoid",
+      "category": "chaos",
+      "feature": "Advantage on initiative tests.",
+      "automation": "effect"
+    },
+    {
+      "id": "battle-hardened",
+      "name": "Battle hardened",
+      "category": "law",
+      "feature": "In combat, an unmodified roll of 1 to 3 is a critical success.",
+      "automation": "effect"
+    },
+    {
+      "id": "resourceful",
+      "name": "Resourceful",
+      "category": "law",
+      "feature": "Replenish one Usage die other than Doom once per session without resting.",
+      "automation": "effect"
+    },
+    {
+      "id": "riddle-of-steel",
+      "name": "Riddle of steel",
+      "category": "law",
+      "feature": "One weapon deals d12 damage and breaks on a damage roll of 1.",
+      "automation": "effect"
+    },
+    {
+      "id": "tough-as-nails",
+      "name": "Tough as nails",
+      "category": "law",
+      "feature": "After surviving the Helpless table, add the character's level to the hit points regained.",
+      "automation": "effect"
+    },
+    {
+      "id": "will-to-live",
+      "name": "Will to live",
+      "category": "law",
+      "feature": "Advantage on rolls against the Helpless table.",
+      "automation": "effect"
+    }
+  ]
+}

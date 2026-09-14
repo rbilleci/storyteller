@@ -1,0 +1,176 @@
+{
+  "additionalProperties": false,
+  "description": "One typed verdict about what a player message is doing.\n\nEvery field is a bounded enum except ``reason``. The enums are load-bearing and\nreach the engine; ``reason`` is model output over player-influenced input, so it\nreaches the diagnostic log and the live probe report only -- never a player, and\nnever a prompt. ``narrator.assess.HazardAssessment`` holds the same line for the\nsame reason.",
+  "properties": {
+    "accepts_offer": {
+      "default": false,
+      "title": "Accepts Offer",
+      "type": "boolean"
+    },
+    "bare_answer": {
+      "default": "none",
+      "enum": [
+        "yes",
+        "no",
+        "none"
+      ],
+      "title": "Bare Answer",
+      "type": "string"
+    },
+    "defence_method": {
+      "default": "none",
+      "enum": [
+        "dodge",
+        "parry",
+        "none"
+      ],
+      "title": "Defence Method",
+      "type": "string"
+    },
+    "departs": {
+      "default": false,
+      "title": "Departs",
+      "type": "boolean"
+    },
+    "hazard": {
+      "enum": [
+        "violence",
+        "theft",
+        "destructive",
+        "none"
+      ],
+      "title": "Hazard",
+      "type": "string"
+    },
+    "interlocutor_id": {
+      "default": "",
+      "maxLength": 64,
+      "title": "Interlocutor Id",
+      "type": "string"
+    },
+    "named_person_ids": {
+      "items": {
+        "maxLength": 64,
+        "type": "string"
+      },
+      "maxItems": 12,
+      "title": "Named Person Ids",
+      "type": "array"
+    },
+    "names_unrecorded_person": {
+      "default": false,
+      "title": "Names Unrecorded Person",
+      "type": "boolean"
+    },
+    "offered_price": {
+      "default": 0,
+      "maximum": 9999,
+      "minimum": 0,
+      "title": "Offered Price",
+      "type": "integer"
+    },
+    "reads_by_observing": {
+      "default": false,
+      "title": "Reads By Observing",
+      "type": "boolean"
+    },
+    "reason": {
+      "maxLength": 240,
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    },
+    "replies_to_question": {
+      "default": false,
+      "title": "Replies To Question",
+      "type": "boolean"
+    },
+    "romance_coercive": {
+      "default": false,
+      "title": "Romance Coercive",
+      "type": "boolean"
+    },
+    "romance_escalation": {
+      "default": false,
+      "title": "Romance Escalation",
+      "type": "boolean"
+    },
+    "route": {
+      "enum": [
+        "risk",
+        "social",
+        "read",
+        "out_of_character",
+        "planner"
+      ],
+      "title": "Route",
+      "type": "string"
+    },
+    "social_category": {
+      "enum": [
+        "bribery",
+        "casual_conversation",
+        "debate",
+        "deception",
+        "etiquette",
+        "information_gathering",
+        "insight",
+        "intimidation",
+        "leadership",
+        "negotiation",
+        "performance",
+        "persuasion",
+        "promise_disclosure",
+        "romance",
+        "none"
+      ],
+      "title": "Social Category",
+      "type": "string"
+    },
+    "social_mode": {
+      "enum": [
+        "concise_intent",
+        "ic_speech",
+        "ooc_action_request",
+        "ooc_rules_inquiry",
+        "mixed",
+        "none"
+      ],
+      "title": "Social Mode",
+      "type": "string"
+    },
+    "trade_phase": {
+      "enum": [
+        "price_inquiry",
+        "counteroffer",
+        "agreement",
+        "purchase_intent",
+        "none"
+      ],
+      "title": "Trade Phase",
+      "type": "string"
+    }
+  },
+  "required": [
+    "route",
+    "hazard",
+    "social_category",
+    "social_mode",
+    "trade_phase",
+    "named_person_ids",
+    "names_unrecorded_person",
+    "interlocutor_id",
+    "accepts_offer",
+    "offered_price",
+    "departs",
+    "bare_answer",
+    "replies_to_question",
+    "defence_method",
+    "reads_by_observing",
+    "romance_escalation",
+    "romance_coercive",
+    "reason"
+  ],
+  "title": "TurnClassification",
+  "type": "object"
+}

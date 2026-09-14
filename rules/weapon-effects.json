@@ -1,0 +1,57 @@
+{
+  "source": "Project house rules. The Black Sword Hack SRD defines no named weapon qualities beyond the two-handed designation, so these effects are project-authored and deterministic.",
+  "note": "combat_attack accepts only the identifiers under 'implemented'. Any other identifier is rejected before dice are rolled, so no partial state is written. The narrator then adjudicates the flourish in fiction and records it through scene_commit. 'target_flag' and 'range_change' are read generically off the row by combat_attack; 'secondary_targets' likewise names a selection/condition pair a shared interpreter reads, rather than branching on the effect's own identifier -- see cleave and impale.",
+  "implemented": {
+    "none": {
+      "name": "None",
+      "rule": "Resolve a standard attack with no additional effect.",
+      "damage": "normal"
+    },
+    "brutal": {
+      "name": "Brutal",
+      "rule": "On a successful hit, a base damage die showing 1 is rerolled once and the new result stands.",
+      "damage": "normal"
+    },
+    "disarm": {
+      "name": "Disarm",
+      "rule": "The attack deals no damage. On a success the target is disarmed: its damage output drops by 2, to a minimum of 1, until it recovers or draws a weapon.",
+      "damage": "none",
+      "target_flag": "disarmed",
+      "npc_damage_penalty": 2
+    },
+    "pin_down": {
+      "name": "Pin down",
+      "rule": "The attack deals no damage. On a success the target is pinned and cannot change range band until it spends one action to break free.",
+      "damage": "none",
+      "target_flag": "pinned"
+    },
+    "shove": {
+      "name": "Shove",
+      "rule": "The attack deals no damage. On a success the target moves one range band away from the attacker.",
+      "damage": "none",
+      "range_change": "away"
+    },
+    "entangle": {
+      "name": "Entangle",
+      "rule": "The attack deals no damage. On a success the target is entangled by rope, net, or vines and cannot change range band until it spends one action to break free.",
+      "damage": "none",
+      "target_flag": "entangled"
+    },
+    "cleave": {
+      "name": "Cleave",
+      "rule": "On a successful hit, the same damage total also strikes every other enemy sharing the target's range band.",
+      "damage": "normal",
+      "secondary_targets": {"selection": "all", "condition": "always"}
+    },
+    "impale": {
+      "name": "Impale",
+      "rule": "On a successful hit that fells the target, the blow carries through for the same damage total to one other enemy sharing the target's range band, chosen at random.",
+      "damage": "normal",
+      "secondary_targets": {"selection": "one", "condition": "target_defeated"}
+    }
+  },
+  "deferred": {
+    "poison": "Not implemented as a weapon_effect on purpose: a coated weapon is combat_attack's own poisoned parameter, delivering one prepared Herbalist dose (rules/effects.json herbalist_dose) rather than a free flourish, so this identifier stays absent to keep poison a resource a character must hold.",
+    "runic": "Not a weapon_effect. Runic weapons are the sentient-weapon subsystem in rules/subsystems.json (runic_weapons), granted by grant_runic_weapon and struck by calling combat_attack with runic true: damage equals the personality-fixed attribute, a start-of-session INT test arms the helpless-kill, and a kill rolls the on-kill d6. Do not pass runic as a weapon_effect."
+  }
+}

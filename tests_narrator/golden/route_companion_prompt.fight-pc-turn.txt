@@ -1,0 +1,25 @@
+A player at the table sent this message:
+
+I take the rope and punch the trader. What next?
+
+People recorded present in the scene: rade (dead), orso-pell (alive).
+
+Classify the message.
+
+route:
+- risk: it declares an act that needs a table-safety confirmation.
+- social: it speaks to, or deals with, a person recorded present.
+- read: it asks what is perceptible in the scene rather than acting.
+- out_of_character: it asks about the game, its rules, or the record.
+- planner: it declares any other action.
+
+also_declares_act: true when the message states that the character does something -- rests, moves, searches, watches, waits, works -- and then asks what happens. "We take a short rest and watch the water. Does anything find us?" takes the rest; the trailing question asks what follows, it does not withdraw the declaration. Answer for a declaration stated in any language. False when the message only asks: about the scene, about the record, or about whether an act is possible, permitted or hypothetical -- 'can I', 'what if I', 'should I', 'what happens if' -- and false when it reports something that already happened rather than doing it now.
+
+declared_act_kind - which act it declares, when also_declares_act is true:
+- rest: it stops to rest, catch its breath, camp, sleep or tend wounds.
+- move: it goes somewhere -- walks, rides, climbs, enters, leaves, travels toward a place.
+- search: it looks through or hunts for something in particular.
+- watch: it keeps watch, waits, listens, or stands guard where it is.
+- other: any other act, and the answer whenever also_declares_act is false.
+
+Answer with one JSON object, every field present: {"route": "...", "also_declares_act": true|false, "declared_act_kind": "...", "reason": "one short sentence"}

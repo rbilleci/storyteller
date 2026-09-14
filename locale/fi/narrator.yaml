@@ -1,0 +1,82 @@
+# Kertojan pelaajille näkyvä teksti, suomeksi.
+# Käännös tiedostosta locale/en/narrator.yaml, avain avaimelta. Katso englanninkielisestä
+# lähteestä rajoitukset: palautuskomennot (/retry, /revise, /dismiss, /continue) ovat
+# syntaksia eikä niitä koskaan käännetä, ja jokainen $placeholder on pakollinen.
+# Nimet ($name, $wielder, $character, $enemy) sijoitetaan taipumattomiin asemiin,
+# koska moottori ei osaa taivuttaa niitä.
+
+language: fi-FI
+
+notices:
+  decision_fault: "Mitään toimintoa ei tapahtunut: pelinjohtaja ei voinut valmistella turvallista päätöstä. Käytä /retry, /revise tai /dismiss."
+  decision_stale_context: "Mitään toimintoa ei tapahtunut: pöydän tila muuttui tämän päätöksen ollessa auki. Käytä /retry kysyäksesi uudelleen."
+  decision_stale_confirmation: "Mitään toimintoa ei tapahtunut: tämä vahvistus ei enää vastaa sitä, mitä olet tekemässä. Kuvaile toiminto uudelleen."
+  decision_segment: "Mitään toimintoa ei tapahtunut. Tämä päätössegmentti tarvitsee toisen pelaajan näkymän. Käytä /continue, /revise tai /dismiss."
+  decision_declined: "Mitään toimintoa ei tapahtunut: ehdotettu toiminto torjuttiin."
+  risk_confirmation: "Mitään toimintoa ei tapahtunut: tämä vaara vaatii todennetun vahvistuksen."
+  classifier_fault: "Pelinjohtaja ei saanut selvää, mitä tuo vuoro teki; mitään ei tapahtunut eikä yhtään noppaa heitetty. Sano se uudelleen, tai muotoile toisin."
+  romance_boundary: "Mitään toimintoa ei tapahtunut: tuo kärjistys ei ole käytettävissä tässä pöydässä."
+  trade_confirmation: "Mitään ostosta ei tapahtunut: sovitut ehdot vaativat todennetun vahvistuksen."
+  trade_completed: "Vahvistettu kauppa kirjattiin."
+  withheld: "Pelinjohtaja pidättää tämän vuoron: sen seurauksia ei ole vielä kirjattu. Jo heitetyt nopat pätevät yhä - älä toista toimintoa. Kysy, mitä tapahtuu seuraavaksi."
+  fault: "Pelinjohtaja kohtasi vian kirjoittaessaan tämän vuoron tarinaa. Jo heitetyt nopat pätevät yhä - älä toista toimintoa. Kysy, mitä tapahtuu seuraavaksi."
+  decision_incomplete: "Yhtään toimintoa ei menetetty: pelinjohtajan valmistelu tätä toimintoa varten on jo kirjattu eikä sitä tarvitse toistaa. Itse toiminto ei ratkennut loppuun tällä vuorolla. Käytä /retry, /revise tai /dismiss."
+  decision_refused: "Yhtään toimintoa ei ratkaistu: sääntömoottori epäsi kohteen $refusal, eikä mikään muuttunut. Käytä /retry, /revise tai /dismiss."
+
+confirmations:
+  violence: "Tämä toiminto voi haavoittaa tai tappaa jonkun, joka ei vielä taistele sinua vastaan. Vahvistetaanko?"
+  theft: "Tämä toiminto vie omaisuutta joltakulta, joka ei ole sitä tarjonnut. Vahvistetaanko?"
+  destructive: "Tämä toiminto voi tuhota jotakin tai muuttaa sitä pysyvästi. Vahvistetaanko?"
+  uncategorized: "Tämä toiminto voi vahingoittaa jotakuta, viedä joltakulta jotakin, tai vaikuttaa pysyvästi johonkuhun tai johonkin. Vahvistetaanko?"
+
+options:
+  confirm: "Vahvista"
+  decline: "Torju"
+  own_approach: "Kuvaile oma lähestymistapasi"
+  parry: "Torjunta (VOI)"
+  dodge: "Väistö (KET)"
+
+decisions:
+  # Pakolliset placeholderit: $enemy $character
+  enemy_turn_question: "$enemy toimii. Miten $character puolustautuu?"
+  enemy_turn_context: "Vuoro hahmolle $character tulee vasta vihollisen $enemy jälkeen."
+
+roll:
+  # Molempien lukujen on pysyttävä merkittyinä: heitetään tavoitteen alle, ja
+  # merkitsemätön pari lukee väärinpäin sille, joka tulee korkealle heittävästä
+  # järjestelmästä.
+  # Pakolliset placeholderit: $name $attribute $total $target $outcome
+  announcement: "$name testaa attribuuttia $attribute: silmäluku $total, tavoiteluku $target, $outcome."
+
+doom:
+  # Pakolliset placeholderit: $name $die $total $result
+  announcement: "$name heittää tuhonoppaa ($die): silmäluku $total, $result."
+
+doom_results:
+  held: "noppa kestää"
+  # Pakollinen placeholder: $next
+  downgraded: "noppa putoaa arvoon $next"
+  depleted: "tuhonoppa on lopussa"
+
+runic:
+  # Riimuaseen panosrivi, jonka MOOTTORI kirjoittaa tuloksen kills_helpless-kentästä
+  # (katso englanninkielinen lähde).
+  # Pakolliset placeholderit: $name $wielder
+  armed: "$name on ottanut mitan kantajastaan $wielder: jos $wielder kaatuu Avuttomana tässä istunnossa, terä surmaa kantajan $wielder saman tien."
+  disarmed: "$name ei ole ottanut mittaa kantajastaan $wielder: Avuttomana kaatuminen tässä istunnossa ei jätä kantajaa $wielder terän armoille."
+  armed_next: "$name on ottanut mitan kantajastaan $wielder seuraavaa istuntoa varten: jos $wielder kaatuu siinä Avuttomana, terä surmaa kantajan $wielder saman tien."
+  disarmed_next: "$name ei ole ottanut mittaa kantajastaan $wielder seuraavaa istuntoa varten: Avuttomana kaatuminen siinä ei jätä kantajaa $wielder terän armoille."
+
+attributes:
+  STR: "VOI"
+  DEX: "KET"
+  CON: "KES"
+  INT: "ÄLY"
+  WIS: "VII"
+  CHA: "KAR"
+
+outcomes:
+  success: "onnistuminen"
+  failure: "epäonnistuminen"
+  critical_success: "kriittinen onnistuminen"
+  critical_failure: "kriittinen epäonnistuminen"

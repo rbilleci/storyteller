@@ -1,0 +1,78 @@
+# 語り手がプレイヤーに示す文言（日本語）。
+# locale/en/narrator.yaml をキーごとに翻訳したもの。復旧コマンド（/retry, /revise,
+# /dismiss, /continue）は構文であり翻訳しない。$placeholder はすべて必須。
+
+language: ja-JP
+
+notices:
+  decision_fault: "何も起こりませんでした。ゲームマスターが安全な選択肢を用意できませんでした。/retry、/revise、/dismiss のいずれかを使ってください。"
+  decision_stale_context: "何も起こりませんでした。この選択が開いている間に卓の状況が変わりました。/retry でもう一度尋ねてください。"
+  decision_stale_confirmation: "何も起こりませんでした。この確認は現在の行動と一致しません。行動をもう一度説明してください。"
+  decision_segment: "何も起こりませんでした。この選択の区切りには、もう一人分の表示が必要です。/continue、/revise、/dismiss のいずれかを使ってください。"
+  decision_declined: "何も起こりませんでした。提案された行動は断られました。"
+  risk_confirmation: "何も起こりませんでした。この危険には認証された確認が必要です。"
+  classifier_fault: "ゲームマスターはこの手番が何をしようとしたのか読み取れませんでした。何も起こらず、ダイスも振られていません。もう一度、または言い換えて伝えてください。"
+  romance_boundary: "何も起こりませんでした。この進展はこの卓では利用できません。"
+  trade_confirmation: "購入は行われませんでした。合意された条件には認証された確認が必要です。"
+  trade_completed: "確認された購入を記録しました。"
+  withheld: "ゲームマスターはこの手番を保留しています。その結果はまだ記録に収まっていません。すでに振られたダイスは有効です - 行動をやり直さないでください。次に何が起こるか尋ねてください。"
+  fault: "ゲームマスターはこの手番の物語を書く際に障害に遭いました。すでに振られたダイスは有効です - 行動をやり直さないでください。次に何が起こるか尋ねてください。"
+  decision_incomplete: "失われたものはありません。この行動のための準備はすでに記録に入っており、やり直す必要はありません。行動そのものはこの手番では完了しませんでした。/retry、/revise、/dismiss のいずれかを使ってください。"
+  decision_refused: "行動は解決されませんでした。ルール処理が $refusal を拒否し、何も変わっていません。/retry、/revise、/dismiss のいずれかを使ってください。"
+
+confirmations:
+  violence: "この行動は、まだあなたと戦っていない相手を傷つけたり殺したりする可能性があります。確認しますか？"
+  theft: "この行動は、差し出されていない持ち物を他人から奪います。確認しますか？"
+  destructive: "この行動は何かを破壊するか、元に戻せない形で変えてしまう可能性があります。確認しますか？"
+  uncategorized: "この行動は、誰かを傷つけるか、何かを奪うか、人や物を元に戻せない形で変えてしまう可能性があります。確認しますか？"
+
+options:
+  confirm: "確認する"
+  decline: "断る"
+  own_approach: "自分のやり方を説明する"
+  parry: "受け流す（筋力）"
+  dodge: "かわす（敏捷）"
+
+decisions:
+  # 必須プレースホルダー: $enemy $character
+  enemy_turn_question: "$enemy が行動中。$character はどう防御する？"
+  enemy_turn_context: "$character の番は $enemy の番の後に来る。"
+
+roll:
+  # 両方の数値には必ずラベルを付けること。このゲームは目標値未満を成功とするため、
+  # ラベルのない「4 対 13」は逆に読める。
+  # 必須プレースホルダー: $name $attribute $total $target $outcome
+  announcement: "$name が $attribute を判定: 出目 $total、目標値 $target、$outcome。"
+
+doom:
+  # 必須プレースホルダー: $name $die $total $result
+  announcement: "$name が破滅のダイス（$die）を振る: 出目 $total、$result。"
+
+doom_results:
+  held: "ダイスは持ちこたえる"
+  # 必須プレースホルダー: $next
+  downgraded: "ダイスは $next に低下する"
+  depleted: "破滅のダイスは尽きる"
+
+runic:
+  # ルーン武器の賭け金の行。結果の kills_helpless フィールドから ENGINE が書く
+  # （英語の原文を参照）。
+  # Required placeholders: $name $wielder
+  armed: "$name は $wielder を見定めた：このセッション中に $wielder が無力状態に倒れれば、刃はその場で $wielder の命を奪う。"
+  disarmed: "$name は $wielder を見定めなかった：このセッション中に無力状態に倒れても、刃が $wielder の命を奪うことはない。"
+  armed_next: "$name は次のセッションに向けて $wielder を見定めた：その中で $wielder が無力状態に倒れれば、刃はその場で $wielder の命を奪う。"
+  disarmed_next: "$name は次のセッションに向けて $wielder を見定めなかった：その中で無力状態に倒れても、刃が $wielder の命を奪うことはない。"
+
+attributes:
+  STR: "筋力"
+  DEX: "敏捷"
+  CON: "耐久"
+  INT: "知力"
+  WIS: "判断"
+  CHA: "魅力"
+
+outcomes:
+  success: "成功"
+  failure: "失敗"
+  critical_success: "決定的成功"
+  critical_failure: "決定的失敗"

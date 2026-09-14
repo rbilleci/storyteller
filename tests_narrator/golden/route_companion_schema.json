@@ -1,0 +1,48 @@
+{
+  "additionalProperties": false,
+  "description": "One narrow verdict: whether a message that asks a question also declares an act, asked when the full classifier routed the turn away from acting.",
+  "properties": {
+    "also_declares_act": {
+      "default": false,
+      "title": "Also Declares Act",
+      "type": "boolean"
+    },
+    "declared_act_kind": {
+      "default": "other",
+      "enum": [
+        "rest",
+        "move",
+        "search",
+        "watch",
+        "other"
+      ],
+      "title": "Declared Act Kind",
+      "type": "string"
+    },
+    "reason": {
+      "maxLength": 240,
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    },
+    "route": {
+      "enum": [
+        "risk",
+        "social",
+        "read",
+        "out_of_character",
+        "planner"
+      ],
+      "title": "Route",
+      "type": "string"
+    }
+  },
+  "required": [
+    "route",
+    "also_declares_act",
+    "declared_act_kind",
+    "reason"
+  ],
+  "title": "RouteCompanion",
+  "type": "object"
+}

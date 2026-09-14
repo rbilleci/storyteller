@@ -1,0 +1,326 @@
+{
+  "source": "Background names, origins, unique markers, attribute increases, and starting coins come from Black Sword Hack - Ultimate Chaos Edition SRD v1.0.2, Character Creation. Feature lines paraphrase the SRD for tool use; consult the SRD for the authoritative wording.",
+  "common_languages": [
+    "Thyrenian"
+  ],
+  "weapon_tables_source": "srd",
+  "weapon_tables_note": "The nine entries per origin are the SRD's own starting-weapon tables, transcribed on August 4, 2026 in the source's die order, so entry N is the result of N. A d10 result of 10 exceeds the table and yields no weapon, matching the SRD's empty entry. The '(two-handed)' suffix carries the SRD's asterisk. It is descriptive text the narrator reads: combat_attack takes two_handed as its own boolean argument and parses no weapon name.",
+  "origins": {
+    "barbarian": {
+      "name": "Barbarian",
+      "starting_coins": 25,
+      "languages": [
+        "Estuary Cant"
+      ],
+      "weapon_table": [
+        "bone bow (two-handed)",
+        "chakram",
+        "claymore (two-handed)",
+        "hunting knife",
+        "iwisa",
+        "spear (two-handed)",
+        "nomad scimitar",
+        "raider's great axe (two-handed)",
+        "warhammer"
+      ],
+      "backgrounds": [
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "unique": true,
+          "attribute_bonus": {
+            "STR": 1
+          },
+          "feature": "Enter a rage that adds a d6 to damage dealt and halves damage received; the rage ends on a d6 result of 1.",
+          "automation": "manual"
+        },
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "attribute_bonus": {
+            "STR": 1
+          },
+          "feature": "Use STR in place of CHA when intimidating.",
+          "automation": "manual",
+          "automation_note": "attribute_substitution"
+        },
+        {
+          "id": "herbalist",
+          "name": "Herbalist",
+          "attribute_bonus": {
+            "INT": 1
+          },
+          "feature": "Create d6 doses of healing balm, hallucinogenic drugs, or poison; a long rest close to nature replenishes the stock.",
+          "automation": "manual"
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "attribute_bonus": {
+            "DEX": 1
+          },
+          "feature": "The first arrow of a fight always hits and adds the character's level to damage.",
+          "automation": "manual"
+        },
+        {
+          "id": "raider",
+          "name": "Raider",
+          "attribute_bonus": {
+            "STR": 1
+          },
+          "feature": "Critical hits deal damage equal to the STR score.",
+          "automation": "manual"
+        },
+        {
+          "id": "scout",
+          "name": "Scout",
+          "attribute_bonus": {
+            "WIS": 1
+          },
+          "feature": "Advantage on initiative tests.",
+          "automation": "auto",
+          "automation_tag": "initiative_advantage"
+        },
+        {
+          "id": "shaman",
+          "name": "Shaman",
+          "attribute_bonus": {
+            "WIS": 1
+          },
+          "feature": "Hold pacts with two spirits.",
+          "automation": "manual",
+          "subsystem": "spirit_alliances",
+          "subsystem_slots": 2
+        },
+        {
+          "id": "storyteller",
+          "name": "Storyteller",
+          "attribute_bonus": {
+            "CHA": 1
+          },
+          "feature": "Know d4 useful facts each session and distract an audience while telling a story.",
+          "automation": "manual",
+          "automation_note": "narrative_ruling"
+        },
+        {
+          "id": "survivor",
+          "name": "Survivor",
+          "attribute_bonus": {
+            "CON": 1
+          },
+          "feature": "Find an improvised weapon within d6 minutes anywhere.",
+          "automation": "manual",
+          "automation_note": "narrative_ruling"
+        },
+        {
+          "id": "wildling",
+          "name": "Wildling",
+          "attribute_bonus": {
+            "CON": 1
+          },
+          "feature": "Take a long rest anywhere without penalty.",
+          "automation": "auto",
+          "automation_tag": "long_rest_anywhere"
+        }
+      ]
+    },
+    "civilised": {
+      "name": "Civilised",
+      "starting_coins": 50,
+      "languages": [
+        "Magistrate Script"
+      ],
+      "weapon_table": [
+        "cestus",
+        "dagger",
+        "engraved longbow (two-handed)",
+        "executioner's cleaver (two-handed)",
+        "flail",
+        "katana",
+        "legion gladius",
+        "rapier",
+        "pilgrim's staff (two-handed)"
+      ],
+      "backgrounds": [
+        {
+          "id": "bodyguard",
+          "name": "Bodyguard",
+          "attribute_bonus": {
+            "CON": 1
+          },
+          "feature": "Protect a nearby character and absorb half of the damage aimed at them.",
+          "automation": "manual"
+        },
+        {
+          "id": "bookworm",
+          "name": "Bookworm",
+          "attribute_bonus": {
+            "INT": 1
+          },
+          "feature": "Substitute INT for any other attribute on one test per long rest.",
+          "automation": "manual"
+        },
+        {
+          "id": "diplomat",
+          "name": "Diplomat",
+          "attribute_bonus": {
+            "CHA": 1
+          },
+          "feature": "Speak two extra languages and act first when only talking during combat.",
+          "automation": "auto",
+          "automation_tag": "extra_languages_2"
+        },
+        {
+          "id": "inventor",
+          "name": "Inventor",
+          "unique": true,
+          "attribute_bonus": {
+            "INT": 1
+          },
+          "feature": "Build two scientific marvels.",
+          "automation": "manual",
+          "subsystem": "twisted_science",
+          "subsystem_slots": 2
+        },
+        {
+          "id": "legionnaire",
+          "name": "Legionnaire",
+          "attribute_bonus": {
+            "STR": 1
+          },
+          "feature": "Let nearby allies reroll a failed dodge, parry, or attack three times per session.",
+          "automation": "manual"
+        },
+        {
+          "id": "sophist",
+          "name": "Sophist",
+          "attribute_bonus": {
+            "CHA": 1
+          },
+          "feature": "Make one listener believe an obvious lie for one hour, once per session.",
+          "automation": "manual"
+        },
+        {
+          "id": "street-urchin",
+          "name": "Street urchin",
+          "attribute_bonus": {
+            "DEX": 1
+          },
+          "feature": "Advantage on stealth, pickpocketing, eavesdropping, and streetwise tests.",
+          "automation": "manual"
+        },
+        {
+          "id": "surgeon",
+          "name": "Surgeon",
+          "attribute_bonus": {
+            "INT": 1
+          },
+          "feature": "A successful INT test reduces an ally's Helpless die from d6 to d4.",
+          "automation": "manual"
+        },
+        {
+          "id": "sword-master",
+          "name": "Sword master",
+          "attribute_bonus": {
+            "DEX": 1
+          },
+          "feature": "Use DEX in place of STR with one-handed bladed weapons.",
+          "automation": "manual"
+        }
+      ]
+    },
+    "decadent": {
+      "name": "Decadent",
+      "starting_coins": 100,
+      "languages": [
+        "Old Choir"
+      ],
+      "weapon_table": [
+        "blood metal sickle",
+        "crossbow (two-handed)",
+        "inquisitor's long sword (two-handed)",
+        "maul",
+        "razor whip",
+        "rusted harpoon",
+        "scythe (two-handed)",
+        "shiv",
+        "serrated sword"
+      ],
+      "backgrounds": [
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "unique": true,
+          "attribute_bonus": {
+            "DEX": 1
+          },
+          "feature": "The first attack against an unaware target deals damage equal to the DEX score.",
+          "automation": "manual"
+        },
+        {
+          "id": "changeling",
+          "name": "Changeling",
+          "attribute_bonus": {
+            "CHA": 1
+          },
+          "feature": "Hold two faerie ties.",
+          "automation": "manual",
+          "subsystem": "faerie_ties",
+          "subsystem_slots": 2
+        },
+        {
+          "id": "forbidden-knowledge",
+          "name": "Forbidden knowledge",
+          "attribute_bonus": {
+            "INT": 1
+          },
+          "feature": "Begin play with four randomly selected spells.",
+          "automation": "manual",
+          "subsystem": "sorcery",
+          "automation_tag": "draw_spells_4"
+        },
+        {
+          "id": "pit-fighter",
+          "name": "Pit-fighter",
+          "attribute_bonus": {
+            "STR": 1
+          },
+          "feature": "Unarmed damage equals weapon damage.",
+          "automation": "auto",
+          "automation_tag": "unarmed_as_weapon"
+        },
+        {
+          "id": "snake-blood",
+          "name": "Snake blood",
+          "attribute_bonus": {
+            "CON": 1
+          },
+          "feature": "Immune to poison and venom.",
+          "automation": "manual",
+          "automation_note": "static_flag"
+        },
+        {
+          "id": "vicious",
+          "name": "Vicious",
+          "attribute_bonus": {
+            "STR": 1
+          },
+          "feature": "Weapon damage rises to d8 and unarmed damage rises to d6.",
+          "automation": "auto",
+          "automation_tag": "damage_die_d8"
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "attribute_bonus": {
+            "CHA": 1
+          },
+          "feature": "Hold pacts with two demons.",
+          "automation": "manual",
+          "subsystem": "demonic_pacts",
+          "subsystem_slots": 2
+        }
+      ]
+    }
+  }
+}

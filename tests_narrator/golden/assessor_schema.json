@@ -1,0 +1,28 @@
+{
+  "additionalProperties": false,
+  "description": "One typed verdict about what a player message is, not what it should cause.",
+  "properties": {
+    "kind": {
+      "enum": [
+        "declaration",
+        "report",
+        "question",
+        "table_talk"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "reason": {
+      "maxLength": 240,
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    }
+  },
+  "required": [
+    "kind",
+    "reason"
+  ],
+  "title": "HazardAssessment",
+  "type": "object"
+}

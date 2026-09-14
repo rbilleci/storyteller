@@ -1,0 +1,11 @@
+# Synthetic combat replay; not a captured play session.
+# Run with: bash scripts/demo_sandbox.sh scripts/demo-combat.txt
+
+Rill: A raider has blocked the narrow passage ahead.
+Ossa: I will stay beside the wall and watch for a second attacker.
+@GM A hostile raider charges Rill in the passage. Create the opponent and begin combat.
+
+@GM Rill attacks the raider with her long knife.
+@GM Ossa dodges if the raider attacks her.
+@GM Rill attacks the raider again if combat remains active, then ends her turn.
+@GM If combat is over, the party requests a short rest in a sheltered courtyard.

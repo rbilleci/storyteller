@@ -1,0 +1,105 @@
+# The terminal adapter's player-facing text, in English.
+#
+# A second domain rather than more keys in narrator.yaml: a channel adapter is its own
+# ownership boundary, and a Discord adapter would add locale/<lang>/discord.yaml beside
+# this rather than growing a shared file.
+#
+# Every command spelled with a leading slash -- /help, /character, /quit, /continue,
+# /retry, /revise, /dismiss -- is SYNTAX. The terminal parses those exact bytes. Keep
+# them verbatim in every language; translating one leaves this text advertising a
+# command the terminal will then refuse.
+
+language: en-US
+
+status:
+  # The one-line status bar above the prompt. Kept terse: it competes with the game text.
+  no_character: "No character yet"
+  hp: "HP $hp/$hp_max"           # $hp $hp_max
+  doom: "Doom $die"              # $die
+  combat: "Combat"
+  round: ": Round $round"        # $round
+  turn: "$name's turn"           # $name
+  day: "Day $day"                # $day
+
+sheet:
+  # Character sheet labels. The ** markers are Markdown emphasis the terminal renders;
+  # keep them around the label exactly as written.
+  backgrounds: "**Backgrounds:**"
+  stories: "**Stories:**"
+  hp: "**HP**"
+  doom: "**Doom**"
+  armour: "**Armour**"
+  weapons: "**Weapons:**"
+  equipment: "**Equipment:**"
+  coins: "**Coins:**"
+  languages: "**Languages:**"
+  resources: "**Resources:**"
+  doses: "**Doses:**"
+  gifts: "**Gifts:**"
+  spells: "**Spells:**"
+  powers: "**Powers:**"
+  runic_weapon: "**Runic weapon:**"
+  conditions: "**Conditions:**"
+  scars: "**Scars:**"
+  notes: "**Notes:**"
+  none: "none"
+  shield: " + shield"
+  level: "Level $level"          # $level
+  unlinked: "No character sheet yet: this terminal is not linked to a character. The sheet appears once character creation links one.\n"
+
+commands:
+  help: "Commands: /help, /character, /thinking, /language, /quit\n"
+  recovery_help: "Recovery commands: /continue, /retry, /revise, /dismiss. Use /revise followed by a new action, or /revise text.\n"
+  revise_after: "Enter a revised action after /revise.\n"
+  revise_now: "Enter a revised action.\n"
+  no_decision_open: "No decision prompt is open, so a numbered answer reaches nothing. Recovery commands: /continue, /retry, /revise, /dismiss.\n"
+  unknown: "Unknown command: $command. Type /help.\n"     # $command
+  slash_required: "Commands now begin with /. Type /help.\n"
+  # /thinking shows or sets how much the narrator may think before answering. The
+  # level names (off, low, medium, high) are syntax like the commands: a player types
+  # them, so they stay verbatim in every language. $level and $levels carry them.
+  thinking_show: "Thinking: $level. Levels: $levels. Type /thinking followed by a level to change it.\n"   # $level $levels
+  thinking_set: "Thinking set to $level.\n"                                                    # $level
+  thinking_unknown: "Unknown thinking level: $level. Levels: $levels.\n"                      # $level $levels
+  thinking_unavailable: "The thinking level cannot be changed on this channel.\n"
+  # /language shows or sets the table's language mid-session. The tags are the
+  # locale/ directory names and are syntax like the commands: a player types them, so
+  # they stay verbatim in every language. $language and $languages carry them.
+  language_show: "Language: $language. Languages: $languages. Type /language followed by a language to change it.\n"   # $language $languages
+  language_set: "Language set to $language.\n"                                                 # $language
+  language_unknown: "Unknown language: $language. Languages: $languages.\n"                   # $language $languages
+  language_unavailable: "The language cannot be changed on this channel.\n"
+
+autocomplete:
+  # Short summaries shown in the terminal's command completion menu. Free text,
+  # unlike the /commands above.
+  help: "Show available commands"
+  character: "Show your character sheet"
+  quit: "Leave the session"
+  thinking: "Show or set how much the narrator thinks"
+  language: "Show or set the table's language"
+  continue: "Let the game continue as narrated"
+  dismiss: "Drop the open decision"
+  retry: "Ask the narrator to try that again"
+  revise: "Replace the last action with a new one"
+
+decision:
+  # The structured-decision prompt and its help.
+  prompt: "Decision for $name"                            # $name
+  enter_number: "Enter a number. Type /help for decision help or /dismiss to close the prompt."
+  help: "Choose a numbered option. /dismiss closes this prompt. /character shows your sheet. /quit leaves the game."
+  choose_listed: "Choose one listed option.\n"
+  describe_approach: "Describe that approach: type it as plain text, or as the option number followed by . or ).\n"
+  custom_grammar: "For $label, type $marker followed by your description. Example: $example"   # $label $marker $example
+  custom_plain: "Plain text on its own works too: describe what you do and it is taken as that approach."
+  custom_example: "slip along the rooftops"
+
+errors:
+  # Answer-validation results. Each states what happened and what still holds.
+  invalid: "That answer is unavailable. Choose an option.\n"
+  conflict: "Your first answer remains in effect.\n"
+  stale: "That decision expired because the game state changed.\n"
+  cancelled: "That decision is no longer active.\n"
+  rejected: "Decision not accepted.\n"
+
+thinking: " Thinking"

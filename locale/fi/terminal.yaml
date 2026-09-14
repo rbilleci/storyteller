@@ -1,0 +1,88 @@
+# Päätesovittimen pelaajille näkyvä teksti, suomeksi.
+# Kauttaviivalla alkavat komennot (/help, /character, /quit, /continue, /retry,
+# /revise, /dismiss) ovat SYNTAKSIA: niitä ei koskaan käännetä.
+
+language: fi-FI
+
+status:
+  no_character: "Ei vielä hahmoa"
+  hp: "OP $hp/$hp_max"
+  doom: "Tuho $die"
+  combat: "Taistelu"
+  round: ": kierros $round"
+  turn: "vuorossa $name"
+  day: "Päivä $day"
+
+sheet:
+  backgrounds: "**Taustat:**"
+  stories: "**Tarinat:**"
+  hp: "**OP**"
+  doom: "**Tuho**"
+  armour: "**Panssari**"
+  weapons: "**Aseet:**"
+  equipment: "**Varusteet:**"
+  coins: "**Kolikot:**"
+  languages: "**Kielet:**"
+  resources: "**Resurssit:**"
+  doses: "**Annokset:**"
+  gifts: "**Lahjat:**"
+  spells: "**Loitsut:**"
+  powers: "**Voimat:**"
+  runic_weapon: "**Riimuase:**"
+  conditions: "**Tilat:**"
+  scars: "**Arvet:**"
+  notes: "**Muistiinpanot:**"
+  none: "ei mitään"
+  shield: " + kilpi"
+  level: "Taso $level"
+  unlinked: "Ei vielä hahmolomaketta: tätä päätettä ei ole kytketty hahmoon. Lomake ilmestyy heti, kun hahmonluonti kytkee sellaisen.\n"
+
+commands:
+  help: "Komennot: /help, /character, /thinking, /language, /quit\n"
+  recovery_help: "Palautuskomennot: /continue, /retry, /revise, /dismiss. Käytä /revise ja perässä uusi toiminto, tai /revise teksti.\n"
+  revise_after: "Kirjoita tarkistettu toiminto komennon /revise jälkeen.\n"
+  revise_now: "Kirjoita tarkistettu toiminto.\n"
+  no_decision_open: "Yhtään päätöstä ei ole auki, joten numero ei tavoita mitään. Palautuskomennot: /continue, /retry, /revise, /dismiss.\n"
+  unknown: "Tuntematon komento: $command. Kirjoita /help.\n"
+  slash_required: "Komennot alkavat nyt merkillä /. Kirjoita /help.\n"
+  thinking_show: "Harkinta: $level. Tasot: $levels. Kirjoita /thinking ja perässä taso vaihtaaksesi sitä.\n"
+  thinking_set: "Harkinta asetettu tasolle $level.\n"
+  thinking_unknown: "Tuntematon harkintataso: $level. Tasot: $levels.\n"
+  thinking_unavailable: "Harkintatasoa ei voi vaihtaa tällä kanavalla.\n"
+  # Kielikoodit ovat syntaksia, kuten komennotkin: älä käännä niitä.
+  language_show: "Kieli: $language. Kielet: $languages. Kirjoita /language ja perässä kieli vaihtaaksesi sitä.\n"
+  language_set: "Kieleksi asetettu $language.\n"
+  language_unknown: "Tuntematon kieli: $language. Kielet: $languages.\n"
+  language_unavailable: "Kieltä ei voi vaihtaa tällä kanavalla.\n"
+
+autocomplete:
+  # Lyhyet kuvaukset, jotka näkyvät terminaalin komentojen täydennysvalikossa.
+  # Vapaata tekstiä, toisin kuin yllä olevat /komennot.
+  help: "Näytä käytettävissä olevat komennot"
+  character: "Näytä hahmolomakkeesi"
+  quit: "Poistu istunnosta"
+  thinking: "Näytä tai aseta, kuinka paljon kertoja ajattelee"
+  language: "Näytä tai aseta pöydän kieli"
+  continue: "Anna pelin jatkua kerrotulla tavalla"
+  dismiss: "Hylkää avoin päätös"
+  retry: "Pyydä kertojaa yrittämään uudelleen"
+  revise: "Korvaa viimeisin toiminto uudella"
+
+decision:
+  prompt: "Päätös hahmolle $name"
+  enter_number: "Syötä numero. Kirjoita /help saadaksesi päätösohjeita tai /dismiss sulkeaksesi."
+  help: "Valitse numeroitu vaihtoehto. /dismiss sulkee tämän kehotteen. /character näyttää hahmolomakkeesi. /quit poistuu pelistä."
+  choose_listed: "Valitse yksi luetelluista vaihtoehdoista.\n"
+  describe_approach: "Kuvaile se lähestymistapa: kirjoita se tavallisena tekstinä, tai vaihtoehdon numerona ja perässä . tai ).\n"
+  custom_grammar: "Kirjoita kohtaan $label $marker ja perässä kuvauksesi. Esimerkki: $example"
+  custom_plain: "Pelkkä tavallinen teksti toimii myös: kuvaile mitä teet, ja se otetaan sinä lähestymistapana."
+  custom_example: "livahtaa kattoja pitkin"
+
+errors:
+  invalid: "Tuo vastaus ei ole käytettävissä. Valitse vaihtoehto.\n"
+  conflict: "Ensimmäinen vastauksesi jää voimaan.\n"
+  stale: "Tuo päätös raukesi, koska pelitilanne muuttui.\n"
+  cancelled: "Tuo päätös ei ole enää voimassa.\n"
+  rejected: "Päätöstä ei hyväksytty.\n"
+
+thinking: " Miettii"

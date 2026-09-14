@@ -1,0 +1,79 @@
+# Tekst van de verteller voor de spelers, in het Nederlands.
+# Vertaling van locale/en/narrator.yaml, sleutel voor sleutel. Zie de Engelse bron voor
+# de beperkingen: de herstelcommando's (/retry, /revise, /dismiss, /continue) zijn
+# syntaxis en worden nooit vertaald, en elke $placeholder is verplicht.
+
+language: nl-NL
+
+notices:
+  decision_fault: "Er vond geen handeling plaats: de spelleider kon geen veilige beslissing voorbereiden. Gebruik /retry, /revise of /dismiss."
+  decision_stale_context: "Er vond geen handeling plaats: de toestand van de tafel veranderde terwijl deze beslissing openstond. Gebruik /retry om opnieuw te vragen."
+  decision_stale_confirmation: "Er vond geen handeling plaats: deze bevestiging komt niet meer overeen met wat je doet. Beschrijf de handeling opnieuw."
+  decision_segment: "Er vond geen handeling plaats. Dit beslissingssegment heeft de blik van een andere speler nodig. Gebruik /continue, /revise of /dismiss."
+  decision_declined: "Er vond geen handeling plaats: de voorgestelde handeling werd afgewezen."
+  risk_confirmation: "Er vond geen handeling plaats: dit gevaar vereist een geauthenticeerde bevestiging."
+  classifier_fault: "De spelleider kon niet begrijpen wat die beurt deed; er gebeurde niets en er werd niet gedobbeld. Zeg het opnieuw, of formuleer het anders."
+  romance_boundary: "Er vond geen handeling plaats: die escalatie is aan deze tafel niet beschikbaar."
+  trade_confirmation: "Er vond geen aankoop plaats: de overeengekomen voorwaarden vereisen een geauthenticeerde bevestiging."
+  trade_completed: "De bevestigde aankoop is vastgelegd."
+  withheld: "De spelleider houdt deze beurt vast: de gevolgen ervan zijn nog niet in het verslag verwerkt. Reeds gegooide dobbelstenen tellen nog steeds - doe de handeling niet over. Vraag wat er daarna gebeurt."
+  fault: "De spelleider stuitte op een storing bij het schrijven van het verhaal van deze beurt. Reeds gegooide dobbelstenen tellen nog steeds - doe de handeling niet over. Vraag wat er daarna gebeurt."
+  decision_incomplete: "Er ging geen handeling verloren: de voorbereiding van de spelleider voor deze handeling staat al in het verslag en hoeft niet herhaald te worden. De handeling zelf is deze beurt niet volledig afgehandeld. Gebruik /retry, /revise of /dismiss."
+  decision_refused: "Er werd geen handeling afgehandeld: het regelwerk weigerde $refusal, en er veranderde niets. Gebruik /retry, /revise of /dismiss."
+
+confirmations:
+  violence: "Deze handeling kan iemand verwonden of doden die nog niet met je vecht. Bevestigen?"
+  theft: "Deze handeling neemt bezit af van iemand die het niet heeft aangeboden. Bevestigen?"
+  destructive: "Deze handeling kan iets vernietigen of blijvend veranderen. Bevestigen?"
+  uncategorized: "Deze handeling kan iemand schaden, iets afnemen, of iemand of iets blijvend aantasten. Bevestigen?"
+
+options:
+  confirm: "Bevestigen"
+  decline: "Afwijzen"
+  own_approach: "Beschrijf je eigen aanpak"
+  parry: "Pareren (STE)"
+  dodge: "Ontwijken (BEH)"
+
+decisions:
+  # Verplichte placeholders: $enemy $character
+  enemy_turn_question: "$enemy handelt. Hoe verdedigt $character zich?"
+  enemy_turn_context: "De beurt van $character komt na die van $enemy."
+
+roll:
+  # Beide getallen moeten gelabeld blijven: er wordt onder de drempel gespeeld, en een
+  # ongelabeld paar leest omgekeerd voor wie van een hoog-gooien-systeem komt.
+  # Verplichte placeholders: $name $attribute $total $target $outcome
+  announcement: "$name werpt op $attribute: $total geworpen tegen doelwaarde $target, $outcome."
+
+doom:
+  # Verplichte placeholders: $name $die $total $result
+  announcement: "$name werpt de doemdobbelsteen ($die): $total geworpen, $result."
+
+doom_results:
+  held: "de dobbelsteen houdt stand"
+  # Verplichte placeholder: $next
+  downgraded: "de dobbelsteen zakt naar $next"
+  depleted: "de doemdobbelsteen is uitgeput"
+
+runic:
+  # De inzetregel van een runenwapen, door de ENGINE geschreven uit het veld
+  # kills_helpless van het resultaat (zie de Engelse bron).
+  # Verplichte placeholders: $name $wielder
+  armed: "$name heeft de maat van $wielder genomen: valt $wielder deze sessie Hulpeloos, dan doodt het lemmet $wielder ter plekke."
+  disarmed: "$name heeft de maat van $wielder niet genomen: een Hulpeloze val deze sessie levert $wielder niet aan het lemmet uit."
+  armed_next: "$name heeft de maat van $wielder genomen voor de volgende sessie: valt $wielder daarin Hulpeloos, dan doodt het lemmet $wielder ter plekke."
+  disarmed_next: "$name heeft de maat van $wielder niet genomen voor de volgende sessie: daarin Hulpeloos vallen levert $wielder niet aan het lemmet uit."
+
+attributes:
+  STR: "STE"
+  DEX: "BEH"
+  CON: "CON"
+  INT: "INT"
+  WIS: "WIJ"
+  CHA: "CHA"
+
+outcomes:
+  success: "succes"
+  failure: "mislukking"
+  critical_success: "kritiek succes"
+  critical_failure: "kritieke mislukking"

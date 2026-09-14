@@ -1,0 +1,88 @@
+# Tekst van de terminaladapter voor de spelers, in het Nederlands.
+# Commando's met een schuine streep (/help, /character, /quit, /continue, /retry,
+# /revise, /dismiss) zijn SYNTAXIS: nooit vertalen.
+
+language: nl-NL
+
+status:
+  no_character: "Nog geen personage"
+  hp: "LP $hp/$hp_max"
+  doom: "Doem $die"
+  combat: "Gevecht"
+  round: ": ronde $round"
+  turn: "beurt van $name"
+  day: "Dag $day"
+
+sheet:
+  backgrounds: "**Achtergronden:**"
+  stories: "**Verhalen:**"
+  hp: "**LP**"
+  doom: "**Doem**"
+  armour: "**Pantser**"
+  weapons: "**Wapens:**"
+  equipment: "**Uitrusting:**"
+  coins: "**Munten:**"
+  languages: "**Talen:**"
+  resources: "**Middelen:**"
+  doses: "**Doses:**"
+  gifts: "**Gaven:**"
+  spells: "**Spreuken:**"
+  powers: "**Krachten:**"
+  runic_weapon: "**Runenwapen:**"
+  conditions: "**Toestanden:**"
+  scars: "**Littekens:**"
+  notes: "**Notities:**"
+  none: "geen"
+  shield: " + schild"
+  level: "Niveau $level"
+  unlinked: "Nog geen personageblad: deze terminal is aan geen personage gekoppeld. Het blad verschijnt zodra de personagecreatie er een koppelt.\n"
+
+commands:
+  help: "Commando's: /help, /character, /thinking, /language, /quit\n"
+  recovery_help: "Herstelcommando's: /continue, /retry, /revise, /dismiss. Gebruik /revise gevolgd door een nieuwe handeling, of /revise tekst.\n"
+  revise_after: "Voer na /revise een herziene handeling in.\n"
+  revise_now: "Voer een herziene handeling in.\n"
+  no_decision_open: "Er staat geen beslissing open, dus een nummer bereikt niets. Herstelcommando's: /continue, /retry, /revise, /dismiss.\n"
+  unknown: "Onbekend commando: $command. Typ /help.\n"
+  slash_required: "Commando's beginnen nu met /. Typ /help.\n"
+  thinking_show: "Denkwerk: $level. Niveaus: $levels. Typ /thinking gevolgd door een niveau om het te wijzigen.\n"
+  thinking_set: "Denkwerk ingesteld op $level.\n"
+  thinking_unknown: "Onbekend denkniveau: $level. Niveaus: $levels.\n"
+  thinking_unavailable: "Het denkniveau kan op dit kanaal niet worden gewijzigd.\n"
+  # Taalcodes zijn syntaxis, net als de commando's: niet vertalen.
+  language_show: "Taal: $language. Talen: $languages. Typ /language gevolgd door een taal om die te wijzigen.\n"
+  language_set: "Taal ingesteld op $language.\n"
+  language_unknown: "Onbekende taal: $language. Talen: $languages.\n"
+  language_unavailable: "De taal kan op dit kanaal niet worden gewijzigd.\n"
+
+autocomplete:
+  # Korte samenvattingen die worden getoond in het opdrachtaanvulmenu van de
+  # terminal. Vrije tekst, in tegenstelling tot de /opdrachten hierboven.
+  help: "Beschikbare commando's tonen"
+  character: "Je personageblad tonen"
+  quit: "De sessie verlaten"
+  thinking: "Tonen of instellen hoeveel de verteller nadenkt"
+  language: "Tonen of instellen welke taal de tafel gebruikt"
+  continue: "Het spel laten doorgaan zoals verteld"
+  dismiss: "De open beslissing afwijzen"
+  retry: "De verteller vragen het opnieuw te proberen"
+  revise: "De laatste actie vervangen door een nieuwe"
+
+decision:
+  prompt: "Beslissing voor $name"
+  enter_number: "Voer een nummer in. Typ /help voor beslissingshulp of /dismiss om te sluiten."
+  help: "Kies een genummerde optie. /dismiss sluit deze vraag. /character toont je personageblad. /quit verlaat het spel."
+  choose_listed: "Kies een van de genoemde opties.\n"
+  describe_approach: "Beschrijf die aanpak: typ hem als gewone tekst, of als het optienummer gevolgd door . of ).\n"
+  custom_grammar: "Typ voor $label $marker gevolgd door je beschrijving. Voorbeeld: $example"
+  custom_plain: "Gewone tekst op zichzelf werkt ook: beschrijf wat je doet en het wordt als die aanpak genomen."
+  custom_example: "over de daken sluipen"
+
+errors:
+  invalid: "Dat antwoord is niet beschikbaar. Kies een optie.\n"
+  conflict: "Je eerste antwoord blijft van kracht.\n"
+  stale: "Die beslissing is verlopen omdat de speltoestand veranderde.\n"
+  cancelled: "Die beslissing is niet meer actief.\n"
+  rejected: "Beslissing niet aanvaard.\n"
+
+thinking: " Denkt na"

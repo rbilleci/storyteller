@@ -1,0 +1,88 @@
+# Terminaladapterens spillertekst, på norsk (bokmål).
+# Kommandoer med skråstrek (/help, /character, /quit, /continue, /retry, /revise,
+# /dismiss) er SYNTAKS: oversettes aldri.
+
+language: nb-NO
+
+status:
+  no_character: "Ingen rollefigur ennå"
+  hp: "LP $hp/$hp_max"
+  doom: "Undergang $die"
+  combat: "Kamp"
+  round: ": runde $round"
+  turn: "$name sin tur"
+  day: "Dag $day"
+
+sheet:
+  backgrounds: "**Bakgrunner:**"
+  stories: "**Historier:**"
+  hp: "**LP**"
+  doom: "**Undergang**"
+  armour: "**Rustning**"
+  weapons: "**Våpen:**"
+  equipment: "**Utstyr:**"
+  coins: "**Mynter:**"
+  languages: "**Språk:**"
+  resources: "**Ressurser:**"
+  doses: "**Doser:**"
+  gifts: "**Gaver:**"
+  spells: "**Trylleformler:**"
+  powers: "**Krefter:**"
+  runic_weapon: "**Runevåpen:**"
+  conditions: "**Tilstander:**"
+  scars: "**Arr:**"
+  notes: "**Notater:**"
+  none: "ingen"
+  shield: " + skjold"
+  level: "Nivå $level"
+  unlinked: "Ingen rollefigurark ennå: denne terminalen er ikke knyttet til noen rollefigur. Arket vises så snart figurskapingen knytter en.\n"
+
+commands:
+  help: "Kommandoer: /help, /character, /thinking, /language, /quit\n"
+  recovery_help: "Gjenopprettingskommandoer: /continue, /retry, /revise, /dismiss. Bruk /revise fulgt av en ny handling, eller /revise tekst.\n"
+  revise_after: "Skriv inn en revidert handling etter /revise.\n"
+  revise_now: "Skriv inn en revidert handling.\n"
+  no_decision_open: "Ingen beslutning er åpen, så et tall når ingenting. Gjenopprettingskommandoer: /continue, /retry, /revise, /dismiss.\n"
+  unknown: "Ukjent kommando: $command. Skriv /help.\n"
+  slash_required: "Kommandoer begynner nå med /. Skriv /help.\n"
+  thinking_show: "Tenking: $level. Nivåer: $levels. Skriv /thinking fulgt av et nivå for å endre den.\n"
+  thinking_set: "Tenking satt til $level.\n"
+  thinking_unknown: "Ukjent tenkenivå: $level. Nivåer: $levels.\n"
+  thinking_unavailable: "Tenkenivået kan ikke endres i denne kanalen.\n"
+  # Språkkodene er syntaks, akkurat som kommandoene: ikke oversett dem.
+  language_show: "Språk: $language. Språk: $languages. Skriv /language fulgt av et språk for å bytte.\n"
+  language_set: "Språk satt til $language.\n"
+  language_unknown: "Ukjent språk: $language. Språk: $languages.\n"
+  language_unavailable: "Språket kan ikke endres i denne kanalen.\n"
+
+autocomplete:
+  # Korte sammendrag vist i terminalens kommandofullføringsmeny. Fri tekst, i
+  # motsetning til /kommandoene ovenfor.
+  help: "Vis tilgjengelige kommandoer"
+  character: "Vis karakterarket ditt"
+  quit: "Forlat økten"
+  thinking: "Vis eller sett hvor mye fortelleren tenker"
+  language: "Vis eller sett bordets språk"
+  continue: "La spillet fortsette slik det ble fortalt"
+  dismiss: "Forkast den åpne avgjørelsen"
+  retry: "Be fortelleren prøve igjen"
+  revise: "Erstatt den siste handlingen med en ny"
+
+decision:
+  prompt: "Beslutning for $name"
+  enter_number: "Skriv inn et tall. Skriv /help for beslutningshjelp eller /dismiss for å lukke."
+  help: "Velg et nummerert alternativ. /dismiss lukker denne. /character viser arket ditt. /quit forlater spillet."
+  choose_listed: "Velg ett av de opplistede alternativene.\n"
+  describe_approach: "Beskriv den fremgangsmåten: skriv den som vanlig tekst, eller som alternativets nummer fulgt av . eller ).\n"
+  custom_grammar: "For $label, skriv $marker fulgt av beskrivelsen din. Eksempel: $example"
+  custom_plain: "Vanlig tekst alene fungerer også: beskriv hva du gjør, så tas det som den fremgangsmåten."
+  custom_example: "smyge langs hustakene"
+
+errors:
+  invalid: "Det svaret er ikke tilgjengelig. Velg et alternativ.\n"
+  conflict: "Det første svaret ditt gjelder fortsatt.\n"
+  stale: "Den beslutningen utløp fordi spilltilstanden endret seg.\n"
+  cancelled: "Den beslutningen er ikke lenger aktiv.\n"
+  rejected: "Beslutningen ble ikke godtatt.\n"
+
+thinking: " Tenker"

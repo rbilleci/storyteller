@@ -1,0 +1,49 @@
+Storyteller
+Copyright (C) 2026 R. Billeci
+
+Project contributions are licensed under the GNU General Public License,
+version 3 only (SPDX: GPL-3.0-only). See LICENSE. This includes the Python
+implementation, tests, scripts, original documentation, locale catalogs,
+configuration, and the original Black Estuary setting under world/.
+The following third-party material retains its own license.
+
+Black Sword Hack — Ultimate Chaos Edition
+System Reference Document v1.0.2
+A game by Alexandre "Kobayashi" Jeannette, published by The Merry Mushmen,
+with help from Evlyn Moreau, Goran Gligović, Rob Matthews, and its backers.
+Source: https://blackswordhack.github.io/
+License: Creative Commons Attribution 4.0 International (CC-BY-4.0)
+https://creativecommons.org/licenses/by/4.0/
+The full license is in LICENSES/CC-BY-4.0.txt.
+
+SRD-derived material appears in:
+  rules/advancement.json
+  rules/backgrounds.json
+  rules/effects.json
+  rules/gifts.json
+  rules/helpless-table.json
+  rules/npc-table.json
+  rules/quick-reference.md
+  rules/subsystems.json
+  rules/attribution.md (quoted rules)
+  docs/srd/dark-pacts.md
+  docs/srd/experience.md
+  skills/bsh-gm/references/rules-quick-reference.md
+SRD-derived descriptions and excerpts also occur in the rules implementation,
+tool descriptions, tests, and game skills. This attribution applies wherever
+that material occurs; it is not limited to the files listed above.
+
+Modifications: rules have been selected, transcribed into structured data,
+paraphrased into operational descriptions, and adapted for deterministic
+automation. Some mechanics are house rules; rules/attribution.md describes
+the differences. rules/weapon-effects.json and world/ are project-authored.
+Original SRD material remains available under CC BY 4.0; the GPL grant on
+project contributions does not replace that grant or remove its attribution.
+No material from other Black Sword Hack products or compatibility logos is
+included. This project is independent and is not endorsed by the original
+authors or publisher.
+
+Third-party Python dependencies are installed separately, under their own
+licenses. See docs/dependencies.md. No model weights, inference server,
+dependency binaries, private campaign records, or development history are
+included in the release.

@@ -1,0 +1,19 @@
+region: The Black Estuary
+settlement: Vey
+starting_location: the-eel-market
+locations:
+  - id: the-eel-market
+    name: The Eel Market
+    exits: [the-drowned-customs-house, the-road-shrine]
+  - id: the-drowned-customs-house
+    name: The Drowned Customs House
+    exits: [the-eel-market, the-river-cave]
+  - id: the-road-shrine
+    name: The Road Shrine
+    exits: [the-eel-market, the-black-bell-crypt, the-river-cave]
+  - id: the-black-bell-crypt
+    name: The Black Bell Crypt
+    exits: [the-road-shrine, the-river-cave]
+  - id: the-river-cave
+    name: The River Cave
+    exits: [the-road-shrine, the-drowned-customs-house, the-black-bell-crypt]

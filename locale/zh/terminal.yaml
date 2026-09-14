@@ -1,0 +1,88 @@
+# 终端适配器的玩家可见文本，简体中文（普通话）。
+# 以斜杠开头的命令（/help、/character、/quit、/continue、/retry、/revise、
+# /dismiss）是语法（SYNTAX）：绝不翻译。
+
+language: zh-CN
+
+status:
+  no_character: "尚无角色"
+  hp: "生命 $hp/$hp_max"
+  doom: "厄运 $die"
+  combat: "战斗"
+  round: "：第 $round 轮"
+  turn: "$name 的回合"
+  day: "第 $day 天"
+
+sheet:
+  backgrounds: "**背景:**"
+  stories: "**故事:**"
+  hp: "**生命**"
+  doom: "**厄运**"
+  armour: "**护甲**"
+  weapons: "**武器:**"
+  equipment: "**装备:**"
+  coins: "**钱币:**"
+  languages: "**语言:**"
+  resources: "**资源:**"
+  doses: "**剂量:**"
+  gifts: "**天赋:**"
+  spells: "**法术:**"
+  powers: "**异能:**"
+  runic_weapon: "**符文武器:**"
+  conditions: "**状态:**"
+  scars: "**伤疤:**"
+  notes: "**笔记:**"
+  none: "无"
+  shield: " + 盾牌"
+  level: "等级 $level"
+  unlinked: "尚无角色卡：这个终端未关联任何角色。角色创建关联一个后，角色卡即会出现。\n"
+
+commands:
+  help: "命令：/help、/character、/thinking、/language、/quit\n"
+  recovery_help: "恢复命令：/continue、/retry、/revise、/dismiss。使用 /revise 后接新的行动，或 /revise 文本。\n"
+  revise_after: "请在 /revise 之后输入修改后的行动。\n"
+  revise_now: "请输入修改后的行动。\n"
+  no_decision_open: "没有打开的决定，因此数字不会到达任何地方。恢复命令：/continue、/retry、/revise、/dismiss。\n"
+  unknown: "未知命令：$command。请输入 /help。\n"
+  slash_required: "命令现在以 / 开头。请输入 /help。\n"
+  thinking_show: "思考：$level。级别： $levels。输入 /thinking 后接一个级别即可更改。\n"
+  thinking_set: "思考已设为 $level。\n"
+  thinking_unknown: "未知的思考级别：$level。级别： $levels。\n"
+  thinking_unavailable: "此频道无法更改思考级别。\n"
+  # 语言代码与命令一样是语法：不要翻译。
+  language_show: "语言：$language。语言列表： $languages。输入 /language 后接一种语言即可更改。\n"
+  language_set: "语言已设为 $language。\n"
+  language_unknown: "未知的语言：$language。语言列表： $languages。\n"
+  language_unavailable: "此频道无法更改语言。\n"
+
+autocomplete:
+  # 终端命令自动补全菜单中显示的简短说明。与上面的 /命令 不同，这是可自由翻译的
+  # 文本。
+  help: "显示可用命令"
+  character: "显示你的角色卡"
+  quit: "离开本次会话"
+  thinking: "显示或设置叙事者的思考程度"
+  language: "显示或设置牌桌语言"
+  continue: "让游戏按照已叙述的内容继续"
+  dismiss: "驳回未处理的决定"
+  retry: "请叙事者再试一次"
+  revise: "用新的行动替换上一个行动"
+
+decision:
+  prompt: "$name 的决定"
+  enter_number: "请输入一个数字。输入 /help 查看决定帮助，或输入 /dismiss 关闭。"
+  help: "选择一个带编号的选项。/dismiss 关闭此提示。/character 显示你的角色卡。/quit 退出游戏。"
+  choose_listed: "请选择列出的选项之一。\n"
+  describe_approach: "描述那个做法：直接输入普通文本，或输入选项编号后接 . 或 )。\n"
+  custom_grammar: "对于 $label，请输入 $marker 后接你的描述。示例：$example"
+  custom_plain: "只输入普通文本也可以：描述你要做什么，它就会被当作那个做法。"
+  custom_example: "沿着屋顶潜行"
+
+errors:
+  invalid: "该回答不可用。请选择一个选项。\n"
+  conflict: "你的第一个回答仍然有效。\n"
+  stale: "游戏状态已改变，该决定已过期。\n"
+  cancelled: "该决定已不再有效。\n"
+  rejected: "决定未被接受。\n"
+
+thinking: " 思考中"

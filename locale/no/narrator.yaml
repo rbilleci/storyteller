@@ -1,0 +1,80 @@
+# Fortellerens spillertekst, på norsk (bokmål). Katalogen heter "no" slik at både
+# "no" og "no-NO" løses hit; taggen i filen er nb-NO fordi innholdet er bokmål.
+# Oversettelse av locale/en/narrator.yaml, nøkkel for nøkkel. Se den engelske kilden
+# for begrensningene: gjenopprettingskommandoene (/retry, /revise, /dismiss,
+# /continue) er syntaks og oversettes aldri, og hver $placeholder er obligatorisk.
+
+language: nb-NO
+
+notices:
+  decision_fault: "Ingen handling fant sted: spillederen kunne ikke forberede en trygg beslutning. Bruk /retry, /revise eller /dismiss."
+  decision_stale_context: "Ingen handling fant sted: bordets tilstand endret seg mens denne beslutningen sto åpen. Bruk /retry for å spørre igjen."
+  decision_stale_confirmation: "Ingen handling fant sted: denne bekreftelsen svarer ikke lenger til det du gjør. Beskriv handlingen på nytt."
+  decision_segment: "Ingen handling fant sted. Dette beslutningssegmentet trenger en annen spillers blikk. Bruk /continue, /revise eller /dismiss."
+  decision_declined: "Ingen handling fant sted: den foreslåtte handlingen ble avslått."
+  risk_confirmation: "Ingen handling fant sted: denne faren krever en autentisert bekreftelse."
+  classifier_fault: "Spillederen kunne ikke forstå hva det trekket gjorde; ingenting skjedde og ingen terninger ble kastet. Si det igjen, eller formuler det på nytt."
+  romance_boundary: "Ingen handling fant sted: den opptrappingen er ikke tilgjengelig ved dette bordet."
+  trade_confirmation: "Intet kjøp fant sted: de avtalte vilkårene krever en autentisert bekreftelse."
+  trade_completed: "Det bekreftede kjøpet ble ført inn i protokollen."
+  withheld: "Spillederen holder dette trekket tilbake: følgene er ennå ikke ført inn i protokollen. Terninger som alt er kastet gjelder fortsatt - ikke gjenta handlingen. Spør hva som skjer videre."
+  fault: "Spillederen støtte på en feil under skrivingen av dette trekkets fortelling. Terninger som alt er kastet gjelder fortsatt - ikke gjenta handlingen. Spør hva som skjer videre."
+  decision_incomplete: "Ingen handling gikk tapt: spillederens forberedelse til denne handlingen står allerede i protokollen og trenger ikke gjentas. Selve handlingen ble ikke ferdig avgjort i dette trekket. Bruk /retry, /revise eller /dismiss."
+  decision_refused: "Ingen handling ble avgjort: regelverket avviste $refusal, og ingenting endret seg. Bruk /retry, /revise eller /dismiss."
+
+confirmations:
+  violence: "Denne handlingen kan såre eller drepe noen som ikke allerede kjemper mot deg. Bekreft?"
+  theft: "Denne handlingen tar eiendom fra noen som ikke har tilbudt den. Bekreft?"
+  destructive: "Denne handlingen kan ødelegge eller varig endre noe. Bekreft?"
+  uncategorized: "Denne handlingen kan skade noen, ta noe fra noen, eller varig påvirke noen eller noe. Bekreft?"
+
+options:
+  confirm: "Bekreft"
+  decline: "Avslå"
+  own_approach: "Beskriv din egen fremgangsmåte"
+  parry: "Parer (STY)"
+  dodge: "Unnvik (SMI)"
+
+decisions:
+  # Obligatoriske placeholders: $enemy $character
+  enemy_turn_question: "$enemy handler. Hvordan forsvarer $character seg?"
+  enemy_turn_context: "Turen til $character kommer etter turen til $enemy."
+
+roll:
+  # Begge tallene må forbli merket: man slår under terskelen, og et umerket par leses
+  # baklengs av den som kommer fra et system der man slår høyt.
+  # Obligatoriske placeholders: $name $attribute $total $target $outcome
+  announcement: "$name slår for $attribute: slo $total mot målverdi $target, $outcome."
+
+doom:
+  # Obligatoriske placeholders: $name $die $total $result
+  announcement: "$name slår undergangsterningen ($die): slo $total, $result."
+
+doom_results:
+  held: "terningen holder"
+  # Obligatorisk placeholder: $next
+  downgraded: "terningen synker til $next"
+  depleted: "undergangsterningen er brukt opp"
+
+runic:
+  # Et runevåpens innsatslinje, skrevet av MOTOREN ut fra resultatets felt
+  # kills_helpless (se den engelske kilden).
+  # Obligatoriske placeholders: $name $wielder
+  armed: "$name har tatt mål av $wielder: faller $wielder Hjelpeløs i denne økten, dreper klingen $wielder på stedet."
+  disarmed: "$name har ikke tatt mål av $wielder: et Hjelpeløst fall i denne økten overgir ikke $wielder til klingen."
+  armed_next: "$name har tatt mål av $wielder for neste økt: faller $wielder Hjelpeløs i den, dreper klingen $wielder på stedet."
+  disarmed_next: "$name har ikke tatt mål av $wielder for neste økt: å falle Hjelpeløs i den overgir ikke $wielder til klingen."
+
+attributes:
+  STR: "STY"
+  DEX: "SMI"
+  CON: "FYS"
+  INT: "INT"
+  WIS: "VIS"
+  CHA: "KAR"
+
+outcomes:
+  success: "suksess"
+  failure: "fiasko"
+  critical_success: "kritisk suksess"
+  critical_failure: "kritisk fiasko"

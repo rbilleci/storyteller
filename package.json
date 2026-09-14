@@ -1,0 +1,11 @@
+{
+  "name": "storyteller-checks",
+  "private": true,
+  "version": "0.1.0",
+  "license": "GPL-3.0-only",
+  "description": "Optional npm aliases for the portable Python acceptance gates.",
+  "scripts": {
+    "check:fast": "bash scripts/check.sh --fast",
+    "check": "bash scripts/check.sh"
+  }
+}

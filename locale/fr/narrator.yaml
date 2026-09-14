@@ -1,0 +1,79 @@
+# Texte du narrateur destiné aux joueurs, en français.
+# Traduction de locale/en/narrator.yaml, clé pour clé. Voir la source anglaise pour les
+# contraintes : les commandes de récupération (/retry, /revise, /dismiss, /continue) sont
+# de la syntaxe et ne se traduisent jamais, et chaque $placeholder est obligatoire.
+
+language: fr-FR
+
+notices:
+  decision_fault: "Aucune action n'a eu lieu : le maître du jeu n'a pas pu préparer une décision sûre. Utilisez /retry, /revise ou /dismiss."
+  decision_stale_context: "Aucune action n'a eu lieu : l'état de la table a changé pendant que cette décision était ouverte. Utilisez /retry pour redemander."
+  decision_stale_confirmation: "Aucune action n'a eu lieu : cette confirmation ne correspond plus à ce que vous faites. Décrivez à nouveau l'action."
+  decision_segment: "Aucune action n'a eu lieu. Ce segment de décision demande une autre vue de joueur. Utilisez /continue, /revise ou /dismiss."
+  decision_declined: "Aucune action n'a eu lieu : l'action proposée a été refusée."
+  risk_confirmation: "Aucune action n'a eu lieu : ce danger exige une confirmation authentifiée."
+  classifier_fault: "Le maître du jeu n'a pas pu comprendre ce que faisait ce tour ; rien ne s'est produit et aucun dé n'a été lancé. Redites-le, ou reformulez."
+  romance_boundary: "Aucune action n'a eu lieu : cette escalade n'est pas disponible à cette table."
+  trade_confirmation: "Aucun achat n'a eu lieu : les termes convenus exigent une confirmation authentifiée."
+  trade_completed: "L'achat confirmé a été enregistré."
+  withheld: "Le maître du jeu retient ce tour : ses conséquences ne sont pas encore inscrites au registre. Les dés déjà lancés comptent toujours - ne refaites pas l'action. Demandez ce qui se passe ensuite."
+  fault: "Le maître du jeu a rencontré une panne en écrivant l'histoire de ce tour. Les dés déjà lancés comptent toujours - ne refaites pas l'action. Demandez ce qui se passe ensuite."
+  decision_incomplete: "Aucune action n'a été perdue : la préparation du maître du jeu pour cette action est déjà inscrite au registre et n'a pas besoin d'être refaite. L'action elle-même ne s'est pas achevée ce tour-ci. Utilisez /retry, /revise ou /dismiss."
+  decision_refused: "Aucune action n'a été résolue : le moteur de règles a refusé $refusal, et rien n'a changé. Utilisez /retry, /revise ou /dismiss."
+
+confirmations:
+  violence: "Cette action peut blesser ou tuer quelqu'un qui ne vous combat pas déjà. Confirmer ?"
+  theft: "Cette action prend le bien de quelqu'un qui ne l'a pas offert. Confirmer ?"
+  destructive: "Cette action peut détruire ou altérer définitivement quelque chose. Confirmer ?"
+  uncategorized: "Cette action peut blesser quelqu'un, lui prendre son bien, ou affecter définitivement quelqu'un ou quelque chose. Confirmer ?"
+
+options:
+  confirm: "Confirmer"
+  decline: "Refuser"
+  own_approach: "Décrivez votre propre approche"
+  parry: "Parer (FOR)"
+  dodge: "Esquiver (DEX)"
+
+decisions:
+  # Placeholders obligatoires : $enemy $character
+  enemy_turn_question: "$enemy agit. Comment $character se défend ?"
+  enemy_turn_context: "Le tour de $character viendra après celui de $enemy."
+
+roll:
+  # Les deux nombres doivent rester étiquetés : on joue en dessous du seuil, et une paire
+  # non étiquetée se lit à l'envers pour qui vient d'un système où l'on joue au-dessus.
+  # Placeholders obligatoires : $name $attribute $total $target $outcome
+  announcement: "$name lance $attribute : $total obtenu contre $target requis, $outcome."
+
+doom:
+  # Placeholders obligatoires : $name $die $total $result
+  announcement: "$name lance le dé de Damnation ($die) : $total obtenu, $result."
+
+doom_results:
+  held: "le dé tient bon"
+  # Placeholder obligatoire : $next
+  downgraded: "le dé tombe à $next"
+  depleted: "le dé de Damnation est épuisé"
+
+runic:
+  # Ligne d'enjeu d'une arme runique, écrite par le MOTEUR à partir du champ
+  # kills_helpless du résultat (voir la source anglaise).
+  # Required placeholders: $name $wielder
+  armed: "$name a pris la mesure de $wielder : si $wielder tombe Sans défense durant cette session, la lame achève $wielder sur-le-champ."
+  disarmed: "$name n'a pas pris la mesure de $wielder : tomber Sans défense durant cette session ne livrera pas $wielder à la lame."
+  armed_next: "$name a pris la mesure de $wielder pour la prochaine session : si $wielder y tombe Sans défense, la lame achève $wielder sur-le-champ."
+  disarmed_next: "$name n'a pas pris la mesure de $wielder pour la prochaine session : y tomber Sans défense ne livrera pas $wielder à la lame."
+
+attributes:
+  STR: "FOR"
+  DEX: "DEX"
+  CON: "CON"
+  INT: "INT"
+  WIS: "SAG"
+  CHA: "CHA"
+
+outcomes:
+  success: "succès"
+  failure: "échec"
+  critical_success: "succès critique"
+  critical_failure: "échec critique"

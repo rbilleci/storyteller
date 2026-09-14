@@ -1,0 +1,12 @@
+# Synthetic replay input for scripts/narrator_serve.py.
+# Lines beginning with @GM request a turn; other lines supply party chatter.
+
+Rill: Let us find somewhere dry to examine our equipment.
+Ossa: I will ask whether there is a covered workbench nearby.
+@GM Ossa asks a local worker where the party can inspect a damaged pack.
+
+Rill: We should check the straps before taking another journey.
+@GM Rill examines the pack straps and describes any damage she can see.
+
+Ossa: We can make our next plan once the pack is secure.
+@GM Summarize the current scene and leave the next destination undecided.

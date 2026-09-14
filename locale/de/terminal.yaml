@@ -1,0 +1,82 @@
+# Spielertexte des Terminal-Adapters, auf Deutsch.
+# Befehle mit führendem Schrägstrich (/help, /character, /quit, /continue, /retry,
+# /revise, /dismiss) sind SYNTAX und werden nie übersetzt.
+language: de-DE
+status:
+  no_character: "Noch keine Figur"
+  hp: "TP $hp/$hp_max"
+  doom: "Verhängnis $die"
+  combat: "Kampf"
+  round: ": Runde $round"
+  turn: "$name ist am Zug"
+  day: "Tag $day"
+sheet:
+  backgrounds: "**Herkunft:**"
+  stories: "**Geschichten:**"
+  hp: "**TP**"
+  doom: "**Verhängnis**"
+  armour: "**Rüstung**"
+  weapons: "**Waffen:**"
+  equipment: "**Ausrüstung:**"
+  coins: "**Münzen:**"
+  languages: "**Sprachen:**"
+  resources: "**Ressourcen:**"
+  doses: "**Dosen:**"
+  gifts: "**Gaben:**"
+  spells: "**Zauber:**"
+  powers: "**Kräfte:**"
+  runic_weapon: "**Runenwaffe:**"
+  conditions: "**Zustände:**"
+  scars: "**Narben:**"
+  notes: "**Notizen:**"
+  none: "keine"
+  shield: " + Schild"
+  level: "Stufe $level"
+  unlinked: "Noch kein Charakterbogen: Dieses Terminal ist mit keiner Figur verknüpft. Der Bogen erscheint, sobald die Charaktererschaffung eine verknüpft.\n"
+commands:
+  help: "Befehle: /help, /character, /thinking, /language, /quit\n"
+  recovery_help: "Wiederherstellungsbefehle: /continue, /retry, /revise, /dismiss. Nutze /revise gefolgt von einer neuen Handlung, oder /revise Text.\n"
+  revise_after: "Gib nach /revise eine überarbeitete Handlung ein.\n"
+  revise_now: "Gib eine überarbeitete Handlung ein.\n"
+  no_decision_open: "Es ist keine Entscheidung offen, eine Zahl erreicht also nichts. Wiederherstellungsbefehle: /continue, /retry, /revise, /dismiss.\n"
+  unknown: "Unbekannter Befehl: $command. Tippe /help.\n"
+  slash_required: "Befehle beginnen jetzt mit /. Tippe /help.\n"
+  thinking_show: "Nachdenken: $level. Stufen: $levels. Tippe /thinking gefolgt von einer Stufe, um es zu ändern.\n"
+  thinking_set: "Nachdenken auf $level gesetzt.\n"
+  thinking_unknown: "Unbekannte Stufe für Nachdenken: $level. Stufen: $levels.\n"
+  thinking_unavailable: "Die Stufe für Nachdenken lässt sich auf diesem Kanal nicht ändern.\n"
+  # Die Sprachkürzel sind Syntax wie die Befehle: niemals übersetzen.
+  language_show: "Sprache: $language. Sprachen: $languages. Tippe /language gefolgt von einer Sprache, um sie zu ändern.\n"
+  language_set: "Sprache auf $language gesetzt.\n"
+  language_unknown: "Unbekannte Sprache: $language. Sprachen: $languages.\n"
+  language_unavailable: "Die Sprache lässt sich auf diesem Kanal nicht ändern.\n"
+
+autocomplete:
+  # Kurze Zusammenfassungen im Befehls-Vervollständigungsmenü des Terminals. Freier
+  # Text, anders als die /Befehle oben.
+  help: "Verfügbare Befehle anzeigen"
+  character: "Deinen Charakterbogen anzeigen"
+  quit: "Die Sitzung verlassen"
+  thinking: "Zeigt oder setzt, wie viel der Erzähler nachdenkt"
+  language: "Zeigt oder setzt die Sprache am Tisch"
+  continue: "Das Spiel wie erzählt weiterlaufen lassen"
+  dismiss: "Die offene Entscheidung verwerfen"
+  retry: "Den Erzähler bitten, es erneut zu versuchen"
+  revise: "Die letzte Handlung durch eine neue ersetzen"
+
+decision:
+  prompt: "Entscheidung für $name"
+  enter_number: "Gib eine Zahl ein. Tippe /help für Hilfe oder /dismiss zum Schließen."
+  help: "Wähle eine nummerierte Option. /dismiss schließt diese Abfrage. /character zeigt deinen Bogen. /quit verlässt das Spiel."
+  choose_listed: "Wähle eine der aufgeführten Optionen.\n"
+  describe_approach: "Beschreibe dieses Vorgehen: als Fließtext, oder als Optionsnummer gefolgt von . oder ).\n"
+  custom_grammar: "Für $label tippe $marker gefolgt von deiner Beschreibung. Beispiel: $example"
+  custom_plain: "Fließtext allein geht auch: beschreibe, was du tust, und es wird als dein Vorgehen genommen."
+  custom_example: "über die Dächer schleichen"
+errors:
+  invalid: "Diese Antwort ist nicht verfügbar. Wähle eine Option.\n"
+  conflict: "Deine erste Antwort bleibt in Kraft.\n"
+  stale: "Diese Entscheidung ist verfallen, weil sich der Spielzustand geändert hat.\n"
+  cancelled: "Diese Entscheidung ist nicht mehr aktiv.\n"
+  rejected: "Entscheidung nicht angenommen.\n"
+thinking: " Denkt nach"

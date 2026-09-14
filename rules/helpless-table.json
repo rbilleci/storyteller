@@ -1,0 +1,56 @@
+{
+  "source": "Black Sword Hack - Ultimate Chaos Edition SRD v1.0.2, Combat: Helpless.",
+  "note": "A player character at 0 hit points becomes Helpless. The player rolls this d6 once the fight ends or the character reaches safety. Results 1 to 5 immediately restore d4 hit points.",
+  "survivor_hp_die": "d4",
+  "results": {
+    "1": {
+      "name": "Scratched",
+      "text": "The character is good to go except for a new scar.",
+      "effect": "scar"
+    },
+    "2": {
+      "name": "Missed",
+      "text": "One random piece of equipment is destroyed.",
+      "effect": "destroy_equipment"
+    },
+    "3": {
+      "name": "Impaired",
+      "text": "Disadvantage on DEX tests for the rest of the session.",
+      "effect": "condition",
+      "condition": {
+        "id": "impaired",
+        "label": "Impaired",
+        "effect": "disadvantage_dex",
+        "scope": "session"
+      }
+    },
+    "4": {
+      "name": "Injured",
+      "text": "Disadvantage on all attribute tests for the rest of the session.",
+      "effect": "condition",
+      "condition": {
+        "id": "injured",
+        "label": "Injured",
+        "effect": "disadvantage_all",
+        "scope": "session"
+      }
+    },
+    "5": {
+      "name": "Butchered",
+      "text": "Permanently lose 1 point of STR on a d6 result of 1 to 3, or 1 point of DEX on a d6 result of 4 to 6.",
+      "effect": "permanent_attribute_loss",
+      "sub_roll": {
+        "die": "d6",
+        "ranges": [
+          { "min": 1, "max": 3, "attribute": "STR" },
+          { "min": 4, "max": 6, "attribute": "DEX" }
+        ]
+      }
+    },
+    "6": {
+      "name": "Killed",
+      "text": "The character dies. Create a new character of the same level.",
+      "effect": "death"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+# Texto do narrador para os jogadores, em português europeu. O diretório chama-se
+# "pt" para que tanto "pt" como "pt-PT" resolvam aqui; o português do Brasil vive em
+# locale/pt-BR.
+# Tradução de locale/en/narrator.yaml, chave por chave. Ver a fonte inglesa para as
+# restrições: os comandos de recuperação (/retry, /revise, /dismiss, /continue) são
+# sintaxe e nunca se traduzem, e cada $placeholder é obrigatório.
+
+language: pt-PT
+
+notices:
+  decision_fault: "Nenhuma ação ocorreu: o mestre de jogo não conseguiu preparar uma decisão segura. Usa /retry, /revise ou /dismiss."
+  decision_stale_context: "Nenhuma ação ocorreu: o estado da mesa mudou enquanto esta decisão estava aberta. Usa /retry para perguntar de novo."
+  decision_stale_confirmation: "Nenhuma ação ocorreu: esta confirmação já não corresponde ao que estás a fazer. Descreve a ação outra vez."
+  decision_segment: "Nenhuma ação ocorreu. Este segmento de decisão precisa da vista de outro jogador. Usa /continue, /revise ou /dismiss."
+  decision_declined: "Nenhuma ação ocorreu: a ação proposta foi recusada."
+  risk_confirmation: "Nenhuma ação ocorreu: este perigo exige uma confirmação autenticada."
+  classifier_fault: "O mestre de jogo não conseguiu perceber o que esse turno fazia; nada aconteceu e nenhum dado foi lançado. Di-lo outra vez, ou reformula."
+  romance_boundary: "Nenhuma ação ocorreu: essa escalada não está disponível nesta mesa."
+  trade_confirmation: "Nenhuma compra ocorreu: os termos acordados exigem uma confirmação autenticada."
+  trade_completed: "A compra confirmada ficou registada."
+  withheld: "O mestre de jogo retém este turno: as suas consequências ainda não estão assentes no registo. Os dados já lançados continuam a contar - não repitas a ação. Pergunta o que acontece a seguir."
+  fault: "O mestre de jogo teve uma falha ao escrever a história deste turno. Os dados já lançados continuam a contar - não repitas a ação. Pergunta o que acontece a seguir."
+  decision_incomplete: "Nenhuma ação se perdeu: a preparação do mestre de jogo para esta ação já chegou ao registo e não precisa de ser repetida. A ação em si não acabou de se resolver neste turno. Usa /retry, /revise ou /dismiss."
+  decision_refused: "Nenhuma ação se resolveu: o motor de regras recusou $refusal, e nada mudou. Usa /retry, /revise ou /dismiss."
+
+confirmations:
+  violence: "Esta ação pode ferir ou matar alguém que ainda não está a lutar contigo. Confirmar?"
+  theft: "Esta ação tira um bem a alguém que não o ofereceu. Confirmar?"
+  destructive: "Esta ação pode destruir ou alterar permanentemente alguma coisa. Confirmar?"
+  uncategorized: "Esta ação pode ferir alguém, tirar-lhe um bem, ou afetar permanentemente alguém ou alguma coisa. Confirmar?"
+
+options:
+  confirm: "Confirmar"
+  decline: "Recusar"
+  own_approach: "Descreve a tua própria abordagem"
+  parry: "Aparar (FOR)"
+  dodge: "Esquivar (DES)"
+
+decisions:
+  # Placeholders obrigatórios: $enemy $character
+  enemy_turn_question: "$enemy está a agir. Como se defende $character?"
+  enemy_turn_context: "O turno de $character vem depois do de $enemy."
+
+roll:
+  # Os dois números têm de ficar etiquetados: joga-se abaixo do limiar, e um par sem
+  # etiqueta lê-se ao contrário para quem vem de um sistema de rolar alto.
+  # Placeholders obrigatórios: $name $attribute $total $target $outcome
+  announcement: "$name testa $attribute: obteve $total contra o alvo $target, $outcome."
+
+doom:
+  # Placeholders obrigatórios: $name $die $total $result
+  announcement: "$name lança o dado da Perdição ($die): obteve $total, $result."
+
+doom_results:
+  held: "o dado aguenta"
+  # Placeholder obrigatório: $next
+  downgraded: "o dado desce para $next"
+  depleted: "o dado da Perdição está esgotado"
+
+runic:
+  # A linha de aposta de uma arma rúnica, escrita pelo MOTOR a partir do campo
+  # kills_helpless do resultado (ver a fonte inglesa).
+  # Placeholders obrigatórios: $name $wielder
+  armed: "$name tomou a medida de $wielder: se $wielder cair Indefeso nesta sessão, a lâmina mata $wielder de imediato."
+  disarmed: "$name não tomou a medida de $wielder: cair Indefeso nesta sessão não entrega $wielder à lâmina."
+  armed_next: "$name tomou a medida de $wielder para a próxima sessão: se $wielder nela cair Indefeso, a lâmina mata $wielder de imediato."
+  disarmed_next: "$name não tomou a medida de $wielder para a próxima sessão: nela cair Indefeso não entrega $wielder à lâmina."
+
+attributes:
+  STR: "FOR"
+  DEX: "DES"
+  CON: "CON"
+  INT: "INT"
+  WIS: "SAB"
+  CHA: "CAR"
+
+outcomes:
+  success: "sucesso"
+  failure: "falha"
+  critical_success: "sucesso crítico"
+  critical_failure: "falha crítica"

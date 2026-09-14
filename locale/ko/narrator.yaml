@@ -1,0 +1,79 @@
+# 플레이어에게 보이는 내레이터 텍스트, 한국어판.
+# locale/en/narrator.yaml 을 키 하나하나 그대로 번역한 것. 제약은 영어 원본 참조:
+# 복구 명령어(/retry, /revise, /dismiss, /continue)는 구문이므로 절대 번역하지 않으며,
+# 모든 $placeholder 는 필수입니다. 플레이스홀더 앞뒤에는 공백을 둡니다.
+
+language: ko-KR
+
+notices:
+  decision_fault: "아무 행동도 일어나지 않았습니다: 게임 마스터가 안전한 결정을 준비하지 못했습니다. /retry, /revise, /dismiss 중 하나를 사용하세요."
+  decision_stale_context: "아무 행동도 일어나지 않았습니다: 이 결정이 열려 있는 동안 테이블의 상태가 바뀌었습니다. 다시 물으려면 /retry 를 사용하세요."
+  decision_stale_confirmation: "아무 행동도 일어나지 않았습니다: 이 확인은 지금 하려는 것과 더 이상 일치하지 않습니다. 행동을 다시 설명해 주세요."
+  decision_segment: "아무 행동도 일어나지 않았습니다. 이 결정 구간에는 다른 플레이어의 시점이 필요합니다. /continue, /revise, /dismiss 중 하나를 사용하세요."
+  decision_declined: "아무 행동도 일어나지 않았습니다: 제안된 행동이 거절되었습니다."
+  risk_confirmation: "아무 행동도 일어나지 않았습니다: 이 위험은 인증된 확인을 요구합니다."
+  classifier_fault: "게임 마스터가 그 차례가 무엇을 하려는 것인지 읽지 못했습니다. 아무 일도 일어나지 않았고 주사위도 굴리지 않았습니다. 다시 말하거나 표현을 바꿔 주세요."
+  romance_boundary: "아무 행동도 일어나지 않았습니다: 그 진전은 이 테이블에서는 허용되지 않습니다."
+  trade_confirmation: "아무 구매도 이루어지지 않았습니다: 합의된 조건은 인증된 확인을 요구합니다."
+  trade_completed: "확인된 구매가 기록되었습니다."
+  withheld: "게임 마스터가 이 차례를 보류하고 있습니다: 그 결과가 아직 기록에 정리되지 않았습니다. 이미 굴린 주사위는 그대로 유효합니다 - 행동을 다시 하지 마세요. 다음에 무슨 일이 일어나는지 물어보세요."
+  fault: "게임 마스터가 이 차례의 이야기를 쓰던 중 오류를 만났습니다. 이미 굴린 주사위는 그대로 유효합니다 - 행동을 다시 하지 마세요. 다음에 무슨 일이 일어나는지 물어보세요."
+  decision_incomplete: "잃은 행동은 없습니다: 이 행동을 위한 게임 마스터의 준비는 이미 기록에 들어가 있어 반복할 필요가 없습니다. 행동 자체는 이번 차례에 끝까지 해결되지 않았습니다. /retry, /revise, /dismiss 중 하나를 사용하세요."
+  decision_refused: "해결된 행동이 없습니다: 규칙 엔진이 $refusal 을 거부했고, 아무것도 바뀌지 않았습니다. /retry, /revise, /dismiss 중 하나를 사용하세요."
+
+confirmations:
+  violence: "이 행동은 아직 당신과 싸우고 있지 않은 사람을 다치게 하거나 죽일 수 있습니다. 확인하시겠습니까?"
+  theft: "이 행동은 내주지 않은 사람의 소유물을 가져갑니다. 확인하시겠습니까?"
+  destructive: "이 행동은 무언가를 파괴하거나 영구히 바꿀 수 있습니다. 확인하시겠습니까?"
+  uncategorized: "이 행동은 누군가를 해치거나, 무언가를 빼앗거나, 누군가 또는 무언가에 영구한 영향을 줄 수 있습니다. 확인하시겠습니까?"
+
+options:
+  confirm: "확인"
+  decline: "거절"
+  own_approach: "자신만의 접근을 설명하기"
+  parry: "쳐내기 (근력)"
+  dodge: "회피 (민첩)"
+
+decisions:
+  # 필수 플레이스홀더: $enemy $character
+  enemy_turn_question: "$enemy 이(가) 행동합니다. $character 은(는) 어떻게 방어합니까?"
+  enemy_turn_context: "$character 의 차례는 $enemy 의 차례 다음에 옵니다."
+
+roll:
+  # 두 숫자 모두 라벨을 유지해야 합니다: 목표값 아래로 굴리는 게임이므로, 라벨 없는
+  # 숫자 쌍은 높게 굴리는 시스템에서 온 플레이어에게 거꾸로 읽힙니다.
+  # 필수 플레이스홀더: $name $attribute $total $target $outcome
+  announcement: "$name 의 $attribute 판정: 주사위 값 $total, 목표값 $target, $outcome."
+
+doom:
+  # 필수 플레이스홀더: $name $die $total $result
+  announcement: "$name 의 파멸의 주사위 ($die) 굴림: 주사위 값 $total, $result."
+
+doom_results:
+  held: "주사위는 유지된다"
+  # 필수 플레이스홀더: $next
+  downgraded: "주사위가 $next 단계로 떨어진다"
+  depleted: "파멸의 주사위가 소진되었다"
+
+runic:
+  # 룬 무기의 내기 문장. 결과의 kills_helpless 필드에서 엔진이 직접 씁니다
+  # (영어 원본 참조).
+  # 필수 플레이스홀더: $name $wielder
+  armed: "$name 이(가) $wielder 를 가늠해 두었다: 이번 세션에서 $wielder 이(가) 무력 상태로 쓰러지면, 칼날이 그 자리에서 $wielder 의 목숨을 거둔다."
+  disarmed: "$name 이(가) $wielder 를 가늠하지 않았다: 이번 세션에서 무력 상태로 쓰러져도 칼날이 $wielder 의 목숨을 거두지는 않는다."
+  armed_next: "$name 이(가) 다음 세션을 위해 $wielder 를 가늠해 두었다: 그 세션에서 $wielder 이(가) 무력 상태로 쓰러지면, 칼날이 그 자리에서 $wielder 의 목숨을 거둔다."
+  disarmed_next: "$name 이(가) 다음 세션을 위해 $wielder 를 가늠하지 않았다: 그 세션에서 무력 상태로 쓰러져도 칼날이 $wielder 의 목숨을 거두지는 않는다."
+
+attributes:
+  STR: "근력"
+  DEX: "민첩"
+  CON: "건강"
+  INT: "지능"
+  WIS: "지혜"
+  CHA: "매력"
+
+outcomes:
+  success: "성공"
+  failure: "실패"
+  critical_success: "대성공"
+  critical_failure: "대실패"

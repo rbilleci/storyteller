@@ -1,0 +1,70 @@
+npcs:
+  - id: sera-vane
+    name: Sera Vane
+    level: 1
+    armour: none
+    role: bell-keeper of the road shrine
+    faction: none
+    location_id: the-river-cave
+    motive: close the negotiation honestly, whatever it costs her
+    actions:
+      - strike a tuning note on her slate hammer
+      - read two days of notes aloud
+    attitude: exhausted, lucid, unwilling to leave
+    voice: short sentences, no wasted words, asks questions back
+
+  - id: orso-pell
+    name: Orso Pell
+    level: 3
+    armour: light
+    role: customs captain of Vey
+    faction: salt-magistrates
+    location_id: the-eel-market
+    motive: find out who is asking about the bell-keeper before the Magistrates do
+    actions:
+      - call two constables from the next stall
+      - offer paid work as a test of discretion
+    attitude: warm, curious, entirely transactional
+    voice: smiles first, asks the real question third
+
+  - id: mother-keth
+    name: Mother Keth
+    level: 2
+    armour: none
+    role: blind elder of the Ferrymen's Compact
+    faction: ferrymens-compact
+    location_id: the-eel-market
+    motive: keep the channel navigable and the bargain stable
+    actions:
+      - name the tide to the minute without a table
+      - withhold the one fact that matters
+    attitude: patient, unbribable, warms to an honoured debt
+    voice: speaks in tides and distances
+
+  - id: the-brass-pilgrim
+    name: The Brass Pilgrim
+    level: 5
+    armour: heavy
+    role: silent armoured guardian of the Black Bell
+    faction: none
+    location_id: the-black-bell-crypt
+    motive: keep the Black Bell on its cradle until someone reads the terms
+    actions:
+      - step between an intruder and the cradle ropes
+      - strike once, hard, without warning
+    attitude: immovable, non-verbal, not malicious
+    voice: silence, and the sound of bronze on stone
+
+  - id: ammet
+    name: Ammet the rope-maker
+    level: 1
+    armour: none
+    role: Choir Below listener
+    faction: choir-below
+    location_id: the-drowned-customs-house
+    motive: get a message carried into the river cave instead of a blade
+    actions:
+      - signal the market with a shuttered lamp
+      - argue the Choir's case well enough to be unsettling
+    attitude: unarmed, watchful, reasonable
+    voice: apologetic, precise, never raises his voice

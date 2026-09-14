@@ -1,0 +1,40 @@
+{
+  "additionalProperties": false,
+  "description": "One narrow verdict: the defence a message binds, asked beside the full classifier.",
+  "properties": {
+    "defence_method": {
+      "default": "none",
+      "enum": [
+        "dodge",
+        "parry",
+        "none"
+      ],
+      "title": "Defence Method",
+      "type": "string"
+    },
+    "reason": {
+      "maxLength": 240,
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    },
+    "route": {
+      "enum": [
+        "risk",
+        "social",
+        "read",
+        "out_of_character",
+        "planner"
+      ],
+      "title": "Route",
+      "type": "string"
+    }
+  },
+  "required": [
+    "route",
+    "defence_method",
+    "reason"
+  ],
+  "title": "DefenceCompanion",
+  "type": "object"
+}

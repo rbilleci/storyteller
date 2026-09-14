@@ -1,0 +1,10 @@
+# Separate MCP 1.x narrator environment; install the project with --no-deps after this.
+# Regenerate: uv pip compile requirements-narrator.in --python-version 3.11 --output-file requirements-narrator.txt
+strands-agents[openai]==1.50.2
+mcp==1.29.0
+pydantic>=2,<3
+PyYAML>=6,<7
+filelock>=3,<4
+prompt-toolkit>=3.0.53,<4
+pytest>=8,<9
+pytest-asyncio>=0.25,<2

@@ -1,0 +1,82 @@
+# ターミナルアダプターがプレイヤーに示す文言（日本語）。
+# スラッシュで始まるコマンド（/help, /character, /quit, /continue, /retry, /revise,
+# /dismiss）は構文であり、翻訳しない。
+language: ja-JP
+status:
+  no_character: "キャラクター未登録"
+  hp: "HP $hp/$hp_max"
+  doom: "破滅ダイス $die"
+  combat: "戦闘"
+  round: "：ラウンド $round"
+  turn: "$name の手番"
+  day: "$day 日目"
+sheet:
+  backgrounds: "**来歴：**"
+  stories: "**物語：**"
+  hp: "**HP**"
+  doom: "**破滅ダイス**"
+  armour: "**防具**"
+  weapons: "**武器：**"
+  equipment: "**装備：**"
+  coins: "**硬貨：**"
+  languages: "**言語：**"
+  resources: "**資源：**"
+  doses: "**用量：**"
+  gifts: "**天賦：**"
+  spells: "**呪文：**"
+  powers: "**異能：**"
+  runic_weapon: "**ルーン武器：**"
+  conditions: "**状態：**"
+  scars: "**傷跡：**"
+  notes: "**備考：**"
+  none: "なし"
+  shield: " ＋盾"
+  level: "レベル $level"
+  unlinked: "キャラクターシートはまだありません。このターミナルはどのキャラクターにも結び付いていません。キャラクター作成で結び付くと表示されます。\n"
+commands:
+  help: "コマンド： /help, /character, /thinking, /language, /quit\n"
+  recovery_help: "復旧コマンド： /continue, /retry, /revise, /dismiss。/revise の後に新しい行動を続けるか、/revise 本文 と入力してください。\n"
+  revise_after: "/revise の後に修正した行動を入力してください。\n"
+  revise_now: "修正した行動を入力してください。\n"
+  no_decision_open: "開いている選択がないため、番号を入力しても何にも届きません。復旧コマンド： /continue, /retry, /revise, /dismiss。\n"
+  unknown: "不明なコマンド： $command。/help と入力してください。\n"
+  slash_required: "コマンドは / で始まります。/help と入力してください。\n"
+  thinking_show: "思考：$level。レベル： $levels。変更するには /thinking に続けてレベルを入力してください。\n"
+  thinking_set: "思考を $level に設定しました。\n"
+  thinking_unknown: "不明な思考レベル： $level。レベル： $levels。\n"
+  thinking_unavailable: "このチャンネルでは思考レベルを変更できません。\n"
+  # 言語コードはコマンドと同じく構文です。翻訳しないでください。
+  language_show: "言語：$language。言語一覧： $languages。変更するには /language に続けて言語を入力してください。\n"
+  language_set: "言語を $language に設定しました。\n"
+  language_unknown: "不明な言語： $language。言語一覧： $languages。\n"
+  language_unavailable: "このチャンネルでは言語を変更できません。\n"
+
+autocomplete:
+  # ターミナルのコマンド補完メニューに表示される短い説明。上記の /コマンド とは
+  # 異なり自由に翻訳可。
+  help: "利用可能なコマンドを表示"
+  character: "キャラクターシートを表示"
+  quit: "セッションを終了する"
+  thinking: "語り手の思考量を表示または設定"
+  language: "卓の言語を表示または設定"
+  continue: "語られた通りにゲームを続ける"
+  dismiss: "開いている決定を却下する"
+  retry: "語り手にもう一度試すよう頼む"
+  revise: "直前の行動を新しい行動に置き換える"
+
+decision:
+  prompt: "$name への選択"
+  enter_number: "番号を入力してください。/help で説明、/dismiss で閉じます。"
+  help: "番号の付いた選択肢から選んでください。/dismiss はこの入力を閉じます。/character はシートを表示します。/quit はゲームを終了します。"
+  choose_listed: "一覧にある選択肢から選んでください。\n"
+  describe_approach: "そのやり方を説明してください。自由な文章か、選択肢の番号に . か ) を付けて入力します。\n"
+  custom_grammar: "$label には $marker に続けて説明を入力してください。例： $example"
+  custom_plain: "自由な文章だけでも構いません。何をするか書けば、それがやり方として扱われます。"
+  custom_example: "屋根伝いに忍び寄る"
+errors:
+  invalid: "その答えは選べません。選択肢から選んでください。\n"
+  conflict: "最初の答えがそのまま有効です。\n"
+  stale: "ゲームの状況が変わったため、この選択は期限切れです。\n"
+  cancelled: "この選択はもう有効ではありません。\n"
+  rejected: "選択は受け付けられませんでした。\n"
+thinking: " 考え中"
